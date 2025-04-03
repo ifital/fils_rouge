@@ -65,9 +65,9 @@ class AuthController extends Controller
     {
         switch ($user->role) {
             case 'admin':
-                return redirect()->route('dashboard')->with('success', 'Bienvenue Admin !');
+                return redirect()->route('dashboard.dashboard')->with('success', 'Bienvenue Admin !');
             case 'employee':
-                return redirect()->route('manager')->with('success', 'Bienvenue Manager !');
+                return redirect()->route('emploiyee.dashboard')->with('success', 'Bienvenue Manager !');
             case 'client':
             default:
                 return redirect()->route('home')->with('success', 'Bienvenue Client !');
