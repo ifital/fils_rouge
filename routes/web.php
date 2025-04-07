@@ -30,5 +30,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', fn () => view('admin.dashboard'))->name('admin.dashboard');
     Route::get('/employee/dashboard', fn () => view('employee.dashboard'))->name('employee.dashboard');
-    Route::get('/client/dashboard', fn () => view('client.dashboard'))->name('client.dashboard');
+    Route::get('/client/dashboard', fn () => view('client.home'))->name('client.home');
 });
