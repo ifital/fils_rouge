@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des chambres</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .animate-fadeIn {
-            animation: fadeIn 0.3s ease-out;
-        }
-    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100">
 
 <div class="container mx-auto mt-8 px-4">
     <div class="flex justify-between items-center mb-4">
@@ -31,38 +22,24 @@
         </div>
     @endif
 
-    @if ($errors->any())
-        <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
-            <ul class="list-disc pl-5">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach($rooms as $room)
             <div class="bg-white rounded shadow p-4">
-                @if($room->images && file_exists(public_path('storage/' . $room->images)))
-                    <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-48 object-cover rounded mb-3">
-                @else
-                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 rounded mb-3">
-                        Pas d'image
-                    </div>
-                @endif
-
+                <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-48 object-cover rounded mb-3">
                 <h3 class="text-xl font-semibold">Chambre #{{ $room->room_number }}</h3>
-                <p>Type : {{ $room->type }}</p>
-                <p>Prix : {{ $room->price }} MAD</p>
-                <p>Statut : {{ $room->status }}</p>
+                <p class="mb-1">Type : {{ $room->type }}</p>
+                <p class="mb-1">Description : {{ $room->description }}</p>
+                <p class="mb-1">Prix : {{ $room->price }} MAD</p>
+                <p class="mb-1">Statut : {{ $room->status }}</p>
 
+                <!-- Supprimer -->
                 <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="mt-2">
                     @csrf
                     @method('DELETE')
                     <button class="bg-red-500 text-white px-3 py-1 rounded">Supprimer</button>
                 </form>
 
+                <!-- Modifier le statut -->
                 <form action="{{ route('admin.rooms.update', $room) }}" method="POST" class="mt-2">
                     @csrf
                     @method('PUT')
@@ -80,9 +57,9 @@
     </div>
 </div>
 
-<!-- MODAL -->
-<div id="modal" onclick="closeModal(event)" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white p-6 rounded w-full max-w-lg relative animate-fadeIn">
+<!-- MODAL AJOUT -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded w-full max-w-lg relative">
         <button onclick="document.getElementById('modal').classList.add('hidden')" class="absolute top-2 right-2 text-gray-600 text-xl">&times;</button>
 
         <h3 class="text-xl font-bold mb-4">Ajouter une chambre</h3>
@@ -90,22 +67,30 @@
         <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="room_number" class="block font-medium">Numéro</label>
+                <label for="room_number" class="block mb-1">Numéro</label>
                 <input type="text" name="room_number" class="w-full border p-2 rounded" required>
             </div>
+
             <div class="mb-3">
-                <label for="type" class="block font-medium">Type</label>
+                <label for="type" class="block mb-1">Type</label>
                 <select name="type" class="w-full border p-2 rounded" required>
                     <option value="dormitory">Dortoir</option>
                     <option value="private">Privée</option>
                 </select>
             </div>
+
             <div class="mb-3">
-                <label for="price" class="block font-medium">Prix</label>
+                <label for="description" class="block mb-1">Description</label>
+                <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="block mb-1">Prix</label>
                 <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
             </div>
+
             <div class="mb-3">
-                <label for="status" class="block font-medium">Statut</label>
+                <label for="status" class="block mb-1">Statut</label>
                 <select name="status" class="w-full border p-2 rounded" required>
                     <option value="available">Disponible</option>
                     <option value="occupied">Occupée</option>
@@ -113,22 +98,16 @@
                     <option value="maintenance">Maintenance</option>
                 </select>
             </div>
+
             <div class="mb-3">
-                <label for="images" class="block font-medium">Image</label>
+                <label for="images" class="block mb-1">Image</label>
                 <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
             </div>
+
             <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Ajouter</button>
         </form>
     </div>
 </div>
-
-<script>
-    function closeModal(event) {
-        if (event.target.id === 'modal') {
-            document.getElementById('modal').classList.add('hidden');
-        }
-    }
-</script>
 
 </body>
 </html>
