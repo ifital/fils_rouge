@@ -47,17 +47,33 @@ class RoomController extends Controller
 
     public function update(Request $request, Room $room)
     {
+        // Validation des données
         $request->validate([
-            'room_number' => 'required|unique:rooms',
+            'room_number' => 'required|unique:rooms,room_number,' . $room->id,
             'type' => 'required|in:dormitory,private',
             'description' => 'nullable|string|max:255',
             'price' => 'required|numeric',
             'status' => 'required|in:available,occupied,cleaning,maintenance',
-            'images' => 'required|image',
+            'images' => 'nullable|image', // L'image est facultative, mais doit être valide si présente
         ]);
-
-        $this->roomService->updateRoom($request, $room);
-
-        return back()->with('success', 'Chambre mise à jour.');
+    
+        // Mise à jour des champs
+        $room->room_number = $request->room_number;
+        $room->type = $request->type;
+        $room->description = $request->description;
+        $room->price = $request->price;
+        $room->status = $request->status;
+    
+        // Si une nouvelle image est envoyée, l'enregistrer et mettre à jour le chemin
+        if ($request->hasFile('images')) {
+            $path = $request->file('images')->store('rooms', 'public');
+            $room->images = $path;
+        }
+    
+        // Sauvegarde les modifications
+        $room->save();
+    
+        return back()->with('success', 'Chambre mise à jour avec succès.');
     }
+    
 }
