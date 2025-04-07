@@ -45,7 +45,7 @@ class AuthController extends Controller
                 case 'employee':
                     return redirect()->route('employee.dashboard');
                 default:
-                    return redirect()->route('client.dashboard');
+                    return redirect()->route('client.home');
             }
         }
 
