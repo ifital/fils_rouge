@@ -19,6 +19,7 @@ class RoomService
         Room::create([
             'room_number' => $request->room_number,
             'type' => $request->type,
+            'description' => $request->description,
             'price' => $request->price,
             'status' => $request->status,
             'images' => $path,
