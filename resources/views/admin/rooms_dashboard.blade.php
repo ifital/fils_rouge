@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des chambres</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 min-h-screen">
 
-<div class="container mx-auto mt-8 px-4">
-    <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold">Liste des chambres</h2>
-        <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-green-600 text-white px-4 py-2 rounded">
-            Ajouter une chambre
+<div class="container mx-auto mt-10 px-4">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-3xl font-bold text-gray-800">Liste des chambres</h2>
+        <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md shadow-sm">
+            + Ajouter une chambre
         </button>
     </div>
 
     @if(session('success'))
-        <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
+        <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
             {{ session('success') }}
         </div>
     @endif
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach($rooms as $room)
-            <div class="bg-white rounded shadow p-4">
-                <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-48 object-cover rounded mb-3">
-                <h3 class="text-xl font-semibold">Chambre #{{ $room->room_number }}</h3>
-                <p class="mb-1">Type : {{ $room->type }}</p>
-                <p class="mb-1">Description : {{ $room->description }}</p>
-                <p class="mb-1">Prix : {{ $room->price }} MAD</p>
-                <p class="mb-1">Statut : {{ $room->status }}</p>
+            <div class="bg-white rounded-2xl shadow-md p-5 transition hover:shadow-lg">
+                <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-lg font-semibold text-gray-800">Chambre #{{ $room->room_number }}</h3>
+                <p class="text-sm text-gray-600 mb-1">Type : {{ $room->type }}</p>
+                <p class="text-sm text-gray-600 mb-1">Description : {{ $room->description }}</p>
+                <p class="text-sm text-gray-600 mb-1">Prix : <span class="font-medium text-gray-800">{{ $room->price }} MAD</span></p>
+                <p class="text-sm text-gray-600 mb-4">Statut : {{ $room->status }}</p>
 
-                <!-- Modifier -->
-                <button onclick="openModal({{ $room->id }}, '{{ $room->room_number }}', '{{ $room->type }}', '{{ $room->description }}', '{{ $room->price }}', '{{ $room->status }}')" class="bg-blue-500 text-white px-3 py-1 rounded">Modifier</button>
+                <div class="flex gap-2">
+                    <button onclick="openModal({{ $room->id }}, '{{ $room->room_number }}', '{{ $room->type }}', '{{ $room->description }}', '{{ $room->price }}', '{{ $room->status }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
+                        Modifier
+                    </button>
 
-                <!-- Supprimer -->
-                <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="mt-2">
-                    @csrf
-                    @method('DELETE')
-                    <button class="bg-red-500 text-white px-3 py-1 rounded">Supprimer</button>
-                </form>
+                    <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button class="bg-red-600 hover:bg-red-700 transition text-white text-sm px-3 py-1 rounded-md">Supprimer</button>
+                    </form>
+                </div>
             </div>
         @endforeach
     </div>
 </div>
 
 <!-- MODAL POUR AJOUTER UNE CHAMBRE -->
-<div id="addModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded w-full max-w-lg relative">
-        <button onclick="closeModal('addModal')" class="absolute top-2 right-2 text-gray-600 text-xl">&times;</button>
+<div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg">
+        <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-        <h3 class="text-xl font-bold mb-4">Ajouter une chambre</h3>
+        <h3 class="text-xl font-semibold mb-4">Ajouter une chambre</h3>
 
         <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -94,17 +96,17 @@
                 <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
             </div>
 
-            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Ajouter</button>
+            <button type="submit" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md">Ajouter</button>
         </form>
     </div>
 </div>
 
 <!-- MODAL POUR MODIFIER UNE CHAMBRE -->
-<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded w-full max-w-lg relative">
-        <button onclick="closeModal('editModal')" class="absolute top-2 right-2 text-gray-600 text-xl">&times;</button>
+<div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg">
+        <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-        <h3 class="text-xl font-bold mb-4">Modifier la chambre</h3>
+        <h3 class="text-xl font-semibold mb-4">Modifier la chambre</h3>
 
         <form action="{{ route('admin.rooms.update', ':room_id') }}" method="POST" enctype="multipart/form-data" id="editRoomForm">
             @csrf
@@ -148,30 +150,24 @@
                 <input type="file" name="images" id="images" class="w-full border p-2 rounded" accept="image/*">
             </div>
 
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Mettre à jour</button>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-md">Mettre à jour</button>
         </form>
     </div>
 </div>
 
 <script>
 function openModal(id, roomNumber, type, description, price, status) {
-    // Ouvrir le modal de modification
     document.getElementById('editModal').classList.remove('hidden');
-    
-    // Remplir les champs du formulaire de modification
     document.getElementById('room_number').value = roomNumber;
     document.getElementById('type').value = type;
     document.getElementById('description').value = description;
     document.getElementById('price').value = price;
     document.getElementById('status').value = status;
-
-    // Mettre à jour l'URL du formulaire pour la chambre spécifique
     const formAction = document.getElementById('editRoomForm').action.replace(':room_id', id);
     document.getElementById('editRoomForm').action = formAction;
 }
 
 function closeModal(modalId) {
-    // Fermer le modal
     document.getElementById(modalId).classList.add('hidden');
 }
 </script>

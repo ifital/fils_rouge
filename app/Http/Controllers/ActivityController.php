@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreActivityRequest;
-use App\Http\Requests\UpdateActivityRequest;
+use App\Http\Requests\ActivityRequest;
 use App\Models\Activity;
 use App\Services\ActivityService;
+use Illuminate\Http\RedirectResponse;
 
 class ActivityController extends Controller
 {
@@ -18,24 +18,37 @@ class ActivityController extends Controller
 
     public function index()
     {
-        return response()->json($this->activityService->getAll());
+        $activities = $this->activityService->getAll();
+        return view('admin.activities_dashboard', compact('activities'));
     }
 
-        public function store(ActivityRequest $request)
+    public function store(ActivityRequest $request): RedirectResponse
     {
-        $activity = $this->activityService->store($request->validated());
-        return response()->json($activity, 201);
+        $this->activityService->store($request->validated());
+
+        return redirect()
+            ->back()
+            ->with('success', 'Activité créée avec succès.')
+            ->with('activities', $this->activityService->getAll());
     }
 
-    public function update(ActivityRequest $request, Activity $activity)
+    public function update(ActivityRequest $request, Activity $activity): RedirectResponse
     {
-        $activity = $this->activityService->update($activity, $request->validated());
-        return response()->json($activity);
+        $this->activityService->update($activity, $request->validated());
+
+        return redirect()
+            ->back()
+            ->with('success', 'Activité mise à jour avec succès.')
+            ->with('activities', $this->activityService->getAll());
     }
 
-    public function destroy(Activity $activity)
+    public function destroy(Activity $activity): RedirectResponse
     {
         $this->activityService->delete($activity);
-        return response()->json(['message' => 'Activité supprimée avec succès']);
+
+        return redirect()
+            ->back()
+            ->with('success', 'Activité supprimée avec succès.')
+            ->with('activities', $this->activityService->getAll());
     }
 }
