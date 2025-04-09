@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Room;
 use App\Services\RoomService;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRoomRequest;
+
 
 class RoomController extends Controller
 {
@@ -22,21 +24,14 @@ class RoomController extends Controller
         return view('admin.rooms_dashboard', compact('rooms'));
     }
 
-    public function store(Request $request)
+
+    public function store(StoreRoomRequest $request)
     {
-        $request->validate([
-            'room_number' => 'required|unique:rooms',
-            'type' => 'required|in:dormitory,private',
-            'description' => 'nullable|string|max:255',
-            'price' => 'required|numeric',
-            'status' => 'required|in:available,occupied,cleaning,maintenance',
-            'images' => 'required|image',
-        ]);
-
         $this->roomService->storeRoom($request);
-
+    
         return back()->with('success', 'Chambre ajoutée.');
     }
+    
 
     public function destroy(Room $room)
     {
@@ -47,14 +42,13 @@ class RoomController extends Controller
 
     public function update(Request $request, Room $room)
     {
-        // Validation des données
         $request->validate([
             'room_number' => 'required|unique:rooms,room_number,' . $room->id,
             'type' => 'required|in:dormitory,private',
             'description' => 'nullable|string|max:255',
             'price' => 'required|numeric',
             'status' => 'required|in:available,occupied,cleaning,maintenance',
-            'images' => 'nullable|image', // L'image est facultative, mais doit être valide si présente
+            'images' => 'nullable|image', 
         ]);
     
         // Mise à jour des champs
