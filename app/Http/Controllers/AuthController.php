@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterUserRequest;
+use App\Http\Requests\LoginUserRequest;
 use App\Services\AuthService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    protected $authService;
+    protected AuthService $authService;
 
     public function __construct(AuthService $authService)
     {
@@ -20,9 +21,9 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function register(Request $request)
+    public function register(RegisterUserRequest $request)
     {
-        $this->authService->register($request->all());
+        $this->authService->register($request->validated());
 
         return redirect()->route('login')->with('success', 'Compte créé avec succès.');
     }
@@ -32,21 +33,16 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request)
+    public function login(LoginUserRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if ($this->authService->login($credentials)) {
+        if ($this->authService->login($request->validated())) {
             $user = Auth::user();
 
-            switch ($user->role) {
-                case 'admin':
-                    return redirect()->route('admin.dashboard');
-                case 'employee':
-                    return redirect()->route('employee.dashboard');
-                default:
-                    return redirect()->route('client.home');
-            }
+            return match ($user->role) {
+                'admin' => redirect()->route('admin.dashboard'),
+                'employee' => redirect()->route('employee.dashboard'),
+                default => redirect()->route('client.home'),
+            };
         }
 
         return back()->withErrors([
