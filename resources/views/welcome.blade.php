@@ -15,44 +15,49 @@
 </head>
 <body class="bg-gray-50 font-sans">
 
-    <!-- Header/Navbar -->
-    <header class="absolute top-0 left-0 right-0 z-20 bg-black bg-opacity-30 text-white" x-data="{ open: false }">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="text-xl font-bold">LOGO</a>
+   <!-- Header/Navbar -->
+<header class="absolute top-0 left-0 right-0 z-20 bg-black bg-opacity-30 text-white" x-data="{ open: false }">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold">LOGO</a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#" class="hover:text-yellow-400">Home</a>
-                <a href="#" class="hover:text-yellow-400">The House</a>
-                <a href="#" class="hover:text-yellow-400">Coworking</a>
-                <a href="#" class="hover:text-yellow-400">Contact</a>
-                <a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Book Now</a>
-            </nav>
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="hover:text-yellow-400">Home</a>
+            <a href="#" class="hover:text-yellow-400">The House</a>
+            <a href="#" class="hover:text-yellow-400">Coworking</a>
+            <a href="#" class="hover:text-yellow-400">Contact</a>
+            <!-- Remplacement de "Book Now" par "Sign Up" et "Sign In" -->
+            <a href="/signin" class="hover:text-yellow-400">Sign In</a>
+            <a href="/signup" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
+            <!-- Fin du remplacement -->
+        </nav>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button @click="open = !open" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path :class="{'hidden': open, 'inline-block': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        <path :class="{'inline-block': open, 'hidden': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button @click="open = !open" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path :class="{'hidden': open, 'inline-block': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path :class="{'inline-block': open, 'hidden': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div x-show="open" @click.away="open = false" class="md:hidden bg-gray-800 bg-opacity-90" x-transition>
-            <nav class="px-4 pt-2 pb-4 space-y-2 flex flex-col items-center">
-                <a href="#" class="block px-2 py-1 hover:text-yellow-400">Home</a>
-                <a href="#" class="block px-2 py-1 hover:text-yellow-400">The House</a>
-                <a href="#" class="block px-2 py-1 hover:text-yellow-400">Coworking</a>
-                <a href="#" class="block px-2 py-1 hover:text-yellow-400">Contact</a>
-                <a href="#" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Book Now</a>
-            </nav>
-        </div>
-    </header>
-
+    <!-- Mobile Menu -->
+    <div x-show="open" @click.away="open = false" class="md:hidden bg-gray-800 bg-opacity-90" x-transition>
+        <nav class="px-4 pt-2 pb-4 space-y-2 flex flex-col items-center">
+            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Home</a>
+            <a href="#" class="block px-2 py-1 hover:text-yellow-400">The House</a>
+            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Coworking</a>
+            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Contact</a>
+            <!-- Remplacement de "Book Now" par "Sign Up" et "Sign In" (Mobile) -->
+            <a href="/signin" class="block px-2 py-1 hover:text-yellow-400 w-full text-center">Sign In</a>
+            <a href="/signup" class="mt-1 bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 w-full text-center">Sign Up</a>
+            <!-- Fin du remplacement -->
+        </nav>
+    </div>
+</header>
     <!-- Section 1: Why Stay -->
     <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center bg-yellow-50" style="background-image: url('https://picsum.photos/seed/wave/1600/900');">
         <!-- Overlay for text readability on background -->
