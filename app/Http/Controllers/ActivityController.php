@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ActivityRequest;
 use App\Models\Activity;
 use App\Services\ActivityService;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreActivityRequest;
+use App\Http\Requests\UpdateActivityRequest;
 
 class ActivityController extends Controller
 {
@@ -22,33 +23,21 @@ class ActivityController extends Controller
         return view('admin.activities_dashboard', compact('activities'));
     }
 
-    public function store(ActivityRequest $request): RedirectResponse
+    public function store(StoreActivityRequest $request)
     {
-        $this->activityService->store($request->validated());
-
-        return redirect()
-            ->back()
-            ->with('success', 'Activité créée avec succès.')
-            ->with('activities', $this->activityService->getAll());
+        $this->activityService->store($request);
+        return back()->with('success', 'Activité ajoutée.');
     }
 
-    public function update(ActivityRequest $request, Activity $activity): RedirectResponse
-    {
-        $this->activityService->update($activity, $request->validated());
-
-        return redirect()
-            ->back()
-            ->with('success', 'Activité mise à jour avec succès.')
-            ->with('activities', $this->activityService->getAll());
-    }
-
-    public function destroy(Activity $activity): RedirectResponse
+    public function destroy(Activity $activity)
     {
         $this->activityService->delete($activity);
+        return back()->with('success', 'Activité supprimée.');
+    }
 
-        return redirect()
-            ->back()
-            ->with('success', 'Activité supprimée avec succès.')
-            ->with('activities', $this->activityService->getAll());
+    public function update(UpdateActivityRequest $request, Activity $activity)
+    {
+        $this->activityService->update($request, $activity);
+        return back()->with('success', 'Activité mise à jour avec succès.');
     }
 }

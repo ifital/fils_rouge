@@ -1,4 +1,3 @@
-<!-- resources/views/admin/activities_dashboard.blade.php -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -51,7 +50,7 @@
 </div>
 
 <!-- MODAL AJOUT -->
-<div id="addModal" class=" inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+<div id="addModal" class="inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
     <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg">
         <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
         <h3 class="text-xl font-semibold mb-4">Ajouter une activité</h3>
@@ -73,17 +72,17 @@
             <div class="mb-3">
                 <label class="block mb-1">Statut</label>
                 <select name="status" class="w-full border p-2 rounded" required>
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
+                    <option value="available">Disponible</option>
+                    <option value="unavailable">Indisponible</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Début</label>
-                <input type="datetime-local" name="start_time" class="w-full border p-2 rounded" required>
+                <input type="datetime-local" name="start_time" class="w-full border p-2 rounded">
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Fin</label>
-                <input type="datetime-local" name="end_time" class="w-full border p-2 rounded" required>
+                <input type="datetime-local" name="end_time" class="w-full border p-2 rounded">
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Image</label>
@@ -109,7 +108,7 @@
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Description</label>
-                <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3"></textarea>
+                <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3" required></textarea>
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Prix</label>
@@ -118,17 +117,17 @@
             <div class="mb-3">
                 <label class="block mb-1">Statut</label>
                 <select name="status" id="status" class="w-full border p-2 rounded" required>
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
+                    <option value="available">Disponible</option>
+                    <option value="unavailable">Indisponible</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Début</label>
-                <input type="datetime-local" name="start_time" id="start_time" class="w-full border p-2 rounded" required>
+                <input type="datetime-local" name="start_time" id="start_time" class="w-full border p-2 rounded">
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Fin</label>
-                <input type="datetime-local" name="end_time" id="end_time" class="w-full border p-2 rounded" required>
+                <input type="datetime-local" name="end_time" id="end_time" class="w-full border p-2 rounded">
             </div>
             <div class="mb-3">
                 <label class="block mb-1">Image</label>

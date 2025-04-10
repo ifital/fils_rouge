@@ -57,7 +57,6 @@
 
         <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="mb-3">
                 <label for="room_number" class="block mb-1">Numéro</label>
                 <input type="text" name="room_number" class="w-full border p-2 rounded" required>
