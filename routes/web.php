@@ -16,8 +16,9 @@ use App\Http\Controllers\ActivityController;
 |
 */
 
-Route::get('/', fn () => view('welcome'))->name('home');
+Route::get('/', fn () => view('home'))->name('home');
 
+// Authentification
 Route::controller(AuthController::class)->group(function () {
     Route::get('/register', 'showRegisterForm')->name('register');
     Route::post('/register', 'register');
