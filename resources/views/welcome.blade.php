@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kekai Surf House</title>
+    <title>Blue Waves</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
@@ -159,7 +159,7 @@
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Reviews</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Review Card 1 -->
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
+                <div class="border-yellow-300 border-solid border-2 p-6 rounded-lg shadow">
                     <div class="flex items-center mb-4">
                         <!-- Replace with actual avatar -->
                         <img src="https://picsum.photos/seed/avatar1/100/100" alt="Avatar Anna Suxa" class="w-12 h-12 rounded-full mr-4 object-cover">
@@ -169,7 +169,7 @@
                 </div>
 
                 <!-- Review Card 2 -->
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
+                <div class="border-yellow-300 border-solid border-2 p-6 rounded-lg shadow">
                     <div class="flex items-center mb-4">
                         <!-- Replace with actual avatar -->
                         <img src="https://picsum.photos/seed/avatar2/100/100" alt="Avatar Said Johnson" class="w-12 h-12 rounded-full mr-4 object-cover">
@@ -179,7 +179,7 @@
                 </div>
 
                 <!-- Review Card 3 -->
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
+                <div class="border-yellow-300 border-solid border-2 p-6 rounded-lg shadow">
                     <div class="flex items-center mb-4">
                         <!-- Replace with actual avatar -->
                         <img src="https://picsum.photos/seed/avatar3/100/100" alt="Avatar Sophia Stern" class="w-12 h-12 rounded-full mr-4 object-cover">
@@ -189,7 +189,7 @@
                 </div>
 
                 <!-- Review Card 4 -->
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
+                <div class="border-yellow-300 border-solid border-2 p-6 rounded-lg shadow">
                     <div class="flex items-center mb-4">
                         <!-- Replace with actual avatar -->
                         <img src="https://picsum.photos/seed/avatar4/100/100" alt="Avatar Alexander Motors" class="w-12 h-12 rounded-full mr-4 object-cover">
