@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostel Booking</title>
-  <!-- Tailwind CSS via CDN -->
+  <title>BLUE WAVES </title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script>
@@ -31,13 +29,8 @@
       <div class="hidden md:flex space-x-6">
         <a href="#" class="text-sm">HOME</a>
         <a href="#" class="text-sm">ROOMS</a>
-        <a href="#" class="text-sm">GALLERY</a>
-        <a href="#" class="text-sm">LOCATION</a>
+        <a href="#" class="text-sm">ACTIVITIES</a>
         <a href="#" class="text-sm">CONTACT</a>
-      </div>
-      <div class="flex space-x-2">
-        <button class="bg-yellow-400 text-black text-xs px-3 py-1 rounded">BOOK NOW</button>
-        <button class="border border-white text-xs px-3 py-1 rounded">CONTACT US</button>
       </div>
     </div>
   </nav>
@@ -47,7 +40,7 @@
     <!-- Header -->
     <h1 class="text-2xl font-bold text-center mb-4">THE DORMS AND PRIVATE ROOMS</h1>
     
-    <p class="text-center mb-8 max-w-3xl mx-auto text-sm">
+    <p class="text-center mb-8 max-w-3xl mx-auto text-xl">
       When you're ready for the easiest and most comfortable stay in town, you'll be
       happy to know that our hostel has the best location in the city center plus
       you'll be met with a lot of adventure.
@@ -247,7 +240,7 @@
     </div>
     <!-- Fully Equipped Kitchen -->
     <div class="mb-12 p-10">
-      <h2 class="text-2xl font-bold mb-6">Fully equipped kitchen</h2>
+      <h2 class=" text-center text-2xl font-bold mb-6">Fully equipped kitchen</h2>
       <div class="flex flex-col md:flex-row gap-6">
         <div class="md:w-1/2">
           <img 
