@@ -56,7 +56,7 @@
             <a href="#" class="block hover:text-yellow-400 transition duration-200">the rooms</a>
             <a href="#" class="block hover:text-yellow-400 transition duration-200">activities</a>
             <a href="#" class="block hover:text-yellow-400 transition duration-200">Contact</a>
-        </div> -->
+        </div>
     </header>
 
     <!-- Main Content Area -->
@@ -139,7 +139,7 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
-    </script> -->
+    </script> 
 
 </body>
 </html>
