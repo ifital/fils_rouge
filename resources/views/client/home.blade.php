@@ -246,7 +246,7 @@
         </div>
     </div>
     <!-- Fully Equipped Kitchen -->
-    <div class="mb-12">
+    <div class="mb-12 p-10">
       <h2 class="text-2xl font-bold mb-6">Fully equipped kitchen</h2>
       <div class="flex flex-col md:flex-row gap-6">
         <div class="md:w-1/2">
@@ -257,7 +257,7 @@
           />
         </div>
         <div class="md:w-1/2">
-          <p class="text-sm">
+          <p class="text-xl font-semibold p-10">
             Our fully equipped kitchen allows you to prepare your own meals, saving money during your travels. 
             The kitchen includes a stove, oven, microwave, refrigerator, and all the utensils you need. 
             It's a great place to meet other travelers while cooking your favorite dishes. 
