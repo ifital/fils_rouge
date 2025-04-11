@@ -16,7 +16,7 @@ use App\Http\Controllers\ActivityController;
 |
 */
 
-Route::get('/', fn () => view('home'))->name('home');
+Route::get('/', fn () => view('welcome'))->name('home');
 
 // Authentification
 Route::controller(AuthController::class)->group(function () {
@@ -47,5 +47,8 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
     });
     
-
+    Route::prefix('client')->name('client.')->group(function () {
+        Route::get('/activities', [ActivityController::class, 'ShowActivities'])->name('activities.index');
+    });
+    
 });

@@ -17,6 +17,11 @@ class ActivityController extends Controller
         $this->activityService = $activityService;
     }
 
+    public function ShowActivities()
+    {
+        return view('client.activities');
+    }
+
     public function index()
     {
         $activities = $this->activityService->getAll();
