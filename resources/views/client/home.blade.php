@@ -185,36 +185,66 @@
     </div>
 
     <!-- What's Included Section -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">What's included?</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">Free WiFi</span>
+    <div class="">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">What's included?</h2>
+            
+            <div class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-lg">
+                <!-- Image -->
+                <div class="md:w-1/2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wZMSCTTLnSH5d8ShivK9eaMF3n1swX.png" alt="Panoramic terrace view" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Amenities List -->
+                <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Fully Equipped Shared Kitchen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Shared Toilets and Baths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Dorm Lockers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Cozy Panoramic Terrace</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Fiber Optic WiFi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Wetsuit Room</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Surfboard Rack</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">Shared kitchen and baths</span>
-        </div>
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">Fresh Linens</span>
-        </div>
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">Lockers</span>
-        </div>
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">24hr Open WiFi</span>
-        </div>
-        <div class="flex items-center">
-          <i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>
-          <span class="text-sm">Washing Powder</span>
-        </div>
-      </div>
     </div>
-
     <!-- Fully Equipped Kitchen -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold mb-6">Fully equipped kitchen</h2>
