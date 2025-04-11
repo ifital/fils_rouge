@@ -50,6 +50,13 @@
                   </button>
             </div>
         </nav>
+        <!-- Mobile Menu (Hidden by default, shown on button click via JS) -->
+        <div class="md:hidden hidden bg-black text-center py-4 space-y-2">
+            <a href="#" class="block hover:text-yellow-400 transition duration-200">Home</a>
+            <a href="#" class="block hover:text-yellow-400 transition duration-200">the rooms</a>
+            <a href="#" class="block hover:text-yellow-400 transition duration-200">activities</a>
+            <a href="#" class="block hover:text-yellow-400 transition duration-200">Contact</a>
+        </div> -->
     </header>
 
     <!-- Main Content Area -->
@@ -120,5 +127,19 @@
 
         </div>
     </main>
+
+    <!-- Optional: Add JavaScript for mobile menu toggle or date picker functionality -->
+    <script>
+        // Basic mobile menu toggle example
+        const menuButton = document.querySelector('header button.md\\:hidden');
+        const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script> -->
+
 </body>
 </html>
