@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Interface</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Optional: Add custom base styles or component styles here if needed */
-        /* For example, if you need a very specific yellow */
-        /* @layer base { */
-        /*   :root { */
-        /*     --color-custom-yellow: #facc15; /* Example hex */ */
-        /*   } */
-        /* } */
-        /* You could then use bg-[var(--color-custom-yellow)] */
-    </style>
 </head>
 <body class="bg-gray-100">
 

@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All The Activities (Responsive)</title>
-    <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Optional: Add custom base styles or component styles here if needed */
-        /* Example: Define a very specific yellow if Tailwind's default isn't quite right */
-        /* @layer base {
-           :root { --brand-yellow: #ffc800; }
-        } */
-        /* Then use like: bg-[var(--brand-yellow)] */
-    </style>
 </head>
 <body class="bg-gray-100">
-
     <!-- Header Navigation -->
     <header class="bg-black text-white shadow-md relative">
         <!-- Main navigation container -->

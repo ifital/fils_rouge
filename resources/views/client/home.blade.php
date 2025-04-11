@@ -13,7 +13,7 @@
         extend: {
           colors: {
             yellow: {
-              400: "#FFD700", // Matching the yellow from the image
+              400: "#FFD700", 
             },
           },
         },
