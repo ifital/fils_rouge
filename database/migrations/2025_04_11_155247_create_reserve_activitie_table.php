@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('reserve_activitie', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
+            $table->date('reservation_date');
+            $table->integer('number_of_people')->default(1);
             $table->timestamps();
         });
     }
