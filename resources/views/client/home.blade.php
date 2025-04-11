@@ -74,7 +74,7 @@
               <div class="text-xs">/ 1 night</div>
             </div>
             <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              Book Now
+              View Details
             </button>
           </div>
         </div>
@@ -106,7 +106,7 @@
               <div class="text-xs">/ 1 night</div>
             </div>
             <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              Book Now
+              View Details
             </button>
           </div>
         </div>
@@ -138,7 +138,7 @@
               <div class="text-xs">/ 1 night</div>
             </div>
             <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              Book Now
+              View Details
             </button>
           </div>
         </div>
@@ -170,7 +170,7 @@
               <div class="text-xs">/ 1 night</div>
             </div>
             <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              Book Now
+              View Details
             </button>
           </div>
         </div>
