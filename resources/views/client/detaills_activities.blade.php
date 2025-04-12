@@ -19,7 +19,7 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#" class="hover:text-yellow-400 transition duration-200">Home</a>
-                <a href="#" class="hover:text-yellow-400 transition duration-200">the rooms</a>
+                <a href="#" class="hover:text-yellow-400 transition duration-200">rooms</a>
                 <a href="#" class="hover:text-yellow-400 transition duration-200">activities</a>
                 <a href="#" class="hover:text-yellow-400 transition duration-200">Contact</a>
             </div>
@@ -27,10 +27,7 @@
             <!-- Action Buttons -->
             <div class="flex space-x-4 items-center">
                 <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
-                    Inscription
-                </a>
-                <a href="#" class="border border-yellow-400 text-yellow-400 px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-400 hover:text-black transition duration-200">
-                    connexion
+                    log out
                 </a>
                  <!-- Mobile Menu Button (Optional) -->
                  <button class="md:hidden text-white focus:outline-none">
@@ -67,19 +64,19 @@
                     <!-- Price -->
                     <div>
                         <span class="text-4xl font-bold text-teal-500">$50</span>
-                        <span class="text-xl text-gray-500 ml-2">for night</span>
+                        <span class="text-xl text-gray-500 ml-2">for adult</span>
                     </div>
 
                     <!-- Duration Selector -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-600 mb-1">How long you will stay?</label>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">How many people do you?</label>
                         <div class="flex items-center">
                             <button class="bg-red-500 text-white p-2 rounded-l-md hover:bg-red-600 transition duration-200 focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <span class="bg-white text-center px-6 py-2 border-t border-b border-gray-300 flex-grow text-gray-700">2 nights</span>
+                            <span class="bg-white text-center px-6 py-2 border-t border-b border-gray-300 flex-grow text-gray-700">2 adults</span>
                             <button class="bg-teal-500 text-white p-2 rounded-r-md hover:bg-teal-600 transition duration-200 focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
