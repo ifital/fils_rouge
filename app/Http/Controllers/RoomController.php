@@ -25,6 +25,17 @@ class RoomController extends Controller
         return view('admin.rooms_dashboard', compact('rooms'));
     }
 
+    public function show($id)
+    {
+        $room = $this->roomService->getRoomDetails($id);
+
+        if (!$room) {
+            return redirect()->back()->with('error', 'Chambre non trouvée.');
+        }
+
+        return view('client.detaills-rooms', compact('room'));
+    }
+
 
     public function store(StoreRoomRequest $request)
     {

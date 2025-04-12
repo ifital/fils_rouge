@@ -12,6 +12,11 @@ class RoomService
         return Room::all();
     }
 
+    public function getRoomDetails(int $id)
+    {
+        return Room::find($id);
+    }
+
     public function storeRoom(Request $request): void
     {
         $path = $request->file('images')->store('rooms', 'public');
