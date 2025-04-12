@@ -27,10 +27,7 @@
             <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
             <div class="flex space-x-4 items-center">
                 <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
-                    Inscription
-                </a>
-                <a href="#" class="border border-yellow-400 text-yellow-400 px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-400 hover:text-black transition duration-200">
-                    connexion
+                    log out
                 </a>
 
                  <!-- Mobile Menu Button (Visible only on Mobile) -->

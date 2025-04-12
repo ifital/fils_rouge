@@ -22,20 +22,49 @@
   </script>
 </head>
 <body class="min-h-screen bg-white font-sans">
-  <!-- Navigation -->
-  <nav class="bg-black text-white p-3">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="font-bold">LOGO</div>
-      <div class="hidden md:flex space-x-6">
-        <a href="#" class="text-sm">HOME</a>
-        <a href="#" class="text-sm">ROOMS</a>
-        <a href="#" class="text-sm">ACTIVITIES</a>
-        <a href="#" class="text-sm">CONTACT</a>
-      </div>
-    </div>
-  </nav>
+   <!-- Header Navigation -->
+   <header class="bg-black text-white shadow-md relative">
+    <!-- Main navigation container -->
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold">
+            LOGO
+        </div>
 
-  <!-- Main Content -->
+        <!-- Desktop Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="#" class="hover:text-yellow-400 transition duration-200">Home</a>
+            <a href="#" class="hover:text-yellow-400 transition duration-200">activities</a>
+            <a href="#" class="hover:text-yellow-400 transition duration-200">Contact</a>
+        </div>
+
+        <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
+        <div class="flex space-x-4 items-center">
+            <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
+                log out
+            </a>
+
+             <!-- Mobile Menu Button (Visible only on Mobile) -->
+             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <span class="sr-only">Open main menu</span> <!-- Accessibility improvement -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown (Initially Hidden) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black absolute w-full left-0 top-full z-20">
+         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Home</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">the rooms</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">activities</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Contact</a>
+         </div>
+    </div>
+</header>
+<!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
     <!-- Header -->
     <h1 class="text-2xl font-bold text-center mb-4">THE DORMS AND PRIVATE ROOMS</h1>
@@ -279,10 +308,17 @@
       </div>
     </footer>
   </main>
-
-  <!-- Initialize Lucide Icons -->
+  <!-- JavaScript for Mobile Menu Toggle -->
   <script>
-    lucide.createIcons();
-  </script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+    });
+</script>
 </body>
 </html>
