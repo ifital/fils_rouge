@@ -133,8 +133,8 @@
                 <!-- Bouton Enregistrer -->
                 <div class="pt-4 md:pt-6 text-center md:text-left">
                     <button type="submit"
-                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
-                        Enregistrer les modifications
+                            class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
+                        Save Modifications
                     </button>
                 </div>
             </form>
