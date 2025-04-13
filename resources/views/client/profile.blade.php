@@ -84,54 +84,63 @@
 
             <!-- Right Section: User Details -->
              <!-- Takes full width on small, remaining width on medium+ --> 
-            <div class="flex-1 w-full md:w-3/4 space-y-5">
-                  <!-- Name Fields: Stack on small, side-by-side on medium+ --> 
+             <div class="flex-1 w-full md:w-3/4 space-y-5">
+                <!-- Nom et prénom -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">Prénom :</label>
-                        <div id="prenom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">  Added truncate 
-                            EX : ALI
+                        <div id="prenom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
+                            {{ $user->name }}
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1" for="nom">Nom :</label>
-                        <div id="nom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">  Added truncate 
-                            EX : ALI
+                        <div id="nom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
+                            {{ strtoupper($user->name) }} {{-- exemple statique, tu peux remplacer par $user->last_name si tu l'as --}}
                         </div>
                     </div>
                 </div>
-
-                 <!-- Email Field --> 
+            
+                <!-- Email -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email :</label>
-                    <div id="email" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">  Added truncate 
-                        EX : xxxxxx@gmail.com
+                    <div id="email" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
+                        {{ $user->email }}
                     </div>
                 </div>
-
-                 <!-- Password Field --> 
+            
+                <!-- Mot de passe (masqué) -->
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Mots de passe :</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Mot de passe :</label>
                     <div id="password" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full">
-                        xxxxxx
+                        ********
                     </div>
                 </div>
-
-                 <!-- Phone Field --> 
+            
+                <!-- Téléphone -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Numéro de téléphone :</label>
-                    <div id="phone" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">  Added truncate 
-                       EX : 07784083789
+                    <div id="phone" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
+                        {{ $user->phone }}
                     </div>
                 </div>
-
-                 <!-- Modify Button: Centered on small, left-aligned on medium+ --> 
-                <div class="pt-4 md:pt-6 text-center md:text-left">
-                     <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
-                        Modifier les informations
-                    </button>
+            
+                <!-- Nationalité -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationalité :</label>
+                    <div id="nationality" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
+                        {{ $user->nationality ?? 'Non renseignée' }}
+                    </div>
                 </div>
-            </div>
+            
+                <!-- Bouton Modifier -->
+                <div class="pt-4 md:pt-6 text-center md:text-left">
+                    <a href="{{ route('profile.edit') }}"
+                       class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
+                        Modifier les informations
+                    </a>
+                </div>
+            </div>            
 
         </div>
     </main>
