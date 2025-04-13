@@ -135,7 +135,7 @@
             
                 <!-- Bouton Modifier -->
                 <div class="pt-4 md:pt-6 text-center md:text-left">
-                    <a href="{{ route('profile.edit') }}"
+                    <a href="{{ route('client.profile.update') }}"
                        class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
                         Modifier les informations
                     </a>
