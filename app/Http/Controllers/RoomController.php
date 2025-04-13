@@ -33,7 +33,7 @@ class RoomController extends Controller
             return redirect()->back()->with('error', 'Chambre non trouvée.');
         }
 
-        return view('client.detaills-rooms', compact('room'));
+        return view('client.detaills_rooms', compact('room'));
     }
 
 

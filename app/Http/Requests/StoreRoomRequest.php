@@ -18,6 +18,7 @@ class StoreRoomRequest extends FormRequest
             'type' => 'required|in:dormitory,private',
             'description' => 'nullable|string|max:255',
             'price' => 'required|numeric',
+            'space' => 'required|numeric',
             'status' => 'required|in:available,occupied,cleaning,maintenance',
             'images' => 'required|image',
         ];

@@ -26,6 +26,7 @@ class RoomService
             'type' => $request->type,
             'description' => $request->description,
             'price' => $request->price,
+            'space' => $request->space,
             'status' => $request->status,
             'images' => $path,
         ]);
