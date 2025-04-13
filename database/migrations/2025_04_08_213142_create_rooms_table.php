@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('type', ['dormitory', 'private']);
             $table->text('description')->nullable(); 
             $table->decimal('price', 10, 2); 
+            $table->decimal('space', 4, 2); 
             $table->enum('status', ['available', 'occupied', 'cleaning', 'maintenance'])->default('available'); 
             $table->text('images');
             $table->timestamps();
