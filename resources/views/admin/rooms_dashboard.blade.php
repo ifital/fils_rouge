@@ -81,6 +81,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="space" class="block mb-1">space</label>
+                <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="status" class="block mb-1">Statut</label>
                 <select name="status" class="w-full border p-2 rounded" required>
                     <option value="available">Disponible</option>
