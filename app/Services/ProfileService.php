@@ -11,5 +11,17 @@ class ProfileService
         return Auth::user();
     }
 
+    public function updateProfile(array $data)
+    {
+        $user = Auth::user();
 
+        $user->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'nationality' => $data['nationality'] ?? null,
+        ]);
+
+        return $user;
+    }
 }
