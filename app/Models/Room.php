@@ -11,6 +11,7 @@ class Room extends Model
         'type',
         'description',
         'price',
+        'space',
         'status',
         'images'
     ];
