@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfileRequest;
 use App\Services\ProfileService;
 
 class ProfileController extends Controller
@@ -19,7 +20,7 @@ class ProfileController extends Controller
         return view('client.profile', compact('user'));
     }
 
-    public function update($request)
+    public function update(UpdateProfileRequest $request)
     {
         $user = $this->profileService->updateProfile($request->validated());
 
