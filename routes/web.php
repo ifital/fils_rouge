@@ -50,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('/activities', [ActivityController::class, 'ShowActivities'])->name('activities.index');
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
+        Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+        Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
     });
     
