@@ -84,63 +84,61 @@
 
             <!-- Right Section: User Details -->
              <!-- Takes full width on small, remaining width on medium+ --> 
-             <div class="flex-1 w-full md:w-3/4 space-y-5">
+             <form action="{{ route('client.profile.update') }}" method="POST" class="flex-1 w-full md:w-3/4 space-y-5">
+                @csrf
+                @method('PUT') {{-- ou POST selon ta route --}}
+                
                 <!-- Nom et prénom -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">Prénom :</label>
-                        <div id="prenom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
-                            {{ $user->name }}
-                        </div>
+                        <input type="text" id="prenom" name="name" value="{{ $user->name }}"
+                               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1" for="nom">Nom :</label>
-                        <div id="nom" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
-                            {{ strtoupper($user->name) }} {{-- exemple statique, tu peux remplacer par $user->last_name si tu l'as --}}
-                        </div>
+                        <input type="text" id="nom" name="last_name" value="{{ strtoupper($user->name) }}"
+                               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                     </div>
                 </div>
             
                 <!-- Email -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email :</label>
-                    <div id="email" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
-                        {{ $user->email }}
-                    </div>
+                    <input type="email" id="email" name="email" value="{{ $user->email }}"
+                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
             
-                <!-- Mot de passe (masqué) -->
+                <!-- Mot de passe (optionnel) -->
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Mot de passe :</label>
-                    <div id="password" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full">
-                        ********
-                    </div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Nouveau mot de passe :</label>
+                    <input type="password" id="password" name="password" placeholder="Laisse vide pour ne pas changer"
+                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
             
                 <!-- Téléphone -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Numéro de téléphone :</label>
-                    <div id="phone" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
-                        {{ $user->phone }}
-                    </div>
+                    <input type="text" id="phone" name="phone" value="{{ $user->phone }}"
+                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
             
                 <!-- Nationalité -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationalité :</label>
-                    <div id="nationality" class="bg-gray-100 text-gray-600 w-full px-4 py-2 rounded-full truncate">
-                        {{ $user->nationality ?? 'Non renseignée' }}
-                    </div>
+                    <input type="text" id="nationality" name="nationality" value="{{ $user->nationality ?? '' }}"
+                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
             
-                <!-- Bouton Modifier -->
+                <!-- Bouton Enregistrer -->
                 <div class="pt-4 md:pt-6 text-center md:text-left">
-                    <a href="{{ route('client.profile.update') }}"
-                       class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
-                        Modifier les informations
-                    </a>
+                    <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-150 ease-in-out">
+                        Enregistrer les modifications
+                    </button>
                 </div>
-            </div>            
+            </form>
+                     
 
         </div>
     </main>
