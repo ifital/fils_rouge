@@ -28,6 +28,20 @@ class ActivityController extends Controller
         return view('admin.activities_dashboard', compact('activities'));
     }
 
+    public function homeActivities(){
+
+        $activities = $activityService->getAll(4);
+        return view('client.my_activities', compact('activities'));
+    
+    }
+    
+    public function show(){
+
+        $activities = $activityService->getActivityDetails($id);
+        return view('client.detaills_activities', compact('activities'));
+
+    }
+
     public function store(StoreActivityRequest $request)
     {
         $this->activityService->store($request);
