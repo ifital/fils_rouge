@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 
 class RoomService
 {
-    public function getAllRooms()
+    public function getAllRooms($perPage)
     {
-        return Room::all();
+        return Room::paginate($perPage);
     }
-
     public function getRoomDetails(int $id)
     {
-        return Room::paginate(4);
+        return Room::find($id);
     }
 
     public function storeRoom(Request $request): void

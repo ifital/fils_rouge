@@ -21,8 +21,14 @@ class RoomController extends Controller
 
     public function index()
     {
-        $rooms = Room::paginate(4);
+        $rooms = $this->roomService->getAllRooms(4);
         return view('admin.rooms_dashboard', compact('rooms'));
+    }
+
+    public function home()
+    {
+        $rooms = $this->roomService->getAllRooms(4); 
+        return view('client.home', compact('rooms'));
     }
 
     public function show($id)
