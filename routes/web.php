@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
-        Route::get('/home', [RoomController::class, 'home'])->name('client.home');
+        Route::get('/home', [RoomController::class, 'home'])->name('home');
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');

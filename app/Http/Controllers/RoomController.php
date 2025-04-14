@@ -27,7 +27,7 @@ class RoomController extends Controller
 
     public function home()
     {
-        $rooms = $this->roomService->getAllRooms(4); 
+        $rooms = $this->roomService->getAllRooms(4);
         return view('client.home', compact('rooms'));
     }
 
