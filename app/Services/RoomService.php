@@ -14,7 +14,7 @@ class RoomService
 
     public function getRoomDetails(int $id)
     {
-        return Room::find($id);
+        return Room::paginate(4);
     }
 
     public function storeRoom(Request $request): void

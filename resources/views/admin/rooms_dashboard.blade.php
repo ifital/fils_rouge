@@ -49,113 +49,117 @@
 </div>
 
 <!-- MODAL POUR AJOUTER UNE CHAMBRE -->
-<div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg">
-        <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
+<div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
+    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-        <h3 class="text-xl font-semibold mb-4">Ajouter une chambre</h3>
+            <h3 class="text-xl font-semibold mb-4">Ajouter une chambre</h3>
 
-        <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="room_number" class="block mb-1">Numéro</label>
-                <input type="text" name="room_number" class="w-full border p-2 rounded" required>
-            </div>
+            <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="room_number" class="block mb-1">Numéro</label>
+                    <input type="text" name="room_number" class="w-full border p-2 rounded" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="type" class="block mb-1">Type</label>
-                <select name="type" class="w-full border p-2 rounded" required>
-                    <option value="dormitory">Dortoir</option>
-                    <option value="private">Privée</option>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label for="type" class="block mb-1">Type</label>
+                    <select name="type" class="w-full border p-2 rounded" required>
+                        <option value="dormitory">Dortoir</option>
+                        <option value="private">Privée</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="description" class="block mb-1">Description</label>
-                <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
-            </div>
+                <div class="mb-3">
+                    <label for="description" class="block mb-1">Description</label>
+                    <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+                </div>
 
-            <div class="mb-3">
-                <label for="price" class="block mb-1">Prix</label>
-                <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
-            </div>
+                <div class="mb-3">
+                    <label for="price" class="block mb-1">Prix</label>
+                    <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="space" class="block mb-1">space</label>
-                <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
-            </div>
+                <div class="mb-3">
+                    <label for="space" class="block mb-1">space</label>
+                    <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="status" class="block mb-1">Statut</label>
-                <select name="status" class="w-full border p-2 rounded" required>
-                    <option value="available">Disponible</option>
-                    <option value="occupied">Occupée</option>
-                    <option value="cleaning">Nettoyage</option>
-                    <option value="maintenance">Maintenance</option>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label for="status" class="block mb-1">Statut</label>
+                    <select name="status" class="w-full border p-2 rounded" required>
+                        <option value="available">Disponible</option>
+                        <option value="occupied">Occupée</option>
+                        <option value="cleaning">Nettoyage</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="images" class="block mb-1">Image</label>
-                <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
-            </div>
+                <div class="mb-3">
+                    <label for="images" class="block mb-1">Image</label>
+                    <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
+                </div>
 
-            <button type="submit" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md">Ajouter</button>
-        </form>
+                <button type="submit" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md">Ajouter</button>
+            </form>
+        </div>
     </div>
 </div>
 
 <!-- MODAL POUR MODIFIER UNE CHAMBRE -->
-<div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg">
-        <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
+<div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
+    <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-        <h3 class="text-xl font-semibold mb-4">Modifier la chambre</h3>
+            <h3 class="text-xl font-semibold mb-4">Modifier la chambre</h3>
 
-        <form action="{{ route('admin.rooms.update', ':room_id') }}" method="POST" enctype="multipart/form-data" id="editRoomForm">
-            @csrf
-            @method('PUT')
+            <form action="{{ route('admin.rooms.update', ':room_id') }}" method="POST" enctype="multipart/form-data" id="editRoomForm">
+                @csrf
+                @method('PUT')
 
-            <div class="mb-3">
-                <label for="room_number" class="block mb-1">Numéro de chambre</label>
-                <input type="text" name="room_number" id="room_number" class="w-full border p-2 rounded" required>
-            </div>
+                <div class="mb-3">
+                    <label for="room_number" class="block mb-1">Numéro de chambre</label>
+                    <input type="text" name="room_number" id="room_number" class="w-full border p-2 rounded" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="type" class="block mb-1">Type</label>
-                <select name="type" id="type" class="w-full border p-2 rounded" required>
-                    <option value="dormitory">Dortoir</option>
-                    <option value="private">Privée</option>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label for="type" class="block mb-1">Type</label>
+                    <select name="type" id="type" class="w-full border p-2 rounded" required>
+                        <option value="dormitory">Dortoir</option>
+                        <option value="private">Privée</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="description" class="block mb-1">Description</label>
-                <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label for="description" class="block mb-1">Description</label>
+                    <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3"></textarea>
+                </div>
 
-            <div class="mb-3">
-                <label for="price" class="block mb-1">Prix</label>
-                <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
-            </div>
+                <div class="mb-3">
+                    <label for="price" class="block mb-1">Prix</label>
+                    <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="status" class="block mb-1">Statut</label>
-                <select name="status" id="status" class="w-full border p-2 rounded" required>
-                    <option value="available">Disponible</option>
-                    <option value="occupied">Occupée</option>
-                    <option value="cleaning">Nettoyage</option>
-                    <option value="maintenance">Maintenance</option>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label for="status" class="block mb-1">Statut</label>
+                    <select name="status" id="status" class="w-full border p-2 rounded" required>
+                        <option value="available">Disponible</option>
+                        <option value="occupied">Occupée</option>
+                        <option value="cleaning">Nettoyage</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="images" class="block mb-1">Image</label>
-                <input type="file" name="images" id="images" class="w-full border p-2 rounded" accept="image/*">
-            </div>
+                <div class="mb-3">
+                    <label for="images" class="block mb-1">Image</label>
+                    <input type="file" name="images" id="images" class="w-full border p-2 rounded" accept="image/*">
+                </div>
 
-            <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-md">Mettre à jour</button>
-        </form>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-md">Mettre à jour</button>
+            </form>
+        </div>
     </div>
 </div>
 
