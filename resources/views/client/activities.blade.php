@@ -166,7 +166,18 @@
 
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
 
 </body>
 </html>
