@@ -76,7 +76,7 @@
     </p>
 
     <!-- Room Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
       @forelse($rooms as $room)
       <div class="border border-gray-200 rounded overflow-hidden flex">
           <div class="w-1/3">
@@ -116,7 +116,7 @@
     </div>
 
     <!-- Pagination -->
-    <div class="mt-6">
+    <div class="mb-8">
       {{ $rooms->links() }}
     </div>
     <!-- What's Included Section -->
