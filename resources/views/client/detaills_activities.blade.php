@@ -141,7 +141,54 @@
         </div>
     </main>
 
- 
+    <!-- JavaScript for functionality -->
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // People counter functionality
+        let peopleCount = 1;
+        const peopleDisplay = document.getElementById('people-count');
+        const peopleSummary = document.getElementById('people-summary');
+        const totalPrice = document.getElementById('total-price');
+        const basePrice = {{ $activity->price }};
+        
+        function updatePeopleDisplay() {
+            peopleDisplay.textContent = peopleCount + (peopleCount === 1 ? ' person' : ' people');
+            peopleSummary.textContent = peopleCount + (peopleCount === 1 ? ' person' : ' people');
+            totalPrice.textContent = (basePrice * peopleCount) + ' MAD';
+        }
+        
+        function incrementPeople() {
+            if (peopleCount < 10) {
+                peopleCount++;
+                updatePeopleDisplay();
+            }
+        }
+        
+        function decrementPeople() {
+            if (peopleCount > 1) {
+                peopleCount--;
+                updatePeopleDisplay();
+            }
+        }
+        
+        // Set today as the minimum date for the date picker
+        const dateInput = document.getElementById('booking-date');
+        if (dateInput) {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            dateInput.min = formattedDate;
+            dateInput.value = formattedDate;
+        }
+    </script> 
 
 </body>
 </html>
