@@ -25,8 +25,8 @@ class ActivityController extends Controller
 
     public function homeActivities(){
 
-        $activities = $activityService->getAll(4);
-        return view('client.my_activities', compact('activities'));
+        $activities = $this->activityService->getAll(4);
+        return view('client.activities', compact('activities'));
     
     }
 
