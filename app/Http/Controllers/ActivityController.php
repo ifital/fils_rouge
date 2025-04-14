@@ -19,7 +19,7 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $activities = $this->activityService->getAll();
+        $activities = $this->activityService->getAll(4);
         return view('admin.activities_dashboard', compact('activities'));
     }
 
