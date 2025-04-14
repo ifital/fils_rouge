@@ -19,7 +19,7 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $activities = $this->activityService->getAll(4);
+        $activities = $this->activityService->getAll();
         return view('admin.activities_dashboard', compact('activities'));
     }
 
@@ -30,10 +30,10 @@ class ActivityController extends Controller
     
     }
 
-    public function show(){
+    public function show($id){
 
-        $activities = $activityService->getActivityDetails($id);
-        return view('client.detaills_activities', compact('activities'));
+        $activity = $this->activityService->getActivityDetails($id);
+        return view('client.detaills_activities', compact('activity'));
 
     }
 
