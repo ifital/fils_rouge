@@ -35,7 +35,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/dashboard', fn () => view('admin.dashboard'))->name('admin.dashboard');
     Route::get('/employee/dashboard', fn () => view('employee.dashboard'))->name('employee.dashboard');
-    Route::get('/client/home', fn () => view('client.home'))->name('client.home');
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
@@ -51,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('/activities', [ActivityController::class, 'ShowActivities'])->name('activities.index');
-        Route::get('/home', [ClientController::class, 'home'])->name('client.home');
+        Route::get('/home', [RoomController::class, 'home'])->name('client.home');
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');

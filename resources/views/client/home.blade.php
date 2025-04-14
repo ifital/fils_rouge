@@ -77,135 +77,48 @@
 
     <!-- Room Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-      <!-- Private Single Room -->
+      @forelse($rooms as $room)
       <div class="border border-gray-200 rounded overflow-hidden flex">
-        <div class="w-1/3">
-          <img 
-            src="https://placehold.co/200x200" 
-            alt="Private Single Room" 
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="w-2/3 p-4 flex flex-col justify-between">
-          <div>
-            <h3 class="font-bold">Private Single Room</h3>
-            <p class="text-xs mt-1">
-              A cozy single room with a comfortable bed, perfect for solo travelers.
-            </p>
+          <div class="w-1/3">
+            <img 
+              src="{{ asset('storage/' . $room->images) }}" 
+              alt="Room {{ $room->room_number }}" 
+              class="h-full w-full object-cover"
+            />
           </div>
-          <div class="flex justify-between items-end mt-4">
+          <div class="w-2/3 p-4 flex flex-col justify-between">
             <div>
-              <div class="flex items-center">
-                <span class="mr-2">1</span>
-                <span class="text-xs">• 10 m²</span>
-              </div>
-              <div class="text-lg font-bold">€25</div>
-              <div class="text-xs">/ 1 night</div>
+              <h3 class="font-bold">{{ $room->type == 'private' ? 'Private Room' : 'Mixed Dorm' }} #{{ $room->room_number }}</h3>
+              <p class="text-xs mt-1">
+                {{ $room->description }}
+              </p>
             </div>
-            <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              View Details
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Private Double Room -->
-      <div class="border border-gray-200 rounded overflow-hidden flex">
-        <div class="w-1/3">
-          <img 
-            src="https://placehold.co/200x200" 
-            alt="Private Double Room" 
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="w-2/3 p-4 flex flex-col justify-between">
-          <div>
-            <h3 class="font-bold">Private Double Room</h3>
-            <p class="text-xs mt-1">
-              Spacious double room with a comfortable bed, perfect for couples or friends traveling together.
-            </p>
-          </div>
-          <div class="flex justify-between items-end mt-4">
-            <div>
-              <div class="flex items-center">
-                <span class="mr-2">2</span>
-                <span class="text-xs">• 20 m²</span>
+            <div class="flex justify-between items-end mt-4">
+              <div>
+                <div class="flex items-center">
+                  <span class="mr-2">1</span>
+                  <span class="text-xs">• {{ $room->space ?? '10' }} m²</span>
+                </div>
+                <div class="text-lg font-bold">{{ $room->price }} MAD</div>
+                <div class="text-xs">/ 1 night</div>
               </div>
-              <div class="text-lg font-bold">€30</div>
-              <div class="text-xs">/ 1 night</div>
+              <a href="{{ route('client.rooms.show', $room->id) }}" class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
+                View Details
+              </a>
             </div>
-            <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              View Details
-            </button>
           </div>
-        </div>
       </div>
-
-      <!-- 8-Bed Mixed Dorm -->
-      <div class="border border-gray-200 rounded overflow-hidden flex">
-        <div class="w-1/3">
-          <img 
-            src="https://placehold.co/200x200" 
-            alt="8-Bed Mixed Dorm" 
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="w-2/3 p-4 flex flex-col justify-between">
-          <div>
-            <h3 class="font-bold">8-Bed Mixed Dorm</h3>
-            <p class="text-xs mt-1">
-              Cozy and comfortable 8-bed mixed dorm with shared facilities, perfect for budget travelers.
-            </p>
-          </div>
-          <div class="flex justify-between items-end mt-4">
-            <div>
-              <div class="flex items-center">
-                <span class="mr-2">1</span>
-                <span class="text-xs">• 30 m²</span>
-              </div>
-              <div class="text-lg font-bold">€13</div>
-              <div class="text-xs">/ 1 night</div>
-            </div>
-            <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              View Details
-            </button>
-          </div>
-        </div>
+      @empty
+      <div class="col-span-2 text-center py-8">
+          <p class="text-gray-500">Aucune chambre disponible pour le moment.</p>
       </div>
-
-      <!-- 5-Bed Mixed Dorm -->
-      <div class="border border-gray-200 rounded overflow-hidden flex">
-        <div class="w-1/3">
-          <img 
-            src="https://placehold.co/200x200" 
-            alt="5-Bed Mixed Dorm" 
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="w-2/3 p-4 flex flex-col justify-between">
-          <div>
-            <h3 class="font-bold">5-Bed Mixed Dorm</h3>
-            <p class="text-xs mt-1">
-              Cozy and comfortable 5-bed mixed dorm with shared facilities, perfect for budget travelers.
-            </p>
-          </div>
-          <div class="flex justify-between items-end mt-4">
-            <div>
-              <div class="flex items-center">
-                <span class="mr-2">1</span>
-                <span class="text-xs">• 30 m²</span>
-              </div>
-              <div class="text-lg font-bold">€13</div>
-              <div class="text-xs">/ 1 night</div>
-            </div>
-            <button class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
-              View Details
-            </button>
-          </div>
-        </div>
-      </div>
+      @endforelse
     </div>
 
+    <!-- Pagination -->
+    <div class="mt-6">
+      {{ $rooms->links() }}
+    </div>
     <!-- What's Included Section -->
     <div class="">
         <div class="container mx-auto px-6">
