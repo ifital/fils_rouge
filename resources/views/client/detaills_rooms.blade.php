@@ -120,7 +120,7 @@
                                 <span class="text-gray-700">Salle de bain commune</span>
                             </li>
                         </ul>
-                    </div>
+                    </div>          
                 </div>
             </div>
 

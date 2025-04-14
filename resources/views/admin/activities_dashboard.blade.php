@@ -94,7 +94,7 @@
 </div>
 
 <!-- MODAL MODIFICATION -->
-<div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+<div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden over-flow-y">
     <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg overflow-y-auto">
         <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
         <h3 class="text-xl font-semibold mb-4">Modifier l'activité</h3>

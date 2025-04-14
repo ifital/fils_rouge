@@ -8,9 +8,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ActivityService
 {
-    public function getAll()
+    public function getAll($perpage)
     {
-        return Activity::all();
+        return Activity::paginate($perpage);
+    }
+
+    public function getActivityDetails($id){
+        
+        return Activity::find($id);
     }
 
     public function store(Request $request): void
