@@ -152,6 +152,14 @@
                         </div>
                     </div>
                     
+                    <!-- Map -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Location</h3>
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <!-- Replace with actual map embed or image -->
+                            <img src="https://picsum.photos/seed/map/600/400" alt="Map showing Blue Waves House location" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
 
 
 </body>
