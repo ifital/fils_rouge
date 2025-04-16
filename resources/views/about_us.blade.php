@@ -23,10 +23,10 @@
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="hover:text-yellow-400 text-yellow-400">about us</a>
-            <a href="#" class="hover:text-yellow-400">Contact</a>
-            <a href="/signin" class="hover:text-yellow-400">Sign In</a>
-            <a href="/signup" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
+            <a href="/" class="hover:text-yellow-400 text-yellow-400">home</a>
+            <a href="{{ route('contact') }}" class="hover:text-yellow-400">Contact</a>
+            <a href="{{ route('register') }}" class="hover:text-yellow-400">Sign In</a>
+            <a href="{{ route('login') }}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -311,10 +311,10 @@
                 Join us for an unforgettable stay in Taghazout. Whether you're a surf enthusiast, digital nomad, or adventure seeker, we have the perfect space for you.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-black text-white px-6 py-3 rounded font-semibold hover:bg-gray-800 transition duration-300">
+                <a href="{{ route('login') }}" class="bg-black text-white px-6 py-3 rounded font-semibold hover:bg-gray-800 transition duration-300">
                     Book Your Stay
                 </a>
-                <a href="#" class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-100 transition duration-300">
+                <a href="{{ route('contact') }}" class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-100 transition duration-300">
                     Contact Us
                 </a>
             </div>
@@ -322,14 +322,13 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-12">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Quick Links -->
             <div>
                 <h3 class="text-lg font-semibold text-white mb-4">Quick Link</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Home</a></li>
+                    <li><a href="/" class="hover:text-yellow-400 transition duration-300">Home</a></li>
                     <li><a href="#" class="hover:text-yellow-400 transition duration-300">The House</a></li>
                     <li><a href="#" class="hover:text-yellow-400 transition duration-300">Surf</a></li>
                     <li><a href="#" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
