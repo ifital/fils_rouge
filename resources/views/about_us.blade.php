@@ -202,3 +202,104 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="relative hero-bg-image py-16" style="background-image: url('https://picsum.photos/seed/testimonial/1600/900');">
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative z-10 container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">What Our Guests Say</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg border border-white border-opacity-20 text-white text-center">
+                    <svg class="w-12 h-12 text-yellow-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                    </svg>
+                    <p class="italic text-lg mb-6">
+                        "Blue Waves House is more than just a place to stay - it's a community, a family. I came for the surf but stayed for the incredible people and atmosphere. The team goes above and beyond to create a truly special experience."
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://picsum.photos/seed/testimonial1/100/100" alt="Guest Testimonial" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div class="text-left">
+                            <p class="font-semibold">Markus Henning</p>
+                            <p class="text-sm text-gray-300">Berlin, Germany</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Values</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <!-- Value 1 -->
+                    <div class="flex">
+                        <div class="bg-yellow-400 h-12 w-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Authentic Hospitality</h3>
+                            <p class="text-gray-600">
+                                We believe in creating genuine connections with our guests, providing warm Moroccan hospitality that makes everyone feel at home.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="flex">
+                        <div class="bg-yellow-400 h-12 w-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Environmental Respect</h3>
+                            <p class="text-gray-600">
+                                We're committed to sustainable practices that preserve the beautiful coastal environment that makes Taghazout so special.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-6">
+                    <!-- Value 3 -->
+                    <div class="flex">
+                        <div class="bg-yellow-400 h-12 w-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Exchange</h3>
+                            <p class="text-gray-600">
+                                We embrace diversity and celebrate the exchange of cultures, traditions, and perspectives that our international guests bring.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="flex">
+                        <div class="bg-yellow-400 h-12 w-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Adventure Spirit</h3>
+                            <p class="text-gray-600">
+                                We foster a spirit of adventure and openness to new experiences, encouraging our guests to explore, discover, and challenge themselves.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
