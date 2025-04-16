@@ -245,8 +245,5 @@
                 <p class="mt-2 mb-2">Call us:</p>
                 <a href="tel:+212600000000" class="hover:text-yellow-400 transition duration-300">+212 6XX-XXX-XXX</a>
             </div>
-
-
-
 </body>
 </html>
