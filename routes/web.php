@@ -20,8 +20,7 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', fn () => view('welcome'))->name('home');
 Route::get('/contact', fn () => view('contact_us'))->name('contact');
-
-
+Route::get('/about', fn () => view('about_us'))->name('about');
 
 // Authentification
 Route::controller(AuthController::class)->group(function () {
@@ -56,8 +55,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        
-
     });
     
 });
