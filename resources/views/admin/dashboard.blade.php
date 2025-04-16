@@ -409,6 +409,24 @@
         </main>
     </div>
 
-
+    <script>
+        // Initialize responsive sidebar behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set sidebar to open by default on desktop
+            if (window.innerWidth >= 768) {
+                Alpine.store('sidebar', { open: true });
+            }
+            
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                const sidebar = document.querySelector('aside');
+                const toggleButton = document.querySelector('[x-data] button');
+                
+                if (window.innerWidth < 768 && !sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
+                    Alpine.store('sidebar', { open: false });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
