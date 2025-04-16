@@ -161,7 +161,121 @@
             </div>
         </aside>
 
-       
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-6 w-full overflow-x-hidden">
+            <div class="max-w-7xl mx-auto">
+                <!-- Page Title -->
+                <div class="mb-6 md:mb-8">
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-800">Dashboard</h1>
+                    <p class="text-gray-600">Welcome to Blue Waves Hostel dashboard</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+                    <!-- Occupancy Rate -->
+                    <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                            <div class="bg-blue-100 p-3 rounded-full mb-3 stats-icon">
+                                <i class="fas fa-bed text-blue-500 text-xl"></i>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-sm text-gray-500 mb-1">Occupancy Rate</p>
+                                <h2 class="text-xl md:text-2xl font-bold text-gray-800">78%</h2>
+                                <p class="text-xs text-green-500 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    <span>5% from last week</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Revenue -->
+                    <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                            <div class="bg-green-100 p-3 rounded-full mb-3 stats-icon">
+                                <i class="fas fa-dollar-sign text-green-500 text-xl"></i>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-sm text-gray-500 mb-1">Total Revenue</p>
+                                <h2 class="text-xl md:text-2xl font-bold text-gray-800">$1,450</h2>
+                                <p class="text-xs text-green-500 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    <span>12% from last month</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Bookings -->
+                    <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-purple-500">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                            <div class="bg-purple-100 p-3 rounded-full mb-3 stats-icon">
+                                <i class="fas fa-calendar-check text-purple-500 text-xl"></i>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-sm text-gray-500 mb-1">Bookings</p>
+                                <h2 class="text-xl md:text-2xl font-bold text-gray-800">48</h2>
+                                <p class="text-xs text-green-500 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    <span>8% from last week</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Guests -->
+                    <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                            <div class="bg-yellow-100 p-3 rounded-full mb-3 stats-icon">
+                                <i class="fas fa-user-plus text-yellow-500 text-xl"></i>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-sm text-gray-500 mb-1">New Guests</p>
+                                <h2 class="text-xl md:text-2xl font-bold text-gray-800">16</h2>
+                                <p class="text-xs text-red-500 mt-1">
+                                    <i class="fas fa-arrow-down mr-1"></i>
+                                    <span>3% from last week</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+                    <!-- Occupancy Chart -->
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2 sm:mb-0">Occupancy Rate (Last 30 days)</h3>
+                            <div class="flex space-x-2">
+                                <button class="text-xs text-blue-600 px-2 py-1 rounded bg-blue-100">Day</button>
+                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Week</button>
+                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Month</button>
+                            </div>
+                        </div>
+                        <div class="h-64 bg-gray-100 rounded flex items-center justify-center">
+                            <!-- Placeholder for chart -->
+                            <p class="text-gray-500">Occupancy Chart</p>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart -->
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2 sm:mb-0">Revenue (Last 6 months)</h3>
+                            <div class="flex space-x-2">
+                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Week</button>
+                                <button class="text-xs text-blue-600 px-2 py-1 rounded bg-blue-100">Month</button>
+                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Year</button>
+                            </div>
+                        </div>
+                        <div class="h-64 bg-gray-100 rounded flex items-center justify-center">
+                            <!-- Placeholder for chart -->
+                            <p class="text-gray-500">Revenue Chart</p>
+                        </div>
+                    </div>
+                </div>
+
              
         </main>
     </div>
