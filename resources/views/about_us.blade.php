@@ -137,3 +137,68 @@
             </div>
         </div>
     </section>
+
+    <!-- Meet Our Team -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="text-center">
+                    <div class="mb-4 relative">
+                        <img src="https://picsum.photos/seed/member1/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
+                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Hamid</h3>
+                    <p class="text-gray-600">Founder & Surf Instructor</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="text-center">
+                    <div class="mb-4 relative">
+                        <img src="https://picsum.photos/seed/member2/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
+                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Fatima</h3>
+                    <p class="text-gray-600">Hospitality Manager</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="text-center">
+                    <div class="mb-4 relative">
+                        <img src="https://picsum.photos/seed/member3/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
+                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Omar</h3>
+                    <p class="text-gray-600">Surf Guide</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="text-center">
+                    <div class="mb-4 relative">
+                        <img src="https://picsum.photos/seed/member4/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
+                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Sarah</h3>
+                    <p class="text-gray-600">Chef & Culinary Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
