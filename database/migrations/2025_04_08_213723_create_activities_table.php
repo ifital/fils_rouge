@@ -18,8 +18,6 @@ return new class extends Migration
             $table->text('images');
             $table->decimal('price', 10, 2); 
             $table->enum('status', ['available', 'unavailable'])->default('available'); 
-            $table->timestamp('start_time')->nullable(); 
-            $table->timestamp('end_time')->nullable(); 
             $table->timestamps();
         });
     }

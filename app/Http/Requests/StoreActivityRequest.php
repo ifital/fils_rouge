@@ -19,8 +19,6 @@ class StoreActivityRequest extends FormRequest
             'images' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'price' => 'required|numeric|min:0',
             'status' => 'required|in:available,unavailable',
-            'start_time' => 'nullable|date',
-            'end_time' => 'nullable|date|after_or_equal:start_time',
         ];
     }
 }

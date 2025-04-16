@@ -28,8 +28,6 @@ class ActivityService
             'images' => $path,
             'price' => $request->price,
             'status' => $request->status,
-            'start_time' => $request->start_time,
-            'end_time' => $request->end_time,
         ]);
     }
 
@@ -49,8 +47,6 @@ class ActivityService
         $activity->description = $request->description;
         $activity->price = $request->price;
         $activity->status = $request->status;
-        $activity->start_time = $request->start_time;
-        $activity->end_time = $request->end_time;
 
         $activity->save();
     }
