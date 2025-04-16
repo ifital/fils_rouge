@@ -63,37 +63,12 @@
             <div class="w-full md:w-1/2">
                 <div class="space-y-6">
                     <h2 class="text-xl font-semibold text-blue-900">{{ $activity->name }}</h2>
-                    
-                    <!-- Description -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            {{ $activity->description }}
-                        </p>
-                    </div>
 
                     <!-- Price -->
                     <div>
                         <span class="text-4xl font-bold text-teal-500">{{ $activity->price }} MAD</span>
                         <span class="text-xl text-gray-500 ml-2">per person</span>
                     </div>
-
-                    <!-- Time of Activity -->
-                    @if($activity->start_time && $activity->end_time)
-                    <div class="bg-gray-100 p-3 rounded-lg">
-                        <p class="text-gray-700">
-                            <span class="font-semibold">Time:</span> {{ $activity->start_time }} - {{ $activity->end_time }}
-                        </p>
-                    </div>
-                    @endif
-
-                    <!-- Status -->
-                    @if($activity->status)
-                    <div class="bg-green-100 p-3 rounded-lg">
-                        <p class="text-green-700">
-                            <span class="font-semibold">Status:</span> {{ $activity->status }}
-                        </p>
-                    </div>
-                    @endif
 
                     <!-- Duration Selector -->
                     <div>
