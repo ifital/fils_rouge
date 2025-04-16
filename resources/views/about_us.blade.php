@@ -23,7 +23,8 @@
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
-            <a href="/" class="hover:text-yellow-400 text-yellow-400">home</a>
+            <a href="/" class="hover:text-yellow-400">home</a>
+            <a href="#" class="hover:text-yellow-600 text-yellow-400">about us</a>
             <a href="{{ route('contact') }}" class="hover:text-yellow-400">Contact</a>
             <a href="{{ route('register') }}" class="hover:text-yellow-400">Sign In</a>
             <a href="{{ route('login') }}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>

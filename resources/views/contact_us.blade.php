@@ -23,10 +23,11 @@
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="hover:text-yellow-400">about us</a>
-            <a href="#" class="hover:text-yellow-400 text-yellow-400">Contact</a>
-            <a href="/signin" class="hover:text-yellow-400">Sign In</a>
-            <a href="/signup" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
+            <a href="/" class="hover:text-yellow-400">home</a>
+            <a href="{{ route('about') }}" class="hover:text-yellow-400">about us</a>
+            <a href="#" class="hover:text-yellow-600 text-yellow-400">Contact</a>
+            <a href="{{ route('login') }}" class="hover:text-yellow-400">Sign In</a>
+            <a href="{{ route('register') }}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
         </nav>
 
         <!-- Mobile Menu Button -->
