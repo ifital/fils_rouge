@@ -223,6 +223,29 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Quick Link</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">The House</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Surf</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacts -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contacts us</h3>
+                <p class="mb-2">Email us:</p>
+                <a href="mailto:kekaisurf7@gmail.com" class="hover:text-yellow-400 transition duration-300">kekaisurf7@gmail.com</a>
+                <p class="mt-2 mb-2">Call us:</p>
+                <a href="tel:+212600000000" class="hover:text-yellow-400 transition duration-300">+212 6XX-XXX-XXX</a>
+            </div>
+
 
 
 </body>
