@@ -54,3 +54,40 @@
     </div>
 </header>
 
+    <!-- Hero Section -->
+    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('https://picsum.photos/seed/aboutus/1600/900');">
+        <!-- Overlay for text readability on background -->
+        <div class="absolute inset-0 bg-gradient-to-t from-yellow-100 via-yellow-50 to-transparent opacity-90"></div>
+        <div class="relative z-10 container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ABOUT BLUE WAVES HOUSE</h2>
+            <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Discover our story, our passion for surf culture, and our commitment to creating unforgettable experiences in the heart of Taghazout.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/seed/story/600/400" alt="Blue Waves House Story" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
+                    <div class="text-gray-600 space-y-4">
+                        <p>
+                            Blue Waves House was born from a deep passion for surfing and the beautiful coastline of Taghazout. Founded in 2018 by a group of surf enthusiasts, our vision was to create more than just accommodation – we wanted to build a community where travelers could connect, explore, and experience the magic of Morocco's surf culture.
+                        </p>
+                        <p>
+                            What started as a small surf camp has evolved into a vibrant hostel that combines comfortable living spaces, modern amenities, and an authentic Moroccan experience. Over the years, we've welcomed thousands of guests from around the world, each contributing to our ever-growing story.
+                        </p>
+                        <p>
+                            Today, Blue Waves House stands as a testament to our commitment to providing a unique, welcoming space for surf enthusiasts, digital nomads, and travelers seeking an authentic connection with Taghazout's stunning coastal environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
