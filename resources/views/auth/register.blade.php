@@ -9,7 +9,6 @@
             background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 100vh;
         }
         .input-field {
             background-color: rgba(255, 255, 255, 0.7);
@@ -80,13 +79,17 @@
                 </div>
 
                 <div class="mb-2">
+                    <label for="password_confirmation" class="block label">confirm password:</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="input-field" required>
+                </div>
+
+                <div class="mb-2">
                     <label for="phone" class="block label">number phone:</label>
                     <input type="text" name="phone" id="phone" class="input-field" required>
                 </div>
 
-                <!-- Les champs supplémentaires peuvent être masqués sur cette version simplifiée -->
+                <!-- Le champ nationalité peut rester caché car non présent dans l'image -->
                 <input type="hidden" name="nationality" id="nationality" value="">
-                <input type="hidden" name="password_confirmation" id="password_confirmation">
                 
                 <div class="flex justify-center mt-6">
                     <button type="submit" class="signup-button">
