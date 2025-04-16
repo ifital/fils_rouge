@@ -303,3 +303,44 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="py-16 bg-yellow-400">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-black mb-6">Ready to Experience Blue Waves?</h2>
+            <p class="text-black text-lg max-w-3xl mx-auto mb-8">
+                Join us for an unforgettable stay in Taghazout. Whether you're a surf enthusiast, digital nomad, or adventure seeker, we have the perfect space for you.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-black text-white px-6 py-3 rounded font-semibold hover:bg-gray-800 transition duration-300">
+                    Book Your Stay
+                </a>
+                <a href="#" class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-100 transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Quick Link</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">The House</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Surf</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacts -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contacts us</h3>
+                <p class="mb-2">Email us:</p>
+                <a href="mailto:kekaisurf7@gmail.com" class="hover:text-yellow-400 transition duration-300">kekaisurf7@gmail.com</a>
+                <p class="mt-2 mb-2">Call us:</p>
+                <a href="tel:+212600000000" class="hover:text-yellow-400 transition duration-300">+212 6XX-XXX-XXX</a>
+            </div>
