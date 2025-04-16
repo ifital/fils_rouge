@@ -190,6 +190,40 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">What are your check-in and check-out times?</h3>
+                    <p class="text-gray-600">Check-in is available from 2:00 PM and check-out is until 12:00 PM. Early check-in or late check-out may be available upon request, subject to availability.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Do you offer airport transfers?</h3>
+                    <p class="text-gray-600">Yes, we offer airport transfers from Agadir-Al Massira Airport for an additional fee. Please contact us in advance to arrange your transfer.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Is breakfast included in the stay?</h3>
+                    <p class="text-gray-600">Yes, a delicious breakfast is included with your stay. We offer a variety of options to start your day right before hitting the waves.</p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Can I rent surfing equipment?</h3>
+                    <p class="text-gray-600">Absolutely! We offer surfboard rentals and other equipment for our guests. Please inquire about availability and pricing during your stay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 </body>
 </html>
