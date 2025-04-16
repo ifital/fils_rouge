@@ -20,17 +20,14 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo -->
         <a href="#" class="text-xl font-bold">LOGO</a>
-
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="hover:text-yellow-400">about us</a>
-            <a href="#" class="hover:text-yellow-400">Contact</a>
-            <!-- Remplacement de "Book Now" par "Sign Up" et "Sign In" -->
-            <a href="/signin" class="hover:text-yellow-400">Sign In</a>
-            <a href="/signup" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
-            <!-- Fin du remplacement -->
+            <a href="#" class="hover:text-yellow-600 text-yellow-400">home</a>
+            <a href="{{ route('about') }}" class="hover:text-yellow-400">about us</a>
+            <a href="{{ route('contact') }}" class="hover:text-yellow-400">Contact</a>
+            <a href="{{ route('login') }}" class="hover:text-yellow-400">Sign In</a>
+            <a href="{{ route('register') }}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300">Sign Up</a>
         </nav>
-
         <!-- Mobile Menu Button -->
         <div class="md:hidden">
             <button @click="open = !open" class="text-white focus:outline-none">
@@ -45,13 +42,11 @@
     <!-- Mobile Menu -->
     <div x-show="open" @click.away="open = false" class="md:hidden bg-gray-800 bg-opacity-90" x-transition>
         <nav class="px-4 pt-2 pb-4 space-y-2 flex flex-col items-center">
-            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Home</a>
-            <a href="#" class="block px-2 py-1 hover:text-yellow-400">The House</a>
-            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Coworking</a>
-            <a href="#" class="block px-2 py-1 hover:text-yellow-400">Contact</a>
+            <a href="{{ route('about') }}" class="block px-2 py-1 hover:text-yellow-400">about us</a>
+            <a href="{{ route('contact') }}" class="block px-2 py-1 hover:text-yellow-400">contact</a>
             <!-- Remplacement de "Book Now" par "Sign Up" et "Sign In" (Mobile) -->
-            <a href="/signin" class="block px-2 py-1 hover:text-yellow-400 w-full text-center">Sign In</a>
-            <a href="/signup" class="mt-1 bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 w-full text-center">Sign Up</a>
+            <a href="{{ route('login') }}" class="block px-2 py-1 hover:text-yellow-400 w-full text-center">Sign In</a>
+            <a href="{{ route('register') }}" class="mt-1 bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 w-full text-center">Sign Up</a>
             <!-- Fin du remplacement -->
         </nav>
     </div>
@@ -235,9 +230,6 @@
                     <!-- Add more social icons as needed -->
                 </div>
             </div>
-        </div>
-        <div class="text-center text-gray-500 mt-10 border-t border-gray-700 pt-6">
-            © 2024 Kekai Surf House. All Rights Reserved.
         </div>
     </footer>
 
