@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="mb-8">
-                    <label for="password" class="block font-medium text-white mb-2">Mot de passe :</label>
+                    <label for="password" class="block font-medium text-white mb-2">password :</label>
                     <input type="password" name="password" id="password" class="input-field" required>
                 </div>
 
@@ -71,7 +71,7 @@
             </form>
 
             <p class="mt-6 text-center text-white text-sm">
-                Pas encore de compte ? <a href="{{ route('register') }}" class="text-yellow-300 hover:underline">S'inscrire</a>
+                if you dont't have acount ? <a href="{{ route('register') }}" class="text-yellow-300 hover:underline">Sign up</a>
             </p>
         </div>
     </div>
