@@ -19,6 +19,8 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', fn () => view('welcome'))->name('home');
+Route::get('/contact', fn () => view('contact_us'))->name('contact');
+
 
 // Authentification
 Route::controller(AuthController::class)->group(function () {

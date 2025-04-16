@@ -23,9 +23,7 @@
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="hover:text-yellow-400">Home</a>
-            <a href="#" class="hover:text-yellow-400">The House</a>
-            <a href="#" class="hover:text-yellow-400">Coworking</a>
+            <a href="#" class="hover:text-yellow-400">about us</a>
             <a href="#" class="hover:text-yellow-400">Contact</a>
             <!-- Remplacement de "Book Now" par "Sign Up" et "Sign In" -->
             <a href="/signin" class="hover:text-yellow-400">Sign In</a>
@@ -63,9 +61,9 @@
         <!-- Overlay for text readability on background -->
         <div class="absolute inset-0 bg-gradient-to-t from-yellow-100 via-yellow-50 to-transparent opacity-90"></div>
         <div class="relative z-10 container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">WHY STAY AT KEKAI SURF HOUSE?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">WHY STAY BLUE WAVES HOUSE?</h2>
             <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Découvrez Taghazout depuis Kekai Surf house, votre havre de surf chaleureux. Profitez de chambres confortables et d’une terrasse panoramique sur les vagues. Un espace dédié pour votre matériel est à disposition. Vivez une expérience unique dans une ambiance conviviale. Réservez dès maintenant !
+                Découvrez Taghazout depuis  BLUE WAVES house, votre havre de surf chaleureux. Profitez de chambres confortables et d’une terrasse panoramique sur les vagues. Un espace dédié pour votre matériel est à disposition. Vivez une expérience unique dans une ambiance conviviale. Réservez dès maintenant !
             </p>
             <a href="#" class="mt-8 inline-block bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-500 transition duration-300">
                 See The House
