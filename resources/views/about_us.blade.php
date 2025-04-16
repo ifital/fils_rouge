@@ -91,3 +91,49 @@
         </div>
     </section>
 
+    <!-- Our Philosophy -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Philosophy</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-yellow-400 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Community</h3>
+                    <p class="text-gray-600">
+                        We believe in the power of connection. At Blue Waves, we foster a community atmosphere where guests can share experiences, cultures, and stories.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-yellow-400 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sustainability</h3>
+                    <p class="text-gray-600">
+                        We're committed to preserving the beautiful environment that surrounds us through eco-friendly practices and respect for our local community.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-yellow-400 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Experience</h3>
+                    <p class="text-gray-600">
+                        We strive to create memorable experiences that go beyond accommodation – from surf lessons to local excursions and cultural immersion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
