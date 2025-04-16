@@ -30,8 +30,6 @@
                 <p class="text-sm text-gray-600 mb-1">Description : {{ $activity->description }}</p>
                 <p class="text-sm text-gray-600 mb-1">Prix : <span class="font-medium text-gray-800">{{ $activity->price }} MAD</span></p>
                 <p class="text-sm text-gray-600 mb-1">Statut : {{ $activity->status }}</p>
-                <p class="text-sm text-gray-600 mb-1">Début : {{ $activity->start_time }}</p>
-                <p class="text-sm text-gray-600 mb-4">Fin : {{ $activity->end_time }}</p>
 
                 <div class="flex gap-2">
                     <button onclick="openModal({{ $activity->id }}, '{{ $activity->name }}', '{{ $activity->description }}', '{{ $activity->price }}', '{{ $activity->status }}', '{{ $activity->start_time }}', '{{ $activity->end_time }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
@@ -77,14 +75,6 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="block mb-1">Début</label>
-                <input type="datetime-local" name="start_time" class="w-full border p-2 rounded">
-            </div>
-            <div class="mb-3">
-                <label class="block mb-1">Fin</label>
-                <input type="datetime-local" name="end_time" class="w-full border p-2 rounded">
-            </div>
-            <div class="mb-3">
                 <label class="block mb-1">Image</label>
                 <input type="file" name="images" class="w-full border p-2 rounded" required>
             </div>
@@ -122,14 +112,6 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="block mb-1">Début</label>
-                <input type="datetime-local" name="start_time" id="start_time" class="w-full border p-2 rounded">
-            </div>
-            <div class="mb-3">
-                <label class="block mb-1">Fin</label>
-                <input type="datetime-local" name="end_time" id="end_time" class="w-full border p-2 rounded">
-            </div>
-            <div class="mb-3">
                 <label class="block mb-1">Image</label>
                 <input type="file" name="images" class="w-full border p-2 rounded">
             </div>
@@ -139,13 +121,12 @@
 </div>
 
 <script>
-function openModal(id, name, description, price, status, start, end) {
+function openModal(id, name, description, price, end) {
     document.getElementById('editModal').classList.remove('hidden');
     document.getElementById('name').value = name;
     document.getElementById('description').value = description;
     document.getElementById('price').value = price;
-    document.getElementById('status').value = status;
-    document.getElementById('start_time').value = start;
+
     document.getElementById('end_time').value = end;
 
     const form = document.getElementById('editForm');
