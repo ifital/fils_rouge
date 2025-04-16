@@ -32,7 +32,7 @@
                 <p class="text-sm text-gray-600 mb-1">Statut : {{ $activity->status }}</p>
 
                 <div class="flex gap-2">
-                    <button onclick="openModal({{ $activity->id }}, '{{ $activity->name }}', '{{ $activity->description }}', '{{ $activity->price }}', '{{ $activity->status }}', '{{ $activity->start_time }}', '{{ $activity->end_time }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
+                    <button onclick="openModal({{ $activity->id }}, '{{ $activity->name }}', '{{ $activity->description }}', '{{ $activity->price }}', '{{ $activity->status }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
                         Modifier
                     </button>
 
@@ -121,13 +121,12 @@
 </div>
 
 <script>
-function openModal(id, name, description, price, end) {
+function openModal(id, name, description, price, status) {
     document.getElementById('editModal').classList.remove('hidden');
     document.getElementById('name').value = name;
     document.getElementById('description').value = description;
     document.getElementById('price').value = price;
-
-    document.getElementById('end_time').value = end;
+    document.getElementById('status').value = status;
 
     const form = document.getElementById('editForm');
     form.action = form.action.replace(':activity_id', id);
