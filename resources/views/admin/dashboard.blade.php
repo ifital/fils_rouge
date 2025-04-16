@@ -276,7 +276,136 @@
                     </div>
                 </div>
 
-             
+                <!-- Recent Bookings and Upcoming Check-ins -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Recent Bookings -->
+                    <div class="bg-white rounded-lg shadow-md">
+                        <div class="px-4 md:px-6 py-4 border-b border-gray-200">
+                            <h3 class="font-semibold text-gray-800">Recent Bookings</h3>
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <div class="overflow-x-auto -mx-4 md:mx-0">
+                                <table class="min-w-full bg-white">
+                                    <thead>
+                                        <tr class="bg-gray-50 text-gray-600 text-xs">
+                                            <th class="py-2 px-4 text-left">Guest</th>
+                                            <th class="py-2 px-4 text-left">Room</th>
+                                            <th class="py-2 px-4 text-left">Arrival</th>
+                                            <th class="py-2 px-4 text-left">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm">
+                                        <tr class="border-b border-gray-100">
+                                            <td class="py-3 px-4">
+                                                <div class="flex items-center">
+                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
+                                                    <span>Thomas Martin</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 px-4">4-Bed Dorm</td>
+                                            <td class="py-3 px-4">Apr 15, 2025</td>
+                                            <td class="py-3 px-4">
+                                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Confirmed</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-100">
+                                            <td class="py-3 px-4">
+                                                <div class="flex items-center">
+                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
+                                                    <span>Emma Wilson</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 px-4">Private Room</td>
+                                            <td class="py-3 px-4">Apr 18, 2025</td>
+                                            <td class="py-3 px-4">
+                                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Pending</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-100">
+                                            <td class="py-3 px-4">
+                                                <div class="flex items-center">
+                                                    <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
+                                                    <span>Michael Brown</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 px-4">6-Bed Dorm</td>
+                                            <td class="py-3 px-4">Apr 20, 2025</td>
+                                            <td class="py-3 px-4">
+                                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Confirmed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 text-sm hover:underline">View all bookings</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Check-ins -->
+                    <div class="bg-white rounded-lg shadow-md">
+                        <div class="px-4 md:px-6 py-4 border-b border-gray-200">
+                            <h3 class="font-semibold text-gray-800">Today's Check-ins</h3>
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <div class="space-y-4">
+                                <!-- Check-in Item 1 -->
+                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
+                                    <div class="flex items-center">
+                                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <p class="font-medium text-gray-800">Sophie Lambert</p>
+                                            <p class="text-xs text-gray-500">Room 101 • Arrival: 2:00 PM</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="text-xs bg-blue-600 text-white px-3 py-1 rounded-full">
+                                            Check-in
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Check-in Item 2 -->
+                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
+                                    <div class="flex items-center">
+                                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <p class="font-medium text-gray-800">Daniel Johnson</p>
+                                            <p class="text-xs text-gray-500">Dorm 3 • Arrival: 3:30 PM</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="text-xs bg-blue-600 text-white px-3 py-1 rounded-full">
+                                            Check-in
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Check-in Item 3 -->
+                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
+                                    <div class="flex items-center">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <p class="font-medium text-gray-800">Lucy Moore</p>
+                                            <p class="text-xs text-gray-500">Room 204 • Arrival: 6:00 PM</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="text-xs bg-blue-600 text-white px-3 py-1 rounded-full">
+                                            Check-in
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <a href="#" class="text-blue-600 text-sm hover:underline">View all check-ins</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
