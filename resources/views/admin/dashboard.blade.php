@@ -27,7 +27,7 @@
                 margin-right: 1rem !important;
             }
         }
-    </style>
+    </style>    
 </head>
 <body class="bg-gray-100 min-h-screen" x-data="{ sidebarOpen: false }">
     <!-- Header -->
