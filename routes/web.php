@@ -51,10 +51,15 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
+        
         Route::get('/home', [RoomController::class, 'home'])->name('home');
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+        Route::get('/reservation/{reservation}/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+        Route::get('/payment/success/{reservation}', [PaymentController::class, 'success'])->name('payment.success');
+        Route::get('/payment/cancel/{reservation}', [PaymentController::class, 'cancel'])->name('payment.cancel');
     });
     
 });
