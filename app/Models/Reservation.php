@@ -18,4 +18,33 @@ class Reservation extends Model
         'status',
     ];
 
+    protected $casts = [
+        'check_in' => 'date',
+        'check_out' => 'date',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+    public function getNightsAttribute()
+    {
+        return $this->check_in->diffInDays($this->check_out);
+    }
+
+    public function isPaid()
+    {
+        return $this->payment && $this->payment->status === 'paid';
+    }
 }

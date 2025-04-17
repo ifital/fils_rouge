@@ -21,4 +21,8 @@ class Payment extends Model
         'payment_date' => 'datetime',
     ];
 
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
 }
