@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="{{ Route('admin.rooms.index') }}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-bed"></i>
                             </span>
@@ -108,7 +108,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="{{ Route('admin.activities.index') }}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-umbrella-beach"></i>
                             </span>
@@ -152,7 +152,7 @@
             
             <!-- Logout Button -->
             <div class="p-4 border-t border-gray-200">
-                <a href="#" class="flex items-center text-red-600 hover:text-red-800">
+                <a href="{{ Route('logout') }}" class="flex items-center text-red-600 hover:text-red-800">
                     <span class="sidebar-icon mr-3">
                         <i class="fas fa-sign-out-alt"></i>
                     </span>
