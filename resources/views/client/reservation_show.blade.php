@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>reservation show</title>
+    <title>Détails de réservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
 
 <div class="container mx-auto px-6 py-12">
     <!-- Affichage des messages -->
@@ -34,6 +35,12 @@
         </div>
     @endif
 
+    @if(!isset($reservation))
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+        <p>Erreur: Aucune information de réservation trouvée.</p>
+        <a href="{{ route('client.my_reservations') }}" class="underline">Retour à mes réservations</a>
+    </div>
+    @else
     <div class="bg-white rounded-lg shadow-lg p-6">
         <h1 class="text-2xl font-bold text-gray-800 mb-6">Détails de votre réservation</h1>
         
@@ -91,7 +98,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span class="text-gray-700">Statut: 
-                            @if($payment && $payment->status === 'paid')
+                            @if(isset($payment) && $payment && $payment->status === 'paid')
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Payé</span>
                             @else
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">En attente de paiement</span>
@@ -102,14 +109,14 @@
                 
                 <!-- Boutons d'action -->
                 <div class="mt-8 space-y-4">
-                    @if(!$payment || $payment->status !== 'paid')
-                        <a href="{{ route('payment.checkout', $reservation->id) }}" class="block w-full bg-teal-500 text-white text-center py-3 rounded-md font-bold text-lg hover:bg-teal-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                    @if(!isset($payment) || !$payment || $payment->status !== 'paid')
+                        <a href="{{ route('client.payment.checkout', $reservation->id) }}" class="block w-full bg-teal-500 text-white text-center py-3 rounded-md font-bold text-lg hover:bg-teal-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
                             Payer maintenant
                         </a>
                     @endif
                     
-                    @if($reservation->status !== 'cancelled' && (!$payment || $payment->status !== 'paid'))
-                        <form action="{{ route('reservations.cancel', $reservation->id) }}" method="POST" class="block">
+                    @if($reservation->status !== 'cancelled' && (!isset($payment) || !$payment || $payment->status !== 'paid'))
+                        <form action="{{ route('client.reservation.cancel', $reservation->id) }}" method="POST" class="block">
                             @csrf
                             @method('PATCH')
                             <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-md font-bold text-lg hover:bg-red-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
@@ -118,13 +125,14 @@
                         </form>
                     @endif
                     
-                    <a href="" class="block w-full bg-gray-300 text-gray-800 text-center py-3 rounded-md font-bold text-lg hover:bg-gray-400 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                    <a href="{{ route('client.my_reservations') }}" class="block w-full bg-gray-300 text-gray-800 text-center py-3 rounded-md font-bold text-lg hover:bg-gray-400 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
                         Retour à mes réservations
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    @endif
 </div>
 </body>
 </html>

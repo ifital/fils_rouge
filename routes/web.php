@@ -5,7 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,14 +50,23 @@ Route::middleware(['auth'])->group(function () {
     });
     
     Route::prefix('client')->name('client.')->group(function () {
+        // Routes pour les activités
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
 
+        // Routes pour les chambres et profil
         Route::get('/home', [RoomController::class, 'home'])->name('home');
         Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
         Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
+        // Routes pour les réservations
+        Route::get('/my-reservations', [ReservationController::class, 'index'])->name('my_reservations');
+        Route::get('/reservation/{reservation}', [ReservationController::class, 'show'])->name('detaills_rooms');
+        Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+        Route::patch('/reservation/{reservation}/cancel', [ReservationController::class, 'cancel'])->name('reservation.cancel');
+
+        // Routes pour les paiements
         Route::get('/reservation/{reservation}/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
         Route::get('/payment/success/{reservation}', [PaymentController::class, 'success'])->name('payment.success');
         Route::get('/payment/cancel/{reservation}', [PaymentController::class, 'cancel'])->name('payment.cancel');
@@ -64,5 +74,5 @@ Route::middleware(['auth'])->group(function () {
     
 });
 
+// Webhook Stripe (ne nécessite pas d'authentification)
 Route::post('/stripe/webhook', [PaymentController::class, 'webhook'])->name('stripe.webhook');
-

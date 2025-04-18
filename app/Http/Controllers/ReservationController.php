@@ -30,7 +30,7 @@ class ReservationController extends Controller
     {
         // Vérifier que la réservation appartient à l'utilisateur connecté
         if ($reservation->user_id !== auth()->id()) {
-            return redirect()->route('client.my_reservations')
+            return redirect()->back()
                 ->with('error', 'Vous n\'êtes pas autorisé à voir cette réservation.');
         }
 
@@ -77,7 +77,8 @@ class ReservationController extends Controller
         $reservation->status = 'confirmed';
         $reservation->save();
 
-        return redirect()->route('client.detaills_rooms', $reservation->id)
+        // Utilisez redirect() au lieu de view() directement pour éviter les problèmes de variables
+        return redirect()->route('client.detaills_rooms', ['reservation' => $reservation->id])
             ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');
     }
 
@@ -93,8 +94,12 @@ class ReservationController extends Controller
         }
 
         // Vérifier que la réservation n'a pas déjà été payée
-        if ($reservation->isPaid()) {
-            return redirect()->route('client.detaills_rooms', $reservation->id)
+        $payment = Payment::where('reservation_id', $reservation->id)
+            ->where('status', 'paid')
+            ->first();
+            
+        if ($payment) {
+            return redirect()->route('client.detaills_rooms', ['reservation' => $reservation->id])
                 ->with('error', 'Impossible d\'annuler une réservation déjà payée. Veuillez contacter le support.');
         }
 
