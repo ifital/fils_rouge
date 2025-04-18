@@ -107,6 +107,9 @@
             @endforeach
 
         </div> <!-- End Activities List -->
+        <div class="mt-6">
+            {{ $activities->links() }}
+        </div>
 
     </main>
 

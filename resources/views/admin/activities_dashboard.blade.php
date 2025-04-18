@@ -202,6 +202,10 @@
                 </div>
             </div>
         </main>
+       
+    </div>
+    <div class="mt-6">
+        {{ $activities->links() }}
     </div>
 
     <!-- MODAL AJOUT -->
