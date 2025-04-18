@@ -14,7 +14,7 @@ class PaymentController extends Controller
 {
     public function checkout(Request $request, Reservation $reservation)
     {
-        // Vérifier que la réservation appartient à l'utilisateur connecté
+        // Vérifier que la réservation appartient à l'utilisateur connecté 
         if ($reservation->user_id !== auth()->id()) {
             return redirect()->back()->with('error', 'Vous n\'êtes pas autorisé à effectuer cette action.');
         }
@@ -25,7 +25,7 @@ class PaymentController extends Controller
             ->first();
 
         if ($existingPayment) {
-            return redirect()->route('reservations.show', $reservation->id)
+            return redirect()->route('client.reservations.show', $reservation->id)
                 ->with('info', 'Cette réservation a déjà été payée.');
         }
 
@@ -73,7 +73,7 @@ class PaymentController extends Controller
         // Vérifier que la session existe
         $sessionId = session('stripe_session_id');
         if (!$sessionId) {
-            return redirect()->route('reservations.index')
+            return redirect()->route('client.reservations.index')
                 ->with('error', 'Session de paiement invalide.');
         }
 
@@ -89,7 +89,7 @@ class PaymentController extends Controller
             
             // Vérifier que le paiement est bien pour cette réservation
             if ($session->client_reference_id != $reservation->id) {
-                return redirect()->route('reservations.index')
+                return redirect()->route('client.reservations.index')
                     ->with('error', 'Référence de réservation invalide.');
             }
 
@@ -102,12 +102,12 @@ class PaymentController extends Controller
             $payment->payment_date = now();
             $payment->save();
 
-            return redirect()->route('reservations.show', $reservation->id)
+            return redirect()->route('client.reservations.show', $reservation->id)
                 ->with('success', 'Paiement effectué avec succès! Votre réservation est confirmée.');
 
         } catch (ApiErrorException $e) {
             Log::error('Erreur Stripe lors de la vérification: ' . $e->getMessage());
-            return redirect()->route('reservations.show', $reservation->id)
+            return redirect()->route('client.reservations.show', $reservation->id)
                 ->with('warning', 'Le paiement a été traité, mais une erreur est survenue lors de la confirmation. Veuillez contacter le support.');
         }
     }
@@ -117,7 +117,7 @@ class PaymentController extends Controller
         // Effacer la session Stripe
         session()->forget('stripe_session_id');
 
-        return redirect()->route('reservations.show', $reservation->id)
+        return redirect()->route('client.reservations.show', $reservation->id)
             ->with('info', 'Le paiement a été annulé. Vous pouvez réessayer ultérieurement.');
     }
 

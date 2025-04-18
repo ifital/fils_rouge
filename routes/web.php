@@ -61,8 +61,8 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
         // Routes pour les réservations
-        Route::get('/my-reservations', [ReservationController::class, 'index'])->name('my_reservations');
-        Route::get('/reservation/{reservation}', [ReservationController::class, 'show'])->name('detaills_rooms');
+        Route::get('/my-reservations', [ReservationController::class, 'index'])->name('reservations.index');
+        Route::get('/reservation/{reservation}', [ReservationController::class, 'show'])->name('reservations.show');
         Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
         Route::patch('/reservation/{reservation}/cancel', [ReservationController::class, 'cancel'])->name('reservation.cancel');
 
