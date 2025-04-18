@@ -43,45 +43,47 @@ class ReservationController extends Controller
      * Enregistrer une nouvelle réservation.
      */
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'room_id' => 'required|exists:rooms,id',
-            'check_in' => 'required|date|after_or_equal:today',
-            'nights' => 'required|integer|min:1|max:30',
-            'guests' => 'required|integer|min:1',
-        ]);
+{
+    $validated = $request->validate([
+        'room_id' => 'required|exists:rooms,id',
+        'check_in' => 'required|date|after_or_equal:today',
+        'nights' => 'required|integer|min:1|max:30',
+        'guests' => 'required|integer|min:1',
+    ]);
 
-        // Récupérer la chambre
-        $room = Room::findOrFail($validated['room_id']);
-        
-        // Vérifier le nombre maximum de personnes
-        $maxGuests = $room->type == 'private' ? 2 : 8;
-        if ($validated['guests'] > $maxGuests) {
-            return redirect()->back()->withErrors(['guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.']);
-        }
-
-        // Calculer la date de départ
-        $checkIn = Carbon::parse($validated['check_in']);
-        $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
-
-        // Calculer le prix total
-        $totalPrice = $room->price * $validated['nights'];
-
-        // Créer la réservation
-        $reservation = new Reservation();
-        $reservation->user_id = auth()->id();
-        $reservation->room_id = $validated['room_id'];
-        $reservation->check_in = $checkIn;
-        $reservation->check_out = $checkOut;
-        $reservation->price = $totalPrice;
-        $reservation->status = 'confirmed';
-        $reservation->save();
-
-        // Utilisez redirect() au lieu de view() directement pour éviter les problèmes de variables
-        return redirect()->route('client.detaills_rooms', ['reservation' => $reservation->id])
-            ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');
+    // Récupérer la chambre
+    $room = Room::findOrFail($validated['room_id']);
+    
+    // Vérifier le nombre maximum de personnes
+    $maxGuests = $room->type == 'private' ? 2 : 8;
+    if ($validated['guests'] > $maxGuests) {
+        return redirect()->back()->withErrors(['guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.']);
     }
 
+    // Calculer la date de départ
+    $checkIn = Carbon::parse($validated['check_in']);
+    $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
+
+    // Calculer le prix total
+    $totalPrice = $room->price * $validated['nights'];
+
+    // Créer la réservation
+    $reservation = new Reservation();
+    $reservation->user_id = auth()->id();
+    $reservation->room_id = $validated['room_id'];
+    $reservation->check_in = $checkIn;
+    $reservation->check_out = $checkOut;
+    $reservation->price = $totalPrice;
+    $reservation->status = 'confirmed';
+    $reservation->save();
+
+  
+    
+    // OU Solution 2: Si vous voulez absolument utiliser view(), passez l'objet complet
+    $payment = null; // Pas encore de paiement
+    return view('client.detaills_reservation', compact('reservation', 'payment'))
+       ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');
+}
     /**
      * Annuler une réservation.
      */

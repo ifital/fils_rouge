@@ -164,7 +164,7 @@
                             <div class="space-y-4">
                                 <p class="text-gray-600">Montant à payer: <span class="font-bold text-gray-800">{{ $reservation->price }} MAD</span></p>
                                 
-                                <a href="{{ route('payment.checkout', ['reservation' => $reservation->id]) }}" 
+                                <a href="{{ route('client.payment.checkout', ['reservation' => $reservation->id]) }}" 
                                    class="block w-full bg-green-500 text-white py-3 px-4 rounded-md font-bold text-center hover:bg-green-600 transition duration-200">
                                     Procéder au paiement
                                 </a>
