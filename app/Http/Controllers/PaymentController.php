@@ -50,8 +50,8 @@ class PaymentController extends Controller
                     ],
                 ],
                 'mode' => 'payment',
-                'success_url' => route('payment.success', ['reservation' => $reservation->id]),
-                'cancel_url' => route('payment.cancel', ['reservation' => $reservation->id]),
+                'success_url' => route('client.payment.success', ['reservation' => $reservation->id]),
+                'cancel_url' => route('client.payment.cancel', ['reservation' => $reservation->id]),
                 'client_reference_id' => $reservation->id,
                 'customer_email' => auth()->user()->email,
             ]);
