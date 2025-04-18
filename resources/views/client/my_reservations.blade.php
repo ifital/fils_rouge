@@ -59,7 +59,7 @@
                 <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                     <!-- Image -->
                     <div class="md:w-1/3 flex-shrink-0">
-                        <img src="{{ $reservation->room->image_url ?? 'https://via.placeholder.com/400x300/cccccc/969696?text=Room+Image' }}" 
+                        <img src="{{ $reservation->room->images ? asset('storage/' . $reservation->room->images) : 'https://via.placeholder.com/400x300/cccccc/969696?text=Room+Image' }}" 
                              alt="{{ $reservation->room->type == 'private' ? 'Private Room' : 'Dormitory' }} #{{ $reservation->room->room_number }}" 
                              class="rounded-lg w-full h-48 md:h-full object-cover">
                     </div>
