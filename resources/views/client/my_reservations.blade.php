@@ -101,17 +101,6 @@
                             <div class="w-full sm:w-auto flex justify-end">
                                 @if($reservation->status != 'cancelled')
                                     <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="{{ route('client.reservations.show', $reservation->id) }}" 
-                                           class="bg-blue-500 text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-blue-600 transition duration-200 text-center">
-                                            details
-                                        </a>
-                                        
-                                        @if(!($reservation->payment && $reservation->payment->status == 'paid'))
-                                            <a href="{{ route('client.payment.checkout', $reservation->id) }}"
-                                               class="bg-green-500 text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-green-600 transition duration-200 text-center">
-                                                pay now
-                                            </a>
-                                            
                                             <form action="{{ route('client.reservation.cancel', $reservation->id) }}" method="POST" class="inline">
                                                 @csrf
                                                 @method('PATCH')
@@ -119,7 +108,6 @@
                                                     cancel
                                                 </button>
                                             </form>
-                                        @endif
                                     </div>
                                 @endif
                             </div>
