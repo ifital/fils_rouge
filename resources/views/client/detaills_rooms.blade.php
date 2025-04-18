@@ -27,7 +27,7 @@
             <!-- Action Buttons -->
             <div class="flex space-x-4 items-center">
                 <a href="{{ route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200">Mon profil</a>
-                <a href="{{ route('client.my_reservations') }}" class="hover:text-yellow-400 transition duration-200">Mes réservations</a>
+                <a href="{{ route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">Mes réservations</a>
                 <a href="{{ route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
                     Déconnexion
                 </a>
@@ -46,7 +46,7 @@
             <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Chambres</a>
             <a href="{{ route('client.activities.index') }}" class="block hover:text-yellow-400 transition duration-200">Activités</a>
             <a href="{{ route('contact') }}" class="block hover:text-yellow-400 transition duration-200">Contact</a>
-            <a href="{{ route('client.my_reservations') }}" class="block hover:text-yellow-400 transition duration-200">Mes réservations</a>
+            <a href="{{ route('client.reservations.index') }}" class="block hover:text-yellow-400 transition duration-200">Mes réservations</a>
         </div>
     </header>
 
