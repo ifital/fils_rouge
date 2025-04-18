@@ -19,17 +19,17 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Home</a>
-                <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Chambres</a>
-                <a href="{{ route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">Activités</a>
+                <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Rooms</a>
+                <a href="{{ route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">Activities</a>
                 <a href="{{ route('contact') }}" class="hover:text-yellow-400 transition duration-200">Contact</a>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex space-x-4 items-center">
-                <a href="{{ route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200">Mon profil</a>
-                <a href="{{ route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">Mes réservations</a>
+                <a href="{{ route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200">My profil</a>
+                <a href="{{ route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">My Reservations</a>
                 <a href="{{ route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
-                    Déconnexion
+                   logout
                 </a>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
@@ -43,10 +43,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-black text-center py-4 space-y-2">
             <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Home</a>
-            <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Chambres</a>
-            <a href="{{ route('client.activities.index') }}" class="block hover:text-yellow-400 transition duration-200">Activités</a>
+            <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Rooms</a>
+            <a href="{{ route('client.activities.index') }}" class="block hover:text-yellow-400 transition duration-200">Activities</a>
             <a href="{{ route('contact') }}" class="block hover:text-yellow-400 transition duration-200">Contact</a>
-            <a href="{{ route('client.reservations.index') }}" class="block hover:text-yellow-400 transition duration-200">Mes réservations</a>
+            <a href="{{ route('client.reservations.index') }}" class="block hover:text-yellow-400 transition duration-200">My reservations</a>
         </div>
     </header>
 
@@ -115,7 +115,7 @@
                     </div>
                     
                     <div class="mt-4">
-                        <h3 class="font-semibold text-lg mb-2">Commodités</h3>
+                        <h3 class="font-semibold text-lg mb-2">Amenities</h3>
                         <ul class="grid grid-cols-2 gap-2">
                             <li class="flex items-center">
                                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,90 +127,89 @@
                                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="text-gray-700">Casiers</span>
+                                <span class="text-gray-700">Lockers</span>
                             </li>
                             <li class="flex items-center">
                                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="text-gray-700">Draps inclus</span>
+                                <span class="text-gray-700">Bed sheets included</span>
                             </li>
                             <li class="flex items-center">
                                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="text-gray-700">Salle de bain commune</span>
+                                <span class="text-gray-700">Shared bathroom</span>
                             </li>
                         </ul>
-                    </div>          
-                </div>
-            </div>
-
-            <!-- Right Column: Booking Form -->
-            <div class="w-full md:w-1/2">
-                <div class="bg-white rounded-lg shadow-lg p-6 space-y-6">
-                    <h2 class="text-xl font-semibold text-blue-900">Réservez maintenant</h2>
-
-                    <!-- Price -->
-                    <div>
-                        <span class="text-4xl font-bold text-teal-500">{{ $room->price }} MAD</span>
-                        <span class="text-xl text-gray-500 ml-2">par nuit</span>
                     </div>
-
-                    <form action="{{ route('client.reservation.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="room_id" value="{{ $room->id }}">
-                        
-                        <!-- Duration Selector -->
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Durée du séjour</label>
-                            <div class="flex items-center">
-                                <button type="button" id="decrease-nights" class="bg-red-500 text-white p-2 rounded-l-md hover:bg-red-600 transition duration-200 focus:outline-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <input type="number" id="nights" name="nights" value="2" min="1" max="30" class="bg-white text-center px-6 py-2 border-t border-b border-gray-300 flex-grow text-gray-700" readonly>
-                                <button type="button" id="increase-nights" class="bg-teal-500 text-white p-2 rounded-r-md hover:bg-teal-600 transition duration-200 focus:outline-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
+                    </div>
+                    </div>
+                    
+                    <!-- Right Column: Booking Form -->
+                    <div class="w-full md:w-1/2">
+                        <div class="bg-white rounded-lg shadow-lg p-6 space-y-6">
+                            <h2 class="text-xl font-semibold text-blue-900">Book Now</h2>
+                    
+                            <!-- Price -->
+                            <div>
+                                <span class="text-4xl font-bold text-teal-500">{{ $room->price }} MAD</span>
+                                <span class="text-xl text-gray-500 ml-2">per night</span>
                             </div>
-                        </div>
-
-                        <!-- Date Picker -->
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Dates du séjour</label>
-                            <div class="flex items-center border border-gray-300 rounded-md overflow-hidden bg-white">
-                                <div class="bg-blue-900 p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
+                    
+                            <form action="{{ route('client.reservation.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="room_id" value="{{ $room->id }}">
+                    
+                                <!-- Duration Selector -->
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">Length of stay</label>
+                                    <div class="flex items-center">
+                                        <button type="button" id="decrease-nights" class="bg-red-500 text-white p-2 rounded-l-md hover:bg-red-600 transition duration-200 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                        <input type="number" id="nights" name="nights" value="2" min="1" max="30" class="bg-white text-center px-6 py-2 border-t border-b border-gray-300 flex-grow text-gray-700" readonly>
+                                        <button type="button" id="increase-nights" class="bg-teal-500 text-white p-2 rounded-r-md hover:bg-teal-600 transition duration-200 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <input type="date" name="check_in" class="px-4 py-2 text-gray-700 flex-grow" required>
-                            </div>
+                    
+                                <!-- Date Picker -->
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">Stay dates</label>
+                                    <div class="flex items-center border border-gray-300 rounded-md overflow-hidden bg-white">
+                                        <div class="bg-blue-900 p-2.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <input type="date" name="check_in" class="px-4 py-2 text-gray-700 flex-grow" required>
+                                    </div>
+                                </div>
+                    
+                                <!-- Guest Information -->
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">Number of guests</label>
+                                    <input type="number" name="guests" min="1" max="{{ $room->type == 'private' ? '2' : '8' }}" value="1" class="w-full border border-gray-300 rounded-md px-4 py-2">
+                                </div>
+                    
+                                <!-- Summary -->
+                                <p class="text-sm text-gray-500 mb-4">
+                                    You will pay <span class="font-semibold text-gray-700"><span id="total-price">{{ $room->price * 2 }}</span> MAD</span> for <span id="night-count" class="font-semibold text-gray-700">2 nights</span>
+                                </p>
+                    
+                                <!-- Confirm Button -->
+                                <button type="submit" class="w-full bg-yellow-400 text-black py-3 rounded-md font-bold text-lg hover:bg-yellow-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                                    Confirm Booking
+                                </button>
+                            </form>
                         </div>
-
-                        <!-- Guest Information -->
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Nombre de personnes</label>
-                            <input type="number" name="guests" min="1" max="{{ $room->type == 'private' ? '2' : '8' }}" value="1" class="w-full border border-gray-300 rounded-md px-4 py-2">
-                        </div>
-
-                        <!-- Summary -->
-                        <p class="text-sm text-gray-500 mb-4">
-                            Vous paierez <span class="font-semibold text-gray-700"><span id="total-price">{{ $room->price * 2 }}</span> MAD</span> pour <span id="night-count" class="font-semibold text-gray-700">2 nuits</span>
-                        </p>
-
-                        <!-- Confirm Button -->
-                        <button type="submit" class="w-full bg-yellow-400 text-black py-3 rounded-md font-bold text-lg hover:bg-yellow-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-                            Confirmer la réservation
-                        </button>
-                    </form>
-                </div>
-            </div>
-
+                    </div> 
         </div>
     </main>
 
