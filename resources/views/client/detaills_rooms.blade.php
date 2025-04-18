@@ -13,26 +13,24 @@
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- Logo -->
             <div class="text-2xl font-bold">
-                LOGO
+                <a href="{{ route('client.home') }}">LOGO</a>
             </div>
 
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="" class="hover:text-yellow-400 transition duration-200">Home</a>
-                <a href="" class="hover:text-yellow-400 transition duration-200">Chambres</a>
-                <a href="" class="hover:text-yellow-400 transition duration-200">Activités</a>
-                <a href="" class="hover:text-yellow-400 transition duration-200">Contact</a>
+                <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Home</a>
+                <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Chambres</a>
+                <a href="{{ route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">Activités</a>
+                <a href="{{ route('contact') }}" class="hover:text-yellow-400 transition duration-200">Contact</a>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex space-x-4 items-center">
-                    <a href="" class="hover:text-yellow-400 transition duration-200">Mon profil</a>
-                    <form method="POST" action="">
-                        @csrf
-                        <button type="submit" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
-                            log out
-                        </button>
-                    </form>
+                <a href="{{ route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200">Mon profil</a>
+                <a href="{{ route('client.my_reservations') }}" class="hover:text-yellow-400 transition duration-200">Mes réservations</a>
+                <a href="{{ route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
+                    Déconnexion
+                </a>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,15 +42,39 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-black text-center py-4 space-y-2">
-            <a href="" class="block hover:text-yellow-400 transition duration-200">Home</a>
-            <a href="" class="block hover:text-yellow-400 transition duration-200">Chambres</a>
-            <a href="" class="block hover:text-yellow-400 transition duration-200">Activités</a>
-            <a href="" class="block hover:text-yellow-400 transition duration-200">Contact</a>
+            <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Home</a>
+            <a href="{{ route('client.home') }}" class="block hover:text-yellow-400 transition duration-200">Chambres</a>
+            <a href="{{ route('client.activities.index') }}" class="block hover:text-yellow-400 transition duration-200">Activités</a>
+            <a href="{{ route('contact') }}" class="block hover:text-yellow-400 transition duration-200">Contact</a>
+            <a href="{{ route('client.my_reservations') }}" class="block hover:text-yellow-400 transition duration-200">Mes réservations</a>
         </div>
     </header>
 
     <!-- Main Content Area -->
     <main class="container mx-auto px-6 py-12">
+        <!-- Flash Messages -->
+        @if(session('success'))
+        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
+            <p>{{ session('success') }}</p>
+        </div>
+        @endif
+
+        @if(session('error'))
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+            <p>{{ session('error') }}</p>
+        </div>
+        @endif
+
+        @if($errors->any())
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <div class="flex flex-col md:flex-row md:space-x-10">
 
             <!-- Left Column: Image -->
@@ -135,7 +157,7 @@
                         <span class="text-xl text-gray-500 ml-2">par nuit</span>
                     </div>
 
-                    <form action="" method="POST">
+                    <form action="{{ route('client.reservation.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="room_id" value="{{ $room->id }}">
                         
