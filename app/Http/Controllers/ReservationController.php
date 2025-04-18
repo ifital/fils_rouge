@@ -62,8 +62,8 @@ class ReservationController extends Controller
 
         // Calculer la date de départ
         $checkIn = Carbon::parse($validated['check_in']);
-        $checkOut = (clone $checkIn)->addDays($validated['nights']);
-        
+        $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
+                
         // Calculer le prix total
         $totalPrice = $room->price * $validated['nights'];
 
