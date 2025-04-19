@@ -33,17 +33,20 @@
 
         <!-- Desktop Navigation Links (Hidden on Mobile) -->
         <div class="hidden md:flex space-x-8 items-center">
-            <a href="#" class="hover:text-yellow-400 transition duration-200">Home</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">activities</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">Contact</a>
+            <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
+            <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">activities</a>
         </div>
-
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
         <div class="flex space-x-4 items-center">
-            <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
+            <a href="{{ Route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
                 log out
             </a>
-
+            <a href="{{ Route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200" aria-label="My Profile" title="My Profile">
+              <span class="sr-only">My Profile</span> <!-- Pour l'accessibilité -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+           </a>
              <!-- Mobile Menu Button (Visible only on Mobile) -->
              <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <span class="sr-only">Open main menu</span> <!-- Accessibility improvement -->
@@ -57,10 +60,8 @@
     <!-- Mobile Menu Dropdown (Initially Hidden) -->
     <div id="mobile-menu" class="hidden md:hidden bg-black absolute w-full left-0 top-full z-20">
          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Home</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">the rooms</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">my resrevations</a>
             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">activities</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Contact</a>
          </div>
     </div>
 </header>
