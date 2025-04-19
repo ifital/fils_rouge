@@ -24,7 +24,7 @@ class ReservationController extends Controller
     }
 
     /**
-     * Afficher les détails d'une réservation.
+     * Rediriger vers la liste des réservations (pas de page de détail).
      */
     public function show(Reservation $reservation)
     {
@@ -34,82 +34,73 @@ class ReservationController extends Controller
                 ->with('error', 'Vous n\'êtes pas autorisé à voir cette réservation.');
         }
 
-        $payment = Payment::where('reservation_id', $reservation->id)->first();
-        
-        return view('client.detaills_rooms', compact('reservation', 'payment'));
+        return redirect()->route('client.reservations.index');
     }
 
     /**
      * Enregistrer une nouvelle réservation.
      */
     public function store(Request $request)
-{
-    $validated = $request->validate([
-        'room_id' => 'required|exists:rooms,id',
-        'check_in' => 'required|date|after_or_equal:today',
-        'nights' => 'required|integer|min:1|max:30',
-        'guests' => 'required|integer|min:1',
-    ]);
+    {
+        $validated = $request->validate([
+            'room_id' => 'required|exists:rooms,id',
+            'check_in' => 'required|date|after_or_equal:today',
+            'nights' => 'required|integer|min:1|max:30',
+            'guests' => 'required|integer|min:1',
+        ]);
 
-    // Récupérer la chambre
-    $room = Room::findOrFail($validated['room_id']);
-    
-    // Vérifier le nombre maximum de personnes
-    $maxGuests = $room->type == 'private' ? 2 : 8;
-    if ($validated['guests'] > $maxGuests) {
-        return redirect()->back()->withErrors(['guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.']);
+        $room = Room::findOrFail($validated['room_id']);
+
+        $maxGuests = $room->type == 'private' ? 2 : 8;
+        if ($validated['guests'] > $maxGuests) {
+            return redirect()->back()->withErrors([
+                'guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.'
+            ]);
+        }
+
+        $checkIn = Carbon::parse($validated['check_in']);
+        $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
+
+        $totalPrice = $room->price * $validated['nights'];
+
+        $reservation = new Reservation();
+        $reservation->user_id = auth()->id();
+        $reservation->room_id = $validated['room_id'];
+        $reservation->check_in = $checkIn;
+        $reservation->check_out = $checkOut;
+        $reservation->price = $totalPrice;
+        $reservation->status = 'confirmed';
+        $reservation->save();
+
+        $payment = null; // Aucun paiement pour l'instant
+
+        return view('client.detaills_reservation', compact('reservation', 'payment'))
+            ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');
     }
 
-    // Calculer la date de départ
-    $checkIn = Carbon::parse($validated['check_in']);
-    $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
-
-    // Calculer le prix total
-    $totalPrice = $room->price * $validated['nights'];
-
-    // Créer la réservation
-    $reservation = new Reservation();
-    $reservation->user_id = auth()->id();
-    $reservation->room_id = $validated['room_id'];
-    $reservation->check_in = $checkIn;
-    $reservation->check_out = $checkOut;
-    $reservation->price = $totalPrice;
-    $reservation->status = 'confirmed';
-    $reservation->save();
-
-  
-    
-    // OU Solution 2: Si vous voulez absolument utiliser view(), passez l'objet complet
-    $payment = null; // Pas encore de paiement
-    return view('client.detaills_reservation', compact('reservation', 'payment'))
-       ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');
-}
     /**
      * Annuler une réservation.
      */
     public function cancel(Reservation $reservation)
     {
-        // Vérifier que la réservation appartient à l'utilisateur connecté
         if ($reservation->user_id !== auth()->id()) {
-            return redirect()->route('client.my_reservations')
+            return redirect()->route('client.reservations.index')
                 ->with('error', 'Vous n\'êtes pas autorisé à effectuer cette action.');
         }
 
-        // Vérifier que la réservation n'a pas déjà été payée
         $payment = Payment::where('reservation_id', $reservation->id)
             ->where('status', 'paid')
             ->first();
-            
+
         if ($payment) {
-            return redirect()->route('client.detaills_rooms', ['reservation' => $reservation->id])
+            return redirect()->route('client.reservations.index')
                 ->with('error', 'Impossible d\'annuler une réservation déjà payée. Veuillez contacter le support.');
         }
 
-        // Annuler la réservation
         $reservation->status = 'cancelled';
         $reservation->save();
 
-        return redirect()->route('client.my_reservations')
+        return redirect()->route('client.reservations.index')
             ->with('success', 'Votre réservation a été annulée avec succès.');
     }
 }
