@@ -35,6 +35,7 @@
         <div class="hidden md:flex space-x-8 items-center">
             <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
             <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">activities</a>
+            <a href="#" class="hover:text-yellow-400 transition duration-200">my activities</a>
         </div>
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
         <div class="flex space-x-4 items-center">
@@ -60,8 +61,8 @@
     <!-- Mobile Menu Dropdown (Initially Hidden) -->
     <div id="mobile-menu" class="hidden md:hidden bg-black absolute w-full left-0 top-full z-20">
          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">my resrevations</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">activities</a>
+            <a href="{{ Route('client.reservations.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">my resrevations</a>
+            <a href="{{ Route('client.activities.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">activities</a>
          </div>
     </div>
 </header>
@@ -90,18 +91,17 @@
           <div class="w-2/3 p-4 flex flex-col justify-between">
             <div>
               <h3 class="font-bold">{{ $room->type == 'private' ? 'Private Room' : 'Mixed Dorm' }} #{{ $room->room_number }}</h3>
-              <p class="text-xs mt-1">
+              <p class="text-bold mt-1 font-semibold text-gray-400">
                 {{ $room->description }}
               </p>
             </div>
             <div class="flex justify-between items-end mt-4">
               <div>
                 <div class="flex items-center">
-                  <span class="mr-2">1</span>
-                  <span class="text-xs">• {{ $room->space ?? '10' }} m²</span>
+                  <span class="text-bold font-semibold">{{ $room->space ?? '10' }} m²</span>
                 </div>
                 <div class="text-lg font-bold">{{ $room->price }} MAD</div>
-                <div class="text-xs">/ 1 night</div>
+                <div class="text-bold font-bold">/ 1 night</div>
               </div>
               <a href="{{ route('client.rooms.show', $room->id) }}" class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
                 View Details
