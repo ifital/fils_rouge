@@ -90,7 +90,7 @@
           </div>
           <div class="w-2/3 p-4 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold">{{ $room->type == 'private' ? 'Private Room' : 'Mixed Dorm' }} #{{ $room->room_number }}</h3>
+              <h3 class="font-bold">{{ $room->type == 'private' ? 'Private Room' : 'Mixed Dorm' }}</h3>
               <p class="text-bold mt-1 font-semibold text-gray-400">
                 {{ $room->description }}
               </p>
@@ -101,7 +101,7 @@
                   <span class="text-bold font-semibold">{{ $room->space ?? '10' }} m²</span>
                 </div>
                 <div class="text-lg font-bold">{{ $room->price }} MAD</div>
-                <div class="text-bold font-bold">/ 1 night</div>
+                <div class="text-bold ">/ 1 night</div>
               </div>
               <a href="{{ route('client.rooms.show', $room->id) }}" class="bg-yellow-400 text-black font-bold text-sm px-4 py-1 rounded">
                 View Details
