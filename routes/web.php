@@ -7,6 +7,8 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StatisticsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,6 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/admin/dashboard', fn () => view('admin.dashboard'))->name('admin.dashboard');
     Route::get('/employee/dashboard', fn () => view('employee.dashboard'))->name('employee.dashboard');
 
     Route::prefix('admin')->name('admin.')->group(function () {
@@ -48,7 +49,7 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/activities/{activity}', [ActivityController::class, 'update'])->name('activities.update');
         Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
 
-        Route::get('/statistics', [\App\Http\Controllers/StatisticsController::class, 'index'])->name('admin.statistics');
+        Route::get('/dashboard', [StatisticsController::class, 'index'])->name('admin.statistics');
 
     });
     

@@ -1,5 +1,6 @@
 <?php
-namespace App\Http\Controllers\Admin;
+
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Room;
@@ -43,6 +44,9 @@ class StatisticsController extends Controller
         // Revenu total
         $totalRevenue = Payment::where('status', 'paid')->sum('amount');
 
-        return view('admin.dashboard', compact('occupancyRate', 'totalRevenue'));
+        // Nombre total de réservations confirmées dans le mois
+        $totalBookings = $reservations->count();
+
+        return view('admin.dashboard', compact('occupancyRate', 'totalRevenue', 'totalBookings'));
     }
 }
