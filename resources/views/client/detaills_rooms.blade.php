@@ -48,7 +48,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-black absolute w-full left-0 top-full z-20">
              <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="{{ Route('client.home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">home</a>
-                <a href="{{ Route('client.reservations.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">resrevations</a>
+                <a href="{{ Route('client.reservations.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">my resrevations</a>
                 <a href="{{ Route('client.home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">my activities</a>
              </div>
         </div>

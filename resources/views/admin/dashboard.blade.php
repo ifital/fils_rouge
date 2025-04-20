@@ -169,58 +169,52 @@
                     <h1 class="text-xl md:text-2xl font-bold text-gray-800">Dashboard</h1>
                     <p class="text-gray-600">Welcome to Blue Waves Hostel dashboard</p>
                 </div>
+                    <!-- Statistics Cards Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <!-- Occupancy Rate -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500 flex flex-col sm:flex-row items-start sm:items-center stats-card">
+                            <div class="bg-blue-100 p-3 rounded-full stats-icon mb-3 sm:mb-0 sm:mr-4">
+                                <i class="fas fa-bed text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Occupancy Rate</p>
+                                <h2 class="text-xl font-bold text-gray-800">{{ number_format($occupancyRate, 2) }}%</h2>
+                            </div>
+                        </div>
 
-              <!-- Occupancy Rate -->
-<div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-        <div class="bg-blue-100 p-3 rounded-full mb-3 stats-icon">
-            <i class="fas fa-bed text-blue-500 text-xl"></i>
-        </div>
-        <div class="w-full">
-            <p class="text-sm text-gray-500 mb-1">Occupancy Rate</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800">{{ $occupancyRate }}%</h2>
-            <p class="text-xs text-green-500 mt-1">
-                <i class="fas fa-arrow-up mr-1"></i>
-                <span>5% from last week</span>
-            </p>
-        </div>
-    </div>
-</div>
+                        <!-- Total Revenue -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500 flex flex-col sm:flex-row items-start sm:items-center stats-card">
+                            <div class="bg-green-100 p-3 rounded-full stats-icon mb-3 sm:mb-0 sm:mr-4">
+                                <i class="fas fa-dollar-sign text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Total Revenue</p>
+                                <h2 class="text-xl font-bold text-gray-800">{{ number_format($totalRevenue, 2) }} MAD</h2>
+                            </div>
+                        </div>
 
-<!-- Total Revenue -->
-<div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-        <div class="bg-green-100 p-3 rounded-full mb-3 stats-icon">
-            <i class="fas fa-dollar-sign text-green-500 text-xl"></i>
-        </div>
-        <div class="w-full">
-            <p class="text-sm text-gray-500 mb-1">Total Revenue</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800">{{ number_format($totalRevenue, 2) }} MAD</h2>
-            <p class="text-xs text-green-500 mt-1">
-                <i class="fas fa-arrow-up mr-1"></i>
-                <span>12% from last month</span>
-            </p>
-        </div>
-    </div>
-</div>
+                        <!-- Total Bookings -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-purple-500 flex flex-col sm:flex-row items-start sm:items-center stats-card">
+                            <div class="bg-purple-100 p-3 rounded-full stats-icon mb-3 sm:mb-0 sm:mr-4">
+                                <i class="fas fa-calendar-check text-purple-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Bookings</p>
+                                <h2 class="text-xl font-bold text-gray-800">{{ $totalBookings }}</h2>
+                            </div>
+                        </div>
 
-<!-- Total Bookings -->
-<div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-purple-500">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-        <div class="bg-purple-100 p-3 rounded-full mb-3 stats-icon">
-            <i class="fas fa-calendar-check text-purple-500 text-xl"></i>
-        </div>
-        <div class="w-full">
-            <p class="text-sm text-gray-500 mb-1">Bookings</p>
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800">{{ $totalBookings }}</h2>
-            <p class="text-xs text-green-500 mt-1">
-                <i class="fas fa-arrow-up mr-1"></i>
-                <span>8% from last week</span>
-            </p>
-        </div>
-    </div>
-</div>
-
+                        <!-- New Guests -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500 flex flex-col sm:flex-row items-start sm:items-center stats-card">
+                            <div class="bg-yellow-100 p-3 rounded-full stats-icon mb-3 sm:mb-0 sm:mr-4">
+                                <i class="fas fa-user-plus text-yellow-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">New Guests</p>
+                                <h2 class="text-xl font-bold text-gray-800">16</h2>
+                            </div>
+                        </div>
+                    </div>
                     <!-- New Guests -->
                     <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500">
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
@@ -232,7 +226,6 @@
                                 <h2 class="text-xl md:text-2xl font-bold text-gray-800">16</h2>
                                 <p class="text-xs text-red-500 mt-1">
                                     <i class="fas fa-arrow-down mr-1"></i>
-                                    <span>3% from last week</span>
                                 </p>
                             </div>
                         </div>
