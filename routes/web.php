@@ -47,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/activities', [ActivityController::class, 'store'])->name('activities.store');
         Route::put('/activities/{activity}', [ActivityController::class, 'update'])->name('activities.update');
         Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
+
+        Route::get('/statistics', [\App\Http\Controllers/StatisticsController::class, 'index'])->name('admin.statistics');
+
     });
     
     Route::prefix('client')->name('client.')->group(function () {
@@ -70,6 +73,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reservation/{reservation}/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
         Route::get('/payment/success/{reservation}', [PaymentController::class, 'success'])->name('payment.success');
         Route::get('/payment/cancel/{reservation}', [PaymentController::class, 'cancel'])->name('payment.cancel');
+        
     });
     
 });
