@@ -49,7 +49,7 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/activities/{activity}', [ActivityController::class, 'update'])->name('activities.update');
         Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
 
-        Route::get('/dashboard', [StatisticsController::class, 'index'])->name('admin.statistics');
+        Route::get('/dashboard', [StatisticsController::class, 'index'])->name('statistics');
 
     });
     
