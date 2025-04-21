@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\ReserveActivityService;
+use App\Models\Activity;
 
 class ReserveActivityController extends Controller
 {
@@ -22,7 +23,7 @@ class ReserveActivityController extends Controller
         ]);
 
         $data['user_id'] = auth()->id();
-        $activity = \App\Models\Activity::findOrFail($data['activity_id']);
+        $activity = Activity::findOrFail($data['activity_id']);
         $data['price'] = $activity->price * $data['number_of_people'];
 
         $this->reserveActivityService->createReservation($data);

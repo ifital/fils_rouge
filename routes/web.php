@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\ReserveActivityController;
+
 
 
 /*
@@ -57,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
         // Routes pour les activités
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
-        Route::post('/activities/reserve', [ReserveActivityController::class, 'store'])->name('client.activities.reserve.store');
+        Route::post('/activities/reserve', [ReserveActivityController::class, 'store'])->name('activities.reserve.store');
 
         // Routes pour les chambres et profil
         Route::get('/home', [RoomController::class, 'home'])->name('home');
