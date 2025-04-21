@@ -10,4 +10,10 @@ class ReserveActivitie extends Model
     protected $fillable = [
         'user_id', 'activity_id', 'reservation_date', 'number_of_people', 'price',
     ];
+
+    public function activity()
+    {
+        return $this->belongsTo(\App\Models\Activity::class);
+    }
+
 }
