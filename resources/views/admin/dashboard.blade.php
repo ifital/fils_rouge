@@ -215,22 +215,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- New Guests -->
-                    <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-                            <div class="bg-yellow-100 p-3 rounded-full mb-3 stats-icon">
-                                <i class="fas fa-user-plus text-yellow-500 text-xl"></i>
-                            </div>
-                            <div class="w-full">
-                                <p class="text-sm text-gray-500 mb-1">New Guests</p>
-                                <h2 class="text-xl md:text-2xl font-bold text-gray-800">16</h2>
-                                <p class="text-xs text-red-500 mt-1">
-                                    <i class="fas fa-arrow-down mr-1"></i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                </div>
 
                 <!-- Charts Section -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
