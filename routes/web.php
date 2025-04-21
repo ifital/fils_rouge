@@ -57,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
         // Routes pour les activités
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
+        Route::post('/activities/reserve', [ReserveActivityController::class, 'store'])->name('client.activities.reserve.store');
 
         // Routes pour les chambres et profil
         Route::get('/home', [RoomController::class, 'home'])->name('home');
