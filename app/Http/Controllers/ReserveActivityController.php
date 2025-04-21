@@ -16,6 +16,7 @@ class ReserveActivityController extends Controller
 
     public function store(Request $request)
     {
+        
         $data = $request->validate([
             'activity_id' => 'required|exists:activities,id',
             'reservation_date' => 'required|date|after_or_equal:today',
