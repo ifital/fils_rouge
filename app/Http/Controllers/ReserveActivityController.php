@@ -38,6 +38,6 @@ class ReserveActivityController extends Controller
 
         $this->reserveActivityService->createReservation($data);
 
-        return redirect()->back()->with('success', 'Activity reserved successfully!');
+        return redirect()->route('client.activities.my.activities');
     }
 }

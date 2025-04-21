@@ -2,6 +2,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Activity;
+use Illuminate\Database\Eloquent\Relations\belongsTo;
+
 
 class ReserveActivitie extends Model
 {
@@ -11,9 +14,9 @@ class ReserveActivitie extends Model
         'user_id', 'activity_id', 'reservation_date', 'number_of_people', 'price',
     ];
 
-    public function activity()
+    public function activity(): belongsTo
     {
-        return $this->belongsTo(\App\Models\Activity::class);
+        return $this->belongsTo(Activity::class);
     }
 
 }
