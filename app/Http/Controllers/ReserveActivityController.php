@@ -14,10 +14,17 @@ class ReserveActivityController extends Controller
         $this->reserveActivityService = $reserveActivityService;
     }
 
-    
+    public function index()
+{
+    $reservations = $this->reserveActivityService
+                         ->getUserReservations(auth()->id());
+
+    return view('client.my_activities', compact('reservations'));
+}
+
 
     public function store(Request $request)
-    {
+    {   
         
         $data = $request->validate([
             'activity_id' => 'required|exists:activities,id',
