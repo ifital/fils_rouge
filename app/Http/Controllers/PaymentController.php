@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
+
+    public function index()
+    {
+        $payments = \App\Models\Payment::with(['reservation.user', 'reservation.room'])->latest()->paginate(10);
+        return view('admin.payments', compact('payments'));
+    }
+
     public function checkout(Request $request, Reservation $reservation)
     {
         // Vérifier que la réservation appartient à l'utilisateur connecté 
