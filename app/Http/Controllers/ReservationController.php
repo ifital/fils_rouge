@@ -40,7 +40,7 @@ class ReservationController extends Controller
     /**
      * Enregistrer une nouvelle réservation.
      */
-    public function store(Request $request)
+        public function store(Request $request)
     {
         $validated = $request->validate([
             'room_id' => 'required|exists:rooms,id',
@@ -51,7 +51,8 @@ class ReservationController extends Controller
 
         $room = Room::findOrFail($validated['room_id']);
 
-        $maxGuests = $room->type == 'private' ? 2 : 8;
+        // Vérifier la capacité max
+        $maxGuests = $room->type === 'private' ? 2 : 8;
         if ($validated['guests'] > $maxGuests) {
             return redirect()->back()->withErrors([
                 'guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.'
@@ -61,8 +62,29 @@ class ReservationController extends Controller
         $checkIn = Carbon::parse($validated['check_in']);
         $checkOut = (clone $checkIn)->addDays((int) $validated['nights']);
 
+        // Vérifier la disponibilité de la chambre
+        $alreadyReserved = Reservation::where('room_id', $room->id)
+            ->where('status', 'confirmed')
+            ->where(function($query) use ($checkIn, $checkOut) {
+                $query->whereBetween('check_in', [$checkIn, $checkOut->subDay()])
+                    ->orWhereBetween('check_out', [$checkIn->addDay(), $checkOut])
+                    ->orWhere(function ($query) use ($checkIn, $checkOut) {
+                        $query->where('check_in', '<=', $checkIn)
+                                ->where('check_out', '>=', $checkOut);
+                    });
+            })
+            ->exists();
+
+        if ($alreadyReserved) {
+            return redirect()->back()->withErrors([
+                'room_id' => 'Cette chambre est déjà réservée pour les dates sélectionnées.'
+            ]);
+        }
+
+        // Calcul du prix total
         $totalPrice = $room->price * $validated['nights'];
 
+        // Création de la réservation
         $reservation = new Reservation();
         $reservation->user_id = auth()->id();
         $reservation->room_id = $validated['room_id'];
@@ -72,7 +94,8 @@ class ReservationController extends Controller
         $reservation->status = 'confirmed';
         $reservation->save();
 
-        $payment = null; // Aucun paiement pour l'instant
+        // Aucun paiement effectué pour le moment
+        $payment = null;
 
         return view('client.detaills_reservation', compact('reservation', 'payment'))
             ->with('success', 'Votre réservation a été créée avec succès. Procédez au paiement pour la confirmer.');

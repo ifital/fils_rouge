@@ -163,18 +163,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        @if($reservation->status == 'confirmed')
-                            <div class="mt-6 pt-6 border-t border-gray-200">
-                                <form action="{{ route('client.reservation.cancel', ['reservation' => $reservation->id]) }}" method="POST" onsubmit="return confirm('Are you sure you want to cancel this booking?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="w-full text-red-600 font-medium hover:text-red-800 transition duration-200">
-                                        Cancel Booking
-                                    </button>
-                                </form>
-                            </div>
-                        @endif
                     @endif
                 </div>
             </div>
