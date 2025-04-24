@@ -167,11 +167,13 @@
                     <h1 class="text-xl md:text-2xl font-bold text-black">Payments</h1>
                     <p class="text-gray-600">Manage payment transactions</p>
                 </div>
-                
                 <!-- Payments Table -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                     <div class="p-4 md:p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center">
                         <h3 class="font-semibold text-gray-800 mb-3 md:mb-0">payements</h3>
+                        <div class="text-sm text-gray-600">
+                            <span class="font-medium">{{ $payments->total() }}</span> payments
+                        </div>
                     </div>
                     
                     <div class="overflow-x-auto">
@@ -210,10 +212,6 @@
                     </div>
                     
                     <!-- Pagination -->
-                    <div class="px-4 md:px-6 py-4 flex justify-between items-center border-t border-gray-200">
-                        <div class="text-sm text-gray-600">
-                         <span class="font-medium">{{ $payments->total() }}</span> payments
-                        </div>
                         <div>
                             {{ $payments->links() }}
                         </div>

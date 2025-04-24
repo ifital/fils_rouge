@@ -21,7 +21,7 @@ class RoomController extends Controller
 
     public function index()
     {
-        $rooms = $this->roomService->getAllRooms(4);
+        $rooms = $this->roomService->getAllRooms(8);
         return view('admin.rooms_dashboard', compact('rooms'));
     }
 

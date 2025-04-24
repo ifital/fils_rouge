@@ -171,8 +171,10 @@
                 <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                     <div class="p-4 md:p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center">
                         <h3 class="font-semibold text-gray-800 mb-3 md:mb-0">All Reservations</h3>
+                        <div class="text-sm text-gray-600">
+                            <span class="font-medium">{{ $reservations->total() }}</span> reservations
+                        </div>
                     </div>
-                    
                     <div class="overflow-x-auto">
                         <table class="min-w-full">
                             <thead class="bg-gray-100 text-gray-700">
@@ -221,12 +223,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
                     <!-- Pagination -->
-                    <div class="px-4 md:px-6 py-4 flex justify-between items-center border-t border-gray-200">
-                        <div class="text-sm text-gray-600">
-                         <span class="font-medium">{{ $reservations->total() }}</span> reservations
-                        </div>
                         <div>
                             {{ $reservations->links() }}
                         </div>
