@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des activités</title>
+    <title>Blue Waves - Activity Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -31,7 +31,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen" x-data="{ sidebarOpen: false }">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-800 to-blue-600 shadow-md text-white fixed top-0 left-0 right-0 z-50">
+    <header class="bg-black shadow-md text-white fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <button @click="sidebarOpen = !sidebarOpen" class="mr-4 text-white focus:outline-none md:hidden">
@@ -47,10 +47,9 @@
             <div class="flex items-center space-x-4">
                 <div class="hidden md:flex items-center space-x-2 text-sm">
                     <i class="fas fa-bell"></i>
-                    <span class="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    <span class="bg-yellow-400 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </div>
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-8 h-8 rounded-full mr-2">
                     <span class="hidden md:inline-block">Admin</span>
                     <i class="fas fa-chevron-down ml-2 text-xs"></i>
                 </div>
@@ -74,16 +73,15 @@
         
         <!-- Sidebar -->
         <aside 
-            class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-white shadow-lg transform transition-transform z-40 overflow-y-auto"
+            class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-black text-white shadow-lg transform transition-transform z-40 overflow-y-auto"
             :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen, 'md:translate-x-0': true}"
         >
             <!-- User Info -->
-            <div class="p-4 border-b border-gray-200">
+            <div class="p-4 border-b border-gray-800">
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <p class="font-medium text-gray-800">Admin User</p>
-                        <p class="text-sm text-gray-500">Administrator</p>
+                        <p class="font-medium text-white">Admin User</p>
+                        <p class="text-sm text-gray-400">Administrator</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +90,7 @@
             <nav class="py-4">
                 <ul class="space-y-1">
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-tachometer-alt"></i>
                             </span>
@@ -100,31 +98,31 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Route('admin.rooms.index') }}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="{{ Route('admin.rooms.index') }}" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-bed"></i>
                             </span>
-                            <span>Chambres</span>
+                            <span>Rooms</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Route('admin.activities.index') }}" class="flex items-center px-4 py-3 text-blue-600 bg-blue-50 border-l-4 border-blue-600">
+                        <a href="{{ Route('admin.activities.index') }}" class="flex items-center px-4 py-3 text-yellow-400 bg-gray-900 border-l-4 border-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-umbrella-beach"></i>
                             </span>
-                            <span>Activités</span>
+                            <span>Activities</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-credit-card"></i>
                             </span>
-                            <span>Paiements</span>
+                            <span>Payments</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-users"></i>
                             </span>
@@ -132,31 +130,31 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-calendar-alt"></i>
                             </span>
-                            <span>Réservations</span>
+                            <span>Reservations</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-cog"></i>
                             </span>
-                            <span>Paramètres</span>
+                            <span>Settings</span>
                         </a>
                     </li>
                 </ul>
             </nav>
             
             <!-- Logout Button -->
-            <div class="p-4 border-t border-gray-200">
-                <a href="{{ Route('logout') }}" class="flex items-center text-red-600 hover:text-red-800">
+            <div class="p-4 border-t border-gray-800">
+                <a href="{{ Route('logout') }}" class="flex items-center text-gray-400 hover:text-yellow-400">
                     <span class="sidebar-icon mr-3">
                         <i class="fas fa-sign-out-alt"></i>
                     </span>
-                    <span>Déconnexion</span>
+                    <span>Logout</span>
                 </a>
             </div>
         </aside>
@@ -164,10 +162,14 @@
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-6 w-full overflow-x-hidden">
             <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-3xl font-bold text-gray-800">Liste des activités</h2>
-                    <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md shadow-sm">
-                        + Ajouter une activité
+                <!-- Page Title -->
+                <div class="mb-6 md:mb-8 flex justify-between items-center">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-black">Activity Management</h1>
+                        <p class="text-gray-600">Manage activities offered by Blue Waves</p>
+                    </div>
+                    <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-black hover:bg-gray-900 transition text-yellow-400 px-4 py-2 rounded-md shadow-sm">
+                        + Add Activity
                     </button>
                 </div>
 
@@ -176,110 +178,148 @@
                         {{ session('success') }}
                     </div>
                 @endif
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Activities Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     @foreach($activities as $activity)
-                        <div class="bg-white rounded-2xl shadow-md p-5 transition hover:shadow-lg">
-                            <img src="{{ asset('storage/' . $activity->images) }}" alt="Image activité" class="w-full h-48 object-cover rounded-xl mb-4">
-                            <h3 class="text-lg font-semibold text-gray-800">{{ $activity->name }}</h3>
-                            <p class="text-sm text-gray-600 mb-1">Description : {{ $activity->description }}</p>
-                            <p class="text-sm text-gray-600 mb-1">Prix : <span class="font-medium text-gray-800">{{ $activity->price }} MAD</span></p>
-                            <p class="text-sm text-gray-600 mb-1">Statut : {{ $activity->status }}</p>
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $activity->images) }}" alt="Activity image" class="w-full h-32 object-cover">
+                                <div class="absolute top-2 right-2">
+                                    <span class="text-xs px-2 py-1 rounded-full 
+                                        {{ $activity->status == 'available' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
+                                        {{ $activity->status == 'available' ? 'Available' : 'Unavailable' }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="font-semibold text-gray-800">{{ $activity->name }}</h3>
+                                    <span class="text-sm font-bold text-black">{{ $activity->price }} MAD</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mb-2 line-clamp-2">{{ $activity->description }}</p>
+                                
+                                <div class="flex gap-1 mt-2">
+                                    <button onclick="openModal({{ $activity->id }}, '{{ $activity->name }}', '{{ $activity->description }}', '{{ $activity->price }}', '{{ $activity->status }}')" class="bg-black hover:bg-gray-900 transition text-yellow-400 text-xs px-2 py-1 rounded">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
 
-                            <div class="flex gap-2">
-                                <button onclick="openModal({{ $activity->id }}, '{{ $activity->name }}', '{{ $activity->description }}', '{{ $activity->price }}', '{{ $activity->status }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
-                                    Modifier
-                                </button>
-
-                                <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST" class="inline-block">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="bg-red-600 hover:bg-red-700 transition text-white text-sm px-3 py-1 rounded-md">Supprimer</button>
-                                </form>
+                                    <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST" class="inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="bg-black hover:bg-gray-900 transition text-red-400 text-xs px-2 py-1 rounded">
+                                            <i class="fas fa-trash-alt mr-1"></i> Delete
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
+                <!-- Pagination -->
+                <div class="mt-6">
+                    {{ $activities->links() }}
+                </div>
             </div>
         </main>
-       
-    </div>
-    <div class="mt-6">
-        {{ $activities->links() }}
     </div>
 
-    <!-- MODAL AJOUT -->
+    <!-- ADD ACTIVITY MODAL -->
     <div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
-        <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
-                <h3 class="text-xl font-semibold mb-4">Ajouter une activité</h3>
+
+                <h3 class="text-xl font-semibold mb-4">Add Activity</h3>
 
                 <form action="{{ route('admin.activities.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
-                        <label class="block mb-1">Nom</label>
-                        <input type="text" name="name" class="w-full border p-2 rounded" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Name</label>
+                            <input type="text" name="name" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Description</label>
+                            <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-sm font-medium">Price</label>
+                            <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-sm font-medium">Status</label>
+                            <select name="status" class="w-full border p-2 rounded" required>
+                                <option value="available">Available</option>
+                                <option value="unavailable">Unavailable</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Image</label>
+                            <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Description</label>
-                        <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeModal('addModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Cancel</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Add</button>
                     </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Prix</label>
-                        <input type="number" name="price" step="0.01" class="w-full border p-2 rounded" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Statut</label>
-                        <select name="status" class="w-full border p-2 rounded" required>
-                            <option value="available">Disponible</option>
-                            <option value="unavailable">Indisponible</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Image</label>
-                        <input type="file" name="images" class="w-full border p-2 rounded" required>
-                    </div>
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">Ajouter</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- MODAL MODIFICATION -->
+    <!-- EDIT ACTIVITY MODAL -->
     <div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
-        <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
-                <h3 class="text-xl font-semibold mb-4">Modifier l'activité</h3>
+
+                <h3 class="text-xl font-semibold mb-4">Edit Activity</h3>
 
                 <form action="{{ route('admin.activities.update', ':activity_id') }}" method="POST" enctype="multipart/form-data" id="editForm">
                     @csrf
                     @method('PUT')
-                    <div class="mb-3">
-                        <label class="block mb-1">Nom</label>
-                        <input type="text" name="name" id="name" class="w-full border p-2 rounded" required>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Name</label>
+                            <input type="text" name="name" id="name" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Description</label>
+                            <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-sm font-medium">Price</label>
+                            <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-sm font-medium">Status</label>
+                            <select name="status" id="status" class="w-full border p-2 rounded" required>
+                                <option value="available">Available</option>
+                                <option value="unavailable">Unavailable</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block mb-1 text-sm font-medium">Image</label>
+                            <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*">
+                            <p class="text-xs text-gray-500 mt-1">Leave empty to keep current image</p>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Description</label>
-                        <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3" required></textarea>
+
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeModal('editModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Cancel</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Update</button>
                     </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Prix</label>
-                        <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Statut</label>
-                        <select name="status" id="status" class="w-full border p-2 rounded" required>
-                            <option value="available">Disponible</option>
-                            <option value="unavailable">Indisponible</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="block mb-1">Image</label>
-                        <input type="file" name="images" class="w-full border p-2 rounded">
-                    </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Mettre à jour</button>
                 </form>
             </div>
         </div>

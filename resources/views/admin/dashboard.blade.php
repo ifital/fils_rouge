@@ -50,7 +50,6 @@
                     <span class="bg-yellow-400 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </div>
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-8 h-8 rounded-full mr-2">
                     <span class="hidden md:inline-block">Admin</span>
                     <i class="fas fa-chevron-down ml-2 text-xs"></i>
                 </div>
@@ -80,7 +79,6 @@
             <!-- User Info -->
             <div class="p-4 border-b border-gray-800">
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-medium text-white">Admin User</p>
                         <p class="text-sm text-gray-400">Administrator</p>

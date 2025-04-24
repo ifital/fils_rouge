@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Waves - Gestion des chambres</title>
+    <title>Blue Waves - Room Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -50,7 +50,6 @@
                     <span class="bg-yellow-400 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </div>
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-8 h-8 rounded-full mr-2">
                     <span class="hidden md:inline-block">Admin</span>
                     <i class="fas fa-chevron-down ml-2 text-xs"></i>
                 </div>
@@ -80,7 +79,6 @@
             <!-- User Info -->
             <div class="p-4 border-b border-gray-800">
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-medium text-white">Admin User</p>
                         <p class="text-sm text-gray-400">Administrator</p>
@@ -104,7 +102,7 @@
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-bed"></i>
                             </span>
-                            <span>Chambres</span>
+                            <span>Rooms</span>
                         </a>
                     </li>
                     <li>
@@ -112,7 +110,7 @@
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-umbrella-beach"></i>
                             </span>
-                            <span>Activités</span>
+                            <span>Activities</span>
                         </a>
                     </li>
                     <li>
@@ -120,7 +118,7 @@
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-credit-card"></i>
                             </span>
-                            <span>Paiements</span>
+                            <span>Payments</span>
                         </a>
                     </li>
                     <li>
@@ -136,7 +134,7 @@
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-calendar-alt"></i>
                             </span>
-                            <span>Réservations</span>
+                            <span>Reservations</span>
                         </a>
                     </li>
                     <li>
@@ -144,7 +142,7 @@
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-cog"></i>
                             </span>
-                            <span>Paramètres</span>
+                            <span>Settings</span>
                         </a>
                     </li>
                 </ul>
@@ -156,7 +154,7 @@
                     <span class="sidebar-icon mr-3">
                         <i class="fas fa-sign-out-alt"></i>
                     </span>
-                    <span>Déconnexion</span>
+                    <span>Logout</span>
                 </a>
             </div>
         </aside>
@@ -167,11 +165,11 @@
                 <!-- Page Title -->
                 <div class="mb-6 md:mb-8 flex justify-between items-center">
                     <div>
-                        <h1 class="text-xl md:text-2xl font-bold text-black">Gestion des chambres</h1>
-                        <p class="text-gray-600">Gérez les chambres de l'hôtel Blue Waves</p>
+                        <h1 class="text-xl md:text-2xl font-bold text-black">Room Management</h1>
+                        <p class="text-gray-600">Manage rooms at Blue Waves Hotel</p>
                     </div>
                     <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-black hover:bg-gray-900 transition text-yellow-400 px-4 py-2 rounded-md shadow-sm">
-                        + Ajouter une chambre
+                        + Add a room
                     </button>
                 </div>
 
@@ -180,49 +178,12 @@
                         {{ session('success') }}
                     </div>
                 @endif
-
-                <!-- Filtres -->
-                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-                    <div class="flex flex-wrap gap-4 items-center">
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Type</label>
-                            <select class="border rounded px-3 py-1.5 text-sm">
-                                <option value="">Tous</option>
-                                <option value="dormitory">Dortoir</option>
-                                <option value="private">Privée</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Statut</label>
-                            <select class="border rounded px-3 py-1.5 text-sm">
-                                <option value="">Tous</option>
-                                <option value="available">Disponible</option>
-                                <option value="occupied">Occupée</option>
-                                <option value="cleaning">Nettoyage</option>
-                                <option value="maintenance">Maintenance</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Prix</label>
-                            <div class="flex items-center gap-2">
-                                <input type="number" placeholder="Min" class="border rounded px-3 py-1.5 text-sm w-20">
-                                <span>-</span>
-                                <input type="number" placeholder="Max" class="border rounded px-3 py-1.5 text-sm w-20">
-                            </div>
-                        </div>
-                        <div class="ml-auto">
-                            <label class="block text-sm text-gray-600 mb-1">Recherche</label>
-                            <input type="text" placeholder="Rechercher..." class="border rounded px-3 py-1.5 text-sm w-full">
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Rooms Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     @foreach($rooms as $room)
                         <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-lg">
                             <div class="relative">
-                                <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-32 object-cover">
+                                <img src="{{ asset('storage/' . $room->images) }}" alt="Room image" class="w-full h-32 object-cover">
                                 <div class="absolute top-2 right-2">
                                     <span class="text-xs px-2 py-1 rounded-full 
                                         {{ $room->status == 'available' ? 'bg-green-100 text-green-800' : '' }}
@@ -230,35 +191,35 @@
                                         {{ $room->status == 'cleaning' ? 'bg-blue-100 text-blue-800' : '' }}
                                         {{ $room->status == 'maintenance' ? 'bg-orange-100 text-orange-800' : '' }}
                                     ">
-                                        {{ $room->status == 'available' ? 'Disponible' : '' }}
-                                        {{ $room->status == 'occupied' ? 'Occupée' : '' }}
-                                        {{ $room->status == 'cleaning' ? 'Nettoyage' : '' }}
+                                        {{ $room->status == 'available' ? 'Available' : '' }}
+                                        {{ $room->status == 'occupied' ? 'Occupied' : '' }}
+                                        {{ $room->status == 'cleaning' ? 'Cleaning' : '' }}
                                         {{ $room->status == 'maintenance' ? 'Maintenance' : '' }}
                                     </span>
                                 </div>
                             </div>
                             <div class="p-3">
                                 <div class="flex justify-between items-center mb-2">
-                                    <h3 class="font-semibold text-gray-800">Chambre #{{ $room->room_number }}</h3>
+                                    <h3 class="font-semibold text-gray-800">Room #{{ $room->room_number }}</h3>
                                     <span class="text-sm font-bold text-black">{{ $room->price }} MAD</span>
                                 </div>
                                 <p class="text-xs text-gray-600 mb-1">Type: 
                                     <span class="font-medium">
-                                        {{ $room->type == 'dormitory' ? 'Dortoir' : 'Privée' }}
+                                        {{ $room->type == 'dormitory' ? 'Dormitory' : 'Private' }}
                                     </span>
                                 </p>
                                 <p class="text-xs text-gray-600 mb-2 line-clamp-2">{{ $room->description }}</p>
                                 
                                 <div class="flex gap-1 mt-2">
                                     <button onclick="openModal({{ $room->id }}, '{{ $room->room_number }}', '{{ $room->type }}', '{{ $room->description }}', '{{ $room->price }}', '{{ $room->status }}')" class="bg-black hover:bg-gray-900 transition text-yellow-400 text-xs px-2 py-1 rounded">
-                                        <i class="fas fa-edit mr-1"></i> Modifier
+                                        <i class="fas fa-edit mr-1"></i> Edit
                                     </button>
 
                                     <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="inline-block">
                                         @csrf
                                         @method('DELETE')
                                         <button class="bg-black hover:bg-gray-900 transition text-red-400 text-xs px-2 py-1 rounded">
-                                            <i class="fas fa-trash-alt mr-1"></i> Supprimer
+                                            <i class="fas fa-trash-alt mr-1"></i> Delete
                                         </button>
                                     </form>
                                 </div>
@@ -275,27 +236,27 @@
         </main>
     </div>
 
-    <!-- MODAL POUR AJOUTER UNE CHAMBRE -->
+    <!-- ADD ROOM MODAL -->
     <div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
         <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-                <h3 class="text-xl font-semibold mb-4">Ajouter une chambre</h3>
+                <h3 class="text-xl font-semibold mb-4">Add a Room</h3>
 
                 <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label for="room_number" class="block mb-1 text-sm font-medium">Numéro</label>
+                            <label for="room_number" class="block mb-1 text-sm font-medium">Room Number</label>
                             <input type="text" name="room_number" class="w-full border p-2 rounded" required>
                         </div>
 
                         <div>
                             <label for="type" class="block mb-1 text-sm font-medium">Type</label>
                             <select name="type" class="w-full border p-2 rounded" required>
-                                <option value="dormitory">Dortoir</option>
-                                <option value="private">Privée</option>
+                                <option value="dormitory">Dormitory</option>
+                                <option value="private">Private</option>
                             </select>
                         </div>
                     </div>
@@ -307,22 +268,22 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label for="price" class="block mb-1 text-sm font-medium">Prix</label>
+                            <label for="price" class="block mb-1 text-sm font-medium">Price</label>
                             <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
                         </div>
 
                         <div>
-                            <label for="space" class="block mb-1 text-sm font-medium">Espace (m²)</label>
+                            <label for="space" class="block mb-1 text-sm font-medium">Space (m²)</label>
                             <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
                         </div>
                     </div>
 
                     <div class="mb-4">
-                        <label for="status" class="block mb-1 text-sm font-medium">Statut</label>
+                        <label for="status" class="block mb-1 text-sm font-medium">Status</label>
                         <select name="status" class="w-full border p-2 rounded" required>
-                            <option value="available">Disponible</option>
-                            <option value="occupied">Occupée</option>
-                            <option value="cleaning">Nettoyage</option>
+                            <option value="available">Available</option>
+                            <option value="occupied">Occupied</option>
+                            <option value="cleaning">Cleaning</option>
                             <option value="maintenance">Maintenance</option>
                         </select>
                     </div>
@@ -333,21 +294,21 @@
                     </div>
 
                     <div class="flex justify-end">
-                        <button type="button" onclick="closeModal('addModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Annuler</button>
-                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Ajouter</button>
+                        <button type="button" onclick="closeModal('addModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Cancel</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Add</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- MODAL POUR MODIFIER UNE CHAMBRE -->
+    <!-- EDIT ROOM MODAL -->
     <div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
         <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
-                <h3 class="text-xl font-semibold mb-4">Modifier la chambre</h3>
+                <h3 class="text-xl font-semibold mb-4">Edit Room</h3>
 
                 <form action="{{ route('admin.rooms.update', ':room_id') }}" method="POST" enctype="multipart/form-data" id="editRoomForm">
                     @csrf
@@ -355,15 +316,15 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label for="room_number" class="block mb-1 text-sm font-medium">Numéro de chambre</label>
+                            <label for="room_number" class="block mb-1 text-sm font-medium">Room Number</label>
                             <input type="text" name="room_number" id="room_number" class="w-full border p-2 rounded" required>
                         </div>
 
                         <div>
                             <label for="type" class="block mb-1 text-sm font-medium">Type</label>
                             <select name="type" id="type" class="w-full border p-2 rounded" required>
-                                <option value="dormitory">Dortoir</option>
-                                <option value="private">Privée</option>
+                                <option value="dormitory">Dormitory</option>
+                                <option value="private">Private</option>
                             </select>
                         </div>
                     </div>
@@ -375,16 +336,16 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label for="price" class="block mb-1 text-sm font-medium">Prix</label>
+                            <label for="price" class="block mb-1 text-sm font-medium">Price</label>
                             <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
                         </div>
 
                         <div>
-                            <label for="status" class="block mb-1 text-sm font-medium">Statut</label>
+                            <label for="status" class="block mb-1 text-sm font-medium">Status</label>
                             <select name="status" id="status" class="w-full border p-2 rounded" required>
-                                <option value="available">Disponible</option>
-                                <option value="occupied">Occupée</option>
-                                <option value="cleaning">Nettoyage</option>
+                                <option value="available">Available</option>
+                                <option value="occupied">Occupied</option>
+                                <option value="cleaning">Cleaning</option>
                                 <option value="maintenance">Maintenance</option>
                             </select>
                         </div>
@@ -393,12 +354,12 @@
                     <div class="mb-4">
                         <label for="images" class="block mb-1 text-sm font-medium">Image</label>
                         <input type="file" name="images" id="images" class="w-full border p-2 rounded" accept="image/*">
-                        <p class="text-xs text-gray-500 mt-1">Laissez vide pour conserver l'image actuelle</p>
+                        <p class="text-xs text-gray-500 mt-1">Leave empty to keep current image</p>
                     </div>
 
                     <div class="flex justify-end">
-                        <button type="button" onclick="closeModal('editModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Annuler</button>
-                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Mettre à jour</button>
+                        <button type="button" onclick="closeModal('editModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Cancel</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Update</button>
                     </div>
                 </form>
             </div>
