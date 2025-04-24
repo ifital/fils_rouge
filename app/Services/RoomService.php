@@ -11,6 +11,12 @@ class RoomService
     {
         return Room::paginate($perPage);
     }
+
+    public function getAvailableRooms($perPage)
+    {
+        return Room::where('status', 'available')->paginate($perPage);
+    }
+
     public function getRoomDetails(int $id)
     {
         return Room::find($id);
