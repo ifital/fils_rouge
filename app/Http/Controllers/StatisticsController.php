@@ -47,6 +47,15 @@ class StatisticsController extends Controller
         // Nombre total de réservations confirmées dans le mois
         $totalBookings = $reservations->count();
 
-        return view('admin.dashboard', compact('occupancyRate', 'totalRevenue', 'totalBookings'));
+        return view('admin.dashboard', [
+            'occupancyRate' => $occupancyRate,
+            'totalRevenue' => $totalRevenue,
+            'totalBookings' => $totalBookings,
+            'occupancyLabels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            'occupancyData' => [70, 65, 80, 85, 90],
+            'revenueLabels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            'revenueData' => [2500, 3000, 2000, 4000, 4500],
+        ]);
+        
     }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Waves - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
@@ -213,170 +214,19 @@
                             </div>
                         </div>
                     </div>
-                                </div>
-
+                    </div>
                 <!-- Charts Section -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
-                    <!-- Occupancy Chart -->
                     <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                            <h3 class="font-semibold text-gray-800 mb-2 sm:mb-0">Occupancy Rate (Last 30 days)</h3>
-                            <div class="flex space-x-2">
-                                <button class="text-xs text-black px-2 py-1 rounded bg-yellow-300">Day</button>
-                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Week</button>
-                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Month</button>
-                            </div>
-                        </div>
-                        <div class="h-64 bg-gray-100 rounded flex items-center justify-center">
-                            <!-- Placeholder for chart -->
-                            <p class="text-gray-500">Occupancy Chart</p>
-                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-4">Occupancy Rate</h3>
+                        <canvas id="occupancyChart" class="h-64"></canvas>
                     </div>
 
-                    <!-- Revenue Chart -->
                     <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                            <h3 class="font-semibold text-gray-800 mb-2 sm:mb-0">Revenue (Last 6 months)</h3>
-                            <div class="flex space-x-2">
-                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Week</button>
-                                <button class="text-xs text-black px-2 py-1 rounded bg-yellow-300">Month</button>
-                                <button class="text-xs text-gray-600 px-2 py-1 rounded">Year</button>
-                            </div>
-                        </div>
-                        <div class="h-64 bg-gray-100 rounded flex items-center justify-center">
-                            <!-- Placeholder for chart -->
-                            <p class="text-gray-500">Revenue Chart</p>
-                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-4">Revenue</h3>
+                        <canvas id="revenueChart" class="h-64"></canvas>
                     </div>
                 </div>
-
-                <!-- Recent Bookings and Upcoming Check-ins -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-                    <!-- Recent Bookings -->
-                    <div class="bg-white rounded-lg shadow-md">
-                        <div class="px-4 md:px-6 py-4 border-b border-gray-200">
-                            <h3 class="font-semibold text-gray-800">Recent Bookings</h3>
-                        </div>
-                        <div class="p-4 md:p-6">
-                            <div class="overflow-x-auto -mx-4 md:mx-0">
-                                <table class="min-w-full bg-white">
-                                    <thead>
-                                        <tr class="bg-gray-50 text-gray-600 text-xs">
-                                            <th class="py-2 px-4 text-left">Guest</th>
-                                            <th class="py-2 px-4 text-left">Room</th>
-                                            <th class="py-2 px-4 text-left">Arrival</th>
-                                            <th class="py-2 px-4 text-left">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-sm">
-                                        <tr class="border-b border-gray-100">
-                                            <td class="py-3 px-4">
-                                                <div class="flex items-center">
-                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
-                                                    <span>Thomas Martin</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-4">4-Bed Dorm</td>
-                                            <td class="py-3 px-4">Apr 15, 2025</td>
-                                            <td class="py-3 px-4">
-                                                <span class="bg-yellow-100 text-black text-xs px-2 py-1 rounded-full">Confirmed</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-b border-gray-100">
-                                            <td class="py-3 px-4">
-                                                <div class="flex items-center">
-                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
-                                                    <span>Emma Wilson</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-4">Private Room</td>
-                                            <td class="py-3 px-4">Apr 18, 2025</td>
-                                            <td class="py-3 px-4">
-                                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-b border-gray-100">
-                                            <td class="py-3 px-4">
-                                                <div class="flex items-center">
-                                                    <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Guest" class="w-8 h-8 rounded-full mr-2">
-                                                    <span>Michael Brown</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-4">6-Bed Dorm</td>
-                                            <td class="py-3 px-4">Apr 20, 2025</td>
-                                            <td class="py-3 px-4">
-                                                <span class="bg-yellow-100 text-black text-xs px-2 py-1 rounded-full">Confirmed</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="mt-4 text-center">
-                                <a href="#" class="text-yellow-600 text-sm hover:underline">View all bookings</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Upcoming Check-ins -->
-                    <div class="bg-white rounded-lg shadow-md">
-                        <div class="px-4 md:px-6 py-4 border-b border-gray-200">
-                            <h3 class="font-semibold text-gray-800">Today's Check-ins</h3>
-                        </div>
-                        <div class="p-4 md:p-6">
-                            <div class="space-y-4">
-                                <!-- Check-in Item 1 -->
-                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
-                                    <div class="flex items-center">
-                                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <p class="font-medium text-gray-800">Sophie Lambert</p>
-                                            <p class="text-xs text-gray-500">Room 101 • Arrival: 2:00 PM</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button class="text-xs bg-black text-yellow-400 px-3 py-1 rounded-full">
-                                            Check-in
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Check-in Item 2 -->
-                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
-                                    <div class="flex items-center">
-                                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <p class="font-medium text-gray-800">Daniel Johnson</p>
-                                            <p class="text-xs text-gray-500">Dorm 3 • Arrival: 3:30 PM</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button class="text-xs bg-black text-yellow-400 px-3 py-1 rounded-full">
-                                            Check-in
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Check-in Item 3 -->
-                                <div class="flex items-center justify-between p-3 md:p-4 rounded-lg border border-gray-100 hover:bg-gray-50">
-                                    <div class="flex items-center">
-                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Guest" class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <p class="font-medium text-gray-800">Lucy Moore</p>
-                                            <p class="text-xs text-gray-500">Room 204 • Arrival: 6:00 PM</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button class="text-xs bg-black text-yellow-400 px-3 py-1 rounded-full">
-                                            Check-in
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4 text-center">
-                                    <a href="#" class="text-yellow-600 text-sm hover:underline">View all check-ins</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -384,22 +234,54 @@
     </div>
 
     <script>
-        // Initialize responsive sidebar behavior
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set sidebar to open by default on desktop
-            if (window.innerWidth >= 768) {
-                Alpine.store('sidebar', { open: true });
-            }
-            
-            // Close sidebar when clicking outside on mobile
-            document.addEventListener('click', function(e) {
-                const sidebar = document.querySelector('aside');
-                const toggleButton = document.querySelector('[x-data] button');
-                
-                if (window.innerWidth < 768 && !sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
-                    Alpine.store('sidebar', { open: false });
+        const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+
+        const occupancyChart = new Chart(occupancyCtx, {
+            type: 'line',
+            data: {
+                labels: {!! json_encode($occupancyLabels) !!},
+                datasets: [{
+                    label: 'Occupancy Rate (%)',
+                    data: {!! json_encode($occupancyData) !!},
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
                 }
-            });
+            }
+        });
+
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: {!! json_encode($revenueLabels) !!},
+                datasets: [{
+                    label: 'Revenue (MAD)',
+                    data: {!! json_encode($revenueData) !!},
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
     </script>
 </body>
