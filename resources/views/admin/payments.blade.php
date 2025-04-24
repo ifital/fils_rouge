@@ -180,10 +180,10 @@
                                 <tr>
                                     <th class="px-4 py-3 text-left text-sm font-medium">ID</th>
                                     <th class="px-4 py-3 text-left text-sm font-medium">Client</th>
-                                    <th class="px-4 py-3 text-left text-sm font-medium">Chambre</th>
-                                    <th class="px-4 py-3 text-left text-sm font-medium">Montant</th>
-                                    <th class="px-4 py-3 text-left text-sm font-medium">Méthode</th>
-                                    <th class="px-4 py-3 text-left text-sm font-medium">Statut</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Room</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Amount</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Methode</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Status</th>
                                     <th class="px-4 py-3 text-left text-sm font-medium">Date</th>
                                 </tr>
                             </thead>

@@ -17,7 +17,7 @@ class ReserveActivityController extends Controller
     public function index()
 {
     $reservations = $this->reserveActivityService
-                         ->getUserReservations(auth()->id());
+    ->getUserReservations(auth()->id());
 
     return view('client.my_activities', compact('reservations'));
 }

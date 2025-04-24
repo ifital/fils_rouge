@@ -53,6 +53,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/dashboard', [StatisticsController::class, 'index'])->name('statistics');
         Route::get('payments', [PaymentController::class, 'index'])->name('payments');
+        Route::get('reservations', [ReservationController::class, 'allReservations'])->name('reservations');
+
 
     });
     

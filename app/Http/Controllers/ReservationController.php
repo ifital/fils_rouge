@@ -10,6 +10,15 @@ use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
+
+    public function allReservations()
+    {
+        $reservations = Reservation::with(['room', 'payment', 'user'])
+            ->orderBy('check_in', 'desc')
+            ->paginate(20);
+
+        return view('admin.reservations', compact('reservations'));
+    }
     /**
      * Afficher la liste des réservations de l'utilisateur.
      */

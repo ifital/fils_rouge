@@ -90,7 +90,7 @@
             <nav class="py-4">
                 <ul class="space-y-1">
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
+                        <a href="{{ Route('admin.statistics') }}" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-tachometer-alt"></i>
                             </span>
@@ -114,7 +114,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
+                        <a href="{{ Route('admin.payments') }}" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-credit-card"></i>
                             </span>
