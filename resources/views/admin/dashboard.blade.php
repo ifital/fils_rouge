@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="{{ Route('admin.payments') }}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-credit-card"></i>
                             </span>
