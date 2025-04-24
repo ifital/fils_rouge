@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des chambres</title>
+    <title>Blue Waves - Gestion des chambres</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -31,7 +31,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen" x-data="{ sidebarOpen: false }">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-800 to-blue-600 shadow-md text-white fixed top-0 left-0 right-0 z-50">
+    <header class="bg-black shadow-md text-white fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <button @click="sidebarOpen = !sidebarOpen" class="mr-4 text-white focus:outline-none md:hidden">
@@ -47,7 +47,7 @@
             <div class="flex items-center space-x-4">
                 <div class="hidden md:flex items-center space-x-2 text-sm">
                     <i class="fas fa-bell"></i>
-                    <span class="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    <span class="bg-yellow-400 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </div>
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-8 h-8 rounded-full mr-2">
@@ -74,16 +74,16 @@
         
         <!-- Sidebar -->
         <aside 
-            class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-white shadow-lg transform transition-transform z-40 overflow-y-auto"
+            class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-black text-white shadow-lg transform transition-transform z-40 overflow-y-auto"
             :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen, 'md:translate-x-0': true}"
         >
             <!-- User Info -->
-            <div class="p-4 border-b border-gray-200">
+            <div class="p-4 border-b border-gray-800">
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <p class="font-medium text-gray-800">Admin User</p>
-                        <p class="text-sm text-gray-500">Administrator</p>
+                        <p class="font-medium text-white">Admin User</p>
+                        <p class="text-sm text-gray-400">Administrator</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
             <nav class="py-4">
                 <ul class="space-y-1">
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-tachometer-alt"></i>
                             </span>
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Route('admin.rooms.index') }}" class="flex items-center px-4 py-3 text-blue-600 bg-blue-50 border-l-4 border-blue-600">
+                        <a href="{{ Route('admin.rooms.index') }}" class="flex items-center px-4 py-3 text-yellow-400 bg-gray-900 border-l-4 border-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-bed"></i>
                             </span>
@@ -108,7 +108,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Route('admin.activities.index') }}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="{{ Route('admin.activities.index') }}" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-umbrella-beach"></i>
                             </span>
@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-credit-card"></i>
                             </span>
@@ -124,7 +124,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-users"></i>
                             </span>
@@ -132,7 +132,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-calendar-alt"></i>
                             </span>
@@ -140,7 +140,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600">
+                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
                                 <i class="fas fa-cog"></i>
                             </span>
@@ -151,8 +151,8 @@
             </nav>
             
             <!-- Logout Button -->
-            <div class="p-4 border-t border-gray-200">
-                <a href="{{ Route('logout') }}" class="flex items-center text-red-600 hover:text-red-800">
+            <div class="p-4 border-t border-gray-800">
+                <a href="{{ Route('logout') }}" class="flex items-center text-gray-400 hover:text-yellow-400">
                     <span class="sidebar-icon mr-3">
                         <i class="fas fa-sign-out-alt"></i>
                     </span>
@@ -164,9 +164,13 @@
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-6 w-full overflow-x-hidden">
             <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-3xl font-bold text-gray-800">Liste des chambres</h2>
-                    <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md shadow-sm">
+                <!-- Page Title -->
+                <div class="mb-6 md:mb-8 flex justify-between items-center">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-black">Gestion des chambres</h1>
+                        <p class="text-gray-600">Gérez les chambres de l'hôtel Blue Waves</p>
+                    </div>
+                    <button onclick="document.getElementById('addModal').classList.remove('hidden')" class="bg-black hover:bg-gray-900 transition text-yellow-400 px-4 py-2 rounded-md shadow-sm">
                         + Ajouter une chambre
                     </button>
                 </div>
@@ -177,30 +181,93 @@
                     </div>
                 @endif
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Filtres -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Type</label>
+                            <select class="border rounded px-3 py-1.5 text-sm">
+                                <option value="">Tous</option>
+                                <option value="dormitory">Dortoir</option>
+                                <option value="private">Privée</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Statut</label>
+                            <select class="border rounded px-3 py-1.5 text-sm">
+                                <option value="">Tous</option>
+                                <option value="available">Disponible</option>
+                                <option value="occupied">Occupée</option>
+                                <option value="cleaning">Nettoyage</option>
+                                <option value="maintenance">Maintenance</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Prix</label>
+                            <div class="flex items-center gap-2">
+                                <input type="number" placeholder="Min" class="border rounded px-3 py-1.5 text-sm w-20">
+                                <span>-</span>
+                                <input type="number" placeholder="Max" class="border rounded px-3 py-1.5 text-sm w-20">
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <label class="block text-sm text-gray-600 mb-1">Recherche</label>
+                            <input type="text" placeholder="Rechercher..." class="border rounded px-3 py-1.5 text-sm w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rooms Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     @foreach($rooms as $room)
-                        <div class="bg-white rounded-2xl shadow-md p-5 transition hover:shadow-lg">
-                            <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-48 object-cover rounded-xl mb-4">
-                            <h3 class="text-lg font-semibold text-gray-800">Chambre #{{ $room->room_number }}</h3>
-                            <p class="text-sm text-gray-600 mb-1">Type : {{ $room->type }}</p>
-                            <p class="text-sm text-gray-600 mb-1">Description : {{ $room->description }}</p>
-                            <p class="text-sm text-gray-600 mb-1">Prix : <span class="font-medium text-gray-800">{{ $room->price }} MAD</span></p>
-                            <p class="text-sm text-gray-600 mb-4">Statut : {{ $room->status }}</p>
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $room->images) }}" alt="Image chambre" class="w-full h-32 object-cover">
+                                <div class="absolute top-2 right-2">
+                                    <span class="text-xs px-2 py-1 rounded-full 
+                                        {{ $room->status == 'available' ? 'bg-green-100 text-green-800' : '' }}
+                                        {{ $room->status == 'occupied' ? 'bg-red-100 text-red-800' : '' }}
+                                        {{ $room->status == 'cleaning' ? 'bg-blue-100 text-blue-800' : '' }}
+                                        {{ $room->status == 'maintenance' ? 'bg-orange-100 text-orange-800' : '' }}
+                                    ">
+                                        {{ $room->status == 'available' ? 'Disponible' : '' }}
+                                        {{ $room->status == 'occupied' ? 'Occupée' : '' }}
+                                        {{ $room->status == 'cleaning' ? 'Nettoyage' : '' }}
+                                        {{ $room->status == 'maintenance' ? 'Maintenance' : '' }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="font-semibold text-gray-800">Chambre #{{ $room->room_number }}</h3>
+                                    <span class="text-sm font-bold text-black">{{ $room->price }} MAD</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mb-1">Type: 
+                                    <span class="font-medium">
+                                        {{ $room->type == 'dormitory' ? 'Dortoir' : 'Privée' }}
+                                    </span>
+                                </p>
+                                <p class="text-xs text-gray-600 mb-2 line-clamp-2">{{ $room->description }}</p>
+                                
+                                <div class="flex gap-1 mt-2">
+                                    <button onclick="openModal({{ $room->id }}, '{{ $room->room_number }}', '{{ $room->type }}', '{{ $room->description }}', '{{ $room->price }}', '{{ $room->status }}')" class="bg-black hover:bg-gray-900 transition text-yellow-400 text-xs px-2 py-1 rounded">
+                                        <i class="fas fa-edit mr-1"></i> Modifier
+                                    </button>
 
-                            <div class="flex gap-2">
-                                <button onclick="openModal({{ $room->id }}, '{{ $room->room_number }}', '{{ $room->type }}', '{{ $room->description }}', '{{ $room->price }}', '{{ $room->status }}')" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm px-3 py-1 rounded-md">
-                                    Modifier
-                                </button>
-
-                                <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="inline-block">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="bg-red-600 hover:bg-red-700 transition text-white text-sm px-3 py-1 rounded-md">Supprimer</button>
-                                </form>
+                                    <form action="{{ route('admin.rooms.destroy', $room) }}" method="POST" class="inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="bg-black hover:bg-gray-900 transition text-red-400 text-xs px-2 py-1 rounded">
+                                            <i class="fas fa-trash-alt mr-1"></i> Supprimer
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
+                <!-- Pagination -->
                 <div class="mt-6">
                     {{ $rooms->links() }}
                 </div>
@@ -210,7 +277,7 @@
 
     <!-- MODAL POUR AJOUTER UNE CHAMBRE -->
     <div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
-        <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('addModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
@@ -218,36 +285,40 @@
 
                 <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
-                        <label for="room_number" class="block mb-1">Numéro</label>
-                        <input type="text" name="room_number" class="w-full border p-2 rounded" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="room_number" class="block mb-1 text-sm font-medium">Numéro</label>
+                            <input type="text" name="room_number" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label for="type" class="block mb-1 text-sm font-medium">Type</label>
+                            <select name="type" class="w-full border p-2 rounded" required>
+                                <option value="dormitory">Dortoir</option>
+                                <option value="private">Privée</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="type" class="block mb-1">Type</label>
-                        <select name="type" class="w-full border p-2 rounded" required>
-                            <option value="dormitory">Dortoir</option>
-                            <option value="private">Privée</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="description" class="block mb-1">Description</label>
+                    <div class="mb-4">
+                        <label for="description" class="block mb-1 text-sm font-medium">Description</label>
                         <textarea name="description" class="w-full border p-2 rounded" rows="3" required></textarea>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="price" class="block mb-1">Prix</label>
-                        <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="price" class="block mb-1 text-sm font-medium">Prix</label>
+                            <input type="number" step="0.01" name="price" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label for="space" class="block mb-1 text-sm font-medium">Espace (m²)</label>
+                            <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="space" class="block mb-1">space</label>
-                        <input type="number" step="0.01" name="space" class="w-full border p-2 rounded" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="status" class="block mb-1">Statut</label>
+                    <div class="mb-4">
+                        <label for="status" class="block mb-1 text-sm font-medium">Statut</label>
                         <select name="status" class="w-full border p-2 rounded" required>
                             <option value="available">Disponible</option>
                             <option value="occupied">Occupée</option>
@@ -256,12 +327,15 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="images" class="block mb-1">Image</label>
+                    <div class="mb-4">
+                        <label for="images" class="block mb-1 text-sm font-medium">Image</label>
                         <input type="file" name="images" class="w-full border p-2 rounded" accept="image/*" required>
                     </div>
 
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md">Ajouter</button>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeModal('addModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Annuler</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Ajouter</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -269,7 +343,7 @@
 
     <!-- MODAL POUR MODIFIER UNE CHAMBRE -->
     <div id="editModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden overflow-y-auto">
-        <div class="bg-white p-6 rounded-2xl w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
+        <div class="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg max-h-full my-6 mx-4">
             <div class="max-h-[90vh] overflow-y-auto">
                 <button onclick="closeModal('editModal')" class="absolute top-3 right-4 text-gray-600 text-2xl hover:text-black">&times;</button>
 
@@ -279,45 +353,53 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="mb-3">
-                        <label for="room_number" class="block mb-1">Numéro de chambre</label>
-                        <input type="text" name="room_number" id="room_number" class="w-full border p-2 rounded" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="room_number" class="block mb-1 text-sm font-medium">Numéro de chambre</label>
+                            <input type="text" name="room_number" id="room_number" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label for="type" class="block mb-1 text-sm font-medium">Type</label>
+                            <select name="type" id="type" class="w-full border p-2 rounded" required>
+                                <option value="dormitory">Dortoir</option>
+                                <option value="private">Privée</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="type" class="block mb-1">Type</label>
-                        <select name="type" id="type" class="w-full border p-2 rounded" required>
-                            <option value="dormitory">Dortoir</option>
-                            <option value="private">Privée</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="description" class="block mb-1">Description</label>
+                    <div class="mb-4">
+                        <label for="description" class="block mb-1 text-sm font-medium">Description</label>
                         <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3"></textarea>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="price" class="block mb-1">Prix</label>
-                        <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="price" class="block mb-1 text-sm font-medium">Prix</label>
+                            <input type="number" step="0.01" name="price" id="price" class="w-full border p-2 rounded" required>
+                        </div>
+
+                        <div>
+                            <label for="status" class="block mb-1 text-sm font-medium">Statut</label>
+                            <select name="status" id="status" class="w-full border p-2 rounded" required>
+                                <option value="available">Disponible</option>
+                                <option value="occupied">Occupée</option>
+                                <option value="cleaning">Nettoyage</option>
+                                <option value="maintenance">Maintenance</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="status" class="block mb-1">Statut</label>
-                        <select name="status" id="status" class="w-full border p-2 rounded" required>
-                            <option value="available">Disponible</option>
-                            <option value="occupied">Occupée</option>
-                            <option value="cleaning">Nettoyage</option>
-                            <option value="maintenance">Maintenance</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="images" class="block mb-1">Image</label>
+                    <div class="mb-4">
+                        <label for="images" class="block mb-1 text-sm font-medium">Image</label>
                         <input type="file" name="images" id="images" class="w-full border p-2 rounded" accept="image/*">
+                        <p class="text-xs text-gray-500 mt-1">Laissez vide pour conserver l'image actuelle</p>
                     </div>
 
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-md">Mettre à jour</button>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeModal('editModal')" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mr-2">Annuler</button>
+                        <button type="submit" class="bg-black hover:bg-gray-900 text-yellow-400 px-4 py-2 rounded-md">Mettre à jour</button>
+                    </div>
                 </form>
             </div>
         </div>
