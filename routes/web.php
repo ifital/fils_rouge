@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
 
         Route::get('/dashboard', [StatisticsController::class, 'index'])->name('statistics');
+        Route::get('/admin/payments', [PaymentController::class, 'index'])->name('admin.payments.index');
 
     });
     
