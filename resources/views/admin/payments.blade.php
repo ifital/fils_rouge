@@ -158,7 +158,6 @@
                 </a>
             </div>
         </aside>
-
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-6 w-full overflow-x-hidden">
             <div class="max-w-7xl mx-auto">
@@ -221,4 +220,4 @@
         </main>
     </div>
 </body>
-</html>
+</html>     

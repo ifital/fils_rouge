@@ -135,4 +135,74 @@ class ReservationController extends Controller
         return redirect()->route('client.reservations.index')
             ->with('success', 'Votre réservation a été annulée avec succès.');
     }
+
+    public function update(Request $request, Reservation $reservation)
+{
+    // Vérification de propriété
+    if ($reservation->user_id !== auth()->id()) {
+        return redirect()->route('client.reservations.index')
+            ->with('error', 'Vous n\'êtes pas autorisé à modifier cette réservation.');
+    }
+
+    // Vérifier si un paiement a été effectué
+    $payment = Payment::where('reservation_id', $reservation->id)
+        ->where('status', 'paid')
+        ->first();
+
+    if ($payment) {
+        return redirect()->route('client.reservations.index')
+            ->with('error', 'Impossible de modifier une réservation déjà payée.');
+    }
+
+    // Validation des nouvelles données
+    $validated = $request->validate([
+        'check_in' => 'required|date|after_or_equal:today',
+        'nights' => 'required|integer|min:1|max:30',
+        'guests' => 'required|integer|min:1',
+    ]);
+
+    $room = $reservation->room;
+
+    // Vérifier la capacité de la chambre
+    $maxGuests = $room->type === 'private' ? 2 : 8;
+    if ($validated['guests'] > $maxGuests) {
+        return redirect()->back()->withErrors([
+            'guests' => 'Le nombre de personnes est trop élevé pour ce type de chambre.'
+        ]);
+    }
+
+    $checkIn = Carbon::parse($validated['check_in']);
+    $checkOut = (clone $checkIn)->addDays($validated['nights']);
+
+    // Vérifier la disponibilité (hors cette réservation)
+    $alreadyReserved = Reservation::where('room_id', $room->id)
+        ->where('status', 'confirmed')
+        ->where('id', '!=', $reservation->id)
+        ->where(function ($query) use ($checkIn, $checkOut) {
+            $query->whereBetween('check_in', [$checkIn, $checkOut->subDay()])
+                  ->orWhereBetween('check_out', [$checkIn->addDay(), $checkOut])
+                  ->orWhere(function ($query) use ($checkIn, $checkOut) {
+                      $query->where('check_in', '<=', $checkIn)
+                            ->where('check_out', '>=', $checkOut);
+                  });
+        })
+        ->exists();
+
+    if ($alreadyReserved) {
+        return redirect()->back()->withErrors([
+            'check_in' => 'La chambre est déjà réservée à ces dates.'
+        ]);
+    }
+
+    // Mise à jour de la réservation
+    $reservation->check_in = $checkIn;
+    $reservation->check_out = $checkOut;
+    $reservation->guests = $validated['guests'];
+    $reservation->price = $room->price * $validated['nights'];
+    $reservation->save();
+
+    return redirect()->route('client.reservations.index')
+        ->with('success', 'La réservation a été modifiée avec succès.');
+}
+
 }
