@@ -26,7 +26,7 @@ class UserController extends Controller
 
         $user->update($validated);
 
-        return redirect()->route('users.index')
+        return redirect()->route('employee.users.index')
             ->with('success', 'Utilisateur mis à jour avec succès.');
     }
 
@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         $user->delete();
         
-        return redirect()->route('users.index')
+        return redirect()->route('employee.users.index')
             ->with('success', 'Utilisateur supprimé avec succès.');
     }
 }

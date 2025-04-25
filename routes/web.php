@@ -9,6 +9,9 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ReserveActivityController;
+use App\Http\Controllers\UserController;
+
+
 
 
 
@@ -38,7 +41,11 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/employee/dashboard', fn () => view('employee.dashboard'))->name('employee.dashboard');
+    Route::prefix('employee')->name('employee.')->group(function (){
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
