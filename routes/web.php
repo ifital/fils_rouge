@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reservation/{reservation}', [ReservationController::class, 'show'])->name('reservations.show');
         Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
         Route::patch('/reservation/{reservation}/cancel', [ReservationController::class, 'cancel'])->name('reservation.cancel');
+        Route::patch('/reservation/{reservation}', [ReservationController::class, 'update'])->name('reservation.update');
 
         // Routes pour les paiements
         Route::get('/reservation/{reservation}/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
