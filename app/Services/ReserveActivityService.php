@@ -13,6 +13,13 @@ class ReserveActivityService
             ->latest()
             ->get();
     }
+
+    public function getAllReservations()
+    {
+        return ReservationActivity::with(['activity', 'user'])
+            ->orderBy('reservation_date', 'desc')
+            ->get();
+    }
     public function createReservation(array $data): ReserveActivitie
     {
         return ReserveActivitie::create($data);
