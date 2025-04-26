@@ -40,4 +40,20 @@ class ReserveActivityController extends Controller
 
         return redirect()->route('client.activities.my.activities');
     }
+
+        public function destroy($reservationId)
+    {
+        $userId = auth()->id();
+        
+        $deleted = $this->reserveActivityService->deleteReservation($reservationId, $userId);
+
+        if ($deleted) {
+            return redirect()->route('client.activities.my.activities')
+            ->with('success', 'Réservation annulée avec succès.');
+        }
+
+        return redirect()->route('client.activities.my.activities')
+        ->with('error', 'Impossible d\'annuler cette réservation.');
+    }
+
 }

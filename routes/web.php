@@ -71,6 +71,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
         Route::post('/activities/reserve', [ReserveActivityController::class, 'store'])->name('activities.reserve.store');
         Route::get('/my-activities', [ReserveActivityController::class, 'index'])->name('activities.my.activities'); 
+        Route::delete('/my-activites/{id}', [ReserveActivityController::class, 'destroy'])->name('activities.cancel');
 
         // Routes pour les chambres et profil
         Route::get('/home', [RoomController::class, 'home'])->name('home');

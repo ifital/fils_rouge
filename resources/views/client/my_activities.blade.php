@@ -72,10 +72,10 @@
 
                         <!-- Cancel Button -->
                         <div class="w-full sm:w-auto flex justify-end">
-                            <form action="#" method="POST" onsubmit="return confirm('Are you sure you want to cancel this reservation?')">
+                            <form action="{{ route('client.activities.cancel', $reservation->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to cancel this reservation?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="bg-black text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-gray-800 transition duration-200 w-full sm:w-auto" disabled>
+                                <button type="submit" class="bg-black text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-gray-800 transition duration-200 w-full sm:w-auto">
                                     Cancel Reservation
                                 </button>
                             </form>
