@@ -51,6 +51,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reservations', [EmployeeReservationController::class, 'index'])->name('reservations.index');
         Route::put('/reservations/{reservation}', [EmployeeReservationController::class, 'update'])->name('reservations.update');
         Route::patch('/reservations/{reservation}/cancel', [EmployeeReservationController::class, 'cancel'])->name('reservations.cancel');
+
+        Route::get('/reservations/activities', [ReserveActivityController::class, 'managerIndex'])->name('reservations.activities');
+        Route::delete('/reservations/activities/{id}', [ReserveActivityController::class, 'managerDestroy'])->name('reservations.activities.destroy');
+        Route::put('/reservations/activities/{id}', [ReserveActivityController::class, 'update'])->name('reservations.activities.update');
     });
 
     Route::prefix('admin')->name('admin.')->group(function () {
