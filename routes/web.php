@@ -10,6 +10,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ReserveActivityController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployeeReservationController;
+
 
 
 

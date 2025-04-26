@@ -34,7 +34,7 @@ class EmployeeReservationController extends Controller
         $reservations = $query->paginate(10);
         $rooms = Room::all();
         
-        return view('employee.reservation_dashboard', compact('reservations', 'rooms'));
+        return view('employee.reservations', compact('reservations', 'rooms'));
     }
 
     /**
