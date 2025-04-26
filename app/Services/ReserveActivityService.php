@@ -30,4 +30,31 @@ class ReserveActivityService
 
         return false;
     }
+
+    public function deleteReservationByManager($reservationId)
+    {
+        $reservation = ReservationActivity::find($reservationId);
+        
+        if ($reservation) {
+            return $reservation->delete();
+        }
+        
+        return false;
+    }
+    
+    public function updateReservation($reservationId, array $data)
+    {
+        $reservation = ReservationActivity::find($reservationId);
+        
+        if ($reservation) {
+            if (isset($data['number_of_people']) && $data['number_of_people'] != $reservation->number_of_people) {
+                $activity = $reservation->activity;
+                $data['price'] = $activity->price * $data['number_of_people'];
+            }
+            
+            return $reservation->update($data);
+        }
+        
+        return false;
+    }
 }
