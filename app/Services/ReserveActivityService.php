@@ -16,7 +16,7 @@ class ReserveActivityService
 
     public function getAllReservations()
     {
-        return ReservationActivity::with(['activity', 'user'])
+        return ReserveActivitie::with(['activity', 'user'])
             ->orderBy('reservation_date', 'desc')
             ->get();
     }
