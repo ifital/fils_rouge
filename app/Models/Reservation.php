@@ -47,4 +47,9 @@ class Reservation extends Model
     {
         return $this->payment && $this->payment->status === 'paid';
     }
+
+    public function getDays()
+    {
+        return $this->check_in->diffInDays($this->check_out);
+    }
 }
