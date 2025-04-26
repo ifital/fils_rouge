@@ -17,4 +17,17 @@ class ReserveActivityService
     {
         return ReserveActivitie::create($data);
     }
+
+    public function deleteReservation(int $reservationId, int $userId): bool
+    {
+        $reservation = ReserveActivitie::where('id', $reservationId)
+            ->where('user_id', $userId)
+            ->first();
+
+        if ($reservation) {
+            return $reservation->delete();
+        }
+
+        return false;
+    }
 }
