@@ -29,7 +29,6 @@
             <a href="#" class="hover:text-yellow-400 transition duration-200">Home</a>
             <a href="#" class="hover:text-yellow-400 transition duration-200">the rooms</a>
             <a href="#" class="hover:text-yellow-400 transition duration-200">activities</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">Contact</a>
         </div>
 
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
@@ -54,7 +53,6 @@
             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Home</a>
             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">the rooms</a>
             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">activities</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-400 hover:bg-gray-700">Contact</a>
          </div>
     </div>
 </header>
@@ -84,60 +82,65 @@
 
             <!-- Right Section: User Details -->
              <!-- Takes full width on small, remaining width on medium+ --> 
-             <form action="{{ route('client.profile.update') }}" method="POST" class="flex-1 w-full md:w-3/4 space-y-5">
-                @csrf
-                @method('PUT') {{-- ou POST selon ta route --}}
-                
-                <!-- Nom et prénom -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">Prénom :</label>
-                        <input type="text" id="prenom" name="name" value="{{ $user->name }}"
-                               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="nom">Nom :</label>
-                        <input type="text" id="nom" name="last_name" value="{{ strtoupper($user->name) }}"
-                               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                    </div>
-                </div>
-            
-                <!-- Email -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email :</label>
-                    <input type="email" id="email" name="email" value="{{ $user->email }}"
-                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                </div>
-            
-                <!-- Mot de passe (optionnel) -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Nouveau mot de passe :</label>
-                    <input type="password" id="password" name="password" placeholder="Laisse vide pour ne pas changer"
-                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                </div>
-            
-                <!-- Téléphone -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Numéro de téléphone :</label>
-                    <input type="text" id="phone" name="phone" value="{{ $user->phone }}"
-                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                </div>
-            
-                <!-- Nationalité -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationalité :</label>
-                    <input type="text" id="nationality" name="nationality" value="{{ $user->nationality ?? '' }}"
-                           class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                </div>
-            
-                <!-- Bouton Enregistrer -->
-                <div class="pt-4 md:pt-6 text-center md:text-left">
-                    <button type="submit"
-                            class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
-                        Save Modifications
-                    </button>
-                </div>
-            </form>
+             <!-- ... le début du fichier reste identique ... -->
+
+<!-- Right Section: User Details -->
+<!-- Takes full width on small, remaining width on medium+ --> 
+<form action="{{ route('client.profile.update') }}" method="POST" class="flex-1 w-full md:w-3/4 space-y-5">
+    @csrf
+    @method('PUT') {{-- or POST depending on your route --}}
+    
+    <!-- First and Last Name -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">First Name:</label>
+            <input type="text" id="prenom" name="name" value="{{ $user->name }}"
+                   class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1" for="nom">Last Name:</label>
+            <input type="text" id="nom" name="last_name" value="{{ strtoupper($user->name) }}"
+                   class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ $user->email }}"
+               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+    </div>
+
+    <!-- Password (optional) -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="password">New Password:</label>
+        <input type="password" id="password" name="password" placeholder="Leave blank to keep current"
+               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+    </div>
+
+    <!-- Phone -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" value="{{ $user->phone }}"
+               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+    </div>
+
+    <!-- Nationality -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" value="{{ $user->nationality ?? '' }}"
+               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+    </div>
+
+    <!-- Save Button -->
+    <div class="pt-4 md:pt-6 text-center md:text-left">
+        <button type="submit"
+                class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
+            Save Changes
+        </button>
+    </div>
+</form>
+
                      
 
         </div>

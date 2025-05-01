@@ -108,16 +108,6 @@ class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-black text-white sh
       </a>
     </li>
     
-    <!-- Profile -->
-    <li>
-      <a href="{{ Route('client.profile.show') }}"
-        class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400 {{ request()->routeIs('client.profile.show') ? 'text-yellow-400 bg-gray-900 border-l-4 border-yellow-400' : '' }}">
-        <span class="sidebar-icon mr-3">
-          <i class="fas fa-user"></i>
-        </span>
-        <span>My Profile</span>
-      </a>
-    </li>
   </ul>
 </nav>
 
