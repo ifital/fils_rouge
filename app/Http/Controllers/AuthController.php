@@ -40,7 +40,7 @@ class AuthController extends Controller
 
             return match ($user->role) {
                 'admin' => redirect()->route('admin.statistics'),
-                'employee' => redirect()->route('employee.dashboard'),
+                'employee' => redirect()->route('employee.users.index'),
                 default => redirect()->route('client.home'),
             };
         }
