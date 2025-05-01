@@ -249,7 +249,7 @@
                         <label class="block text-sm font-medium text-gray-700">Role</label>
                         <select id="editUserRole" name="role" class="mt-1 p-2 w-full border rounded-md" required>
                             <option value="admin">Admin</option>
-                            <option value="manager">Manager</option>
+                            <option value="employee">Manager</option>
                             <option value="client">Client</option>
                         </select>
                     </div>
