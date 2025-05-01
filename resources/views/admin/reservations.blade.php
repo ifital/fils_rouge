@@ -132,14 +132,6 @@
                     <li>
                         <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
                             <span class="sidebar-icon mr-3">
-                                <i class="fas fa-users"></i>
-                            </span>
-                            <span>Clients</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-                            <span class="sidebar-icon mr-3">
                                 <i class="fas fa-cog"></i>
                             </span>
                             <span>Settings</span>
