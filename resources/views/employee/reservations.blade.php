@@ -59,99 +59,78 @@
     <!-- Sidebar - Mobile Overlay -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden hidden"></div>
 
-    <!-- Sidebar -->
-    <aside id="sidebar"
-      class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-black text-white shadow-lg transform -translate-x-full transition-transform z-40 overflow-y-auto md:translate-x-0">
-      <!-- User Info -->
-      <div class="p-4 border-b border-gray-800">
-        <div class="flex items-center">
-          <div>
-            <p class="font-medium text-white">Manager User</p>
-            <p class="text-sm text-gray-400">Manager</p>
-          </div>
-        </div>
-      </div>
+   <!-- Sidebar -->
+<aside id="sidebar"
+class="fixed md:sticky top-14 h-[calc(100vh-3.5rem)] w-64 bg-black text-white shadow-lg transform -translate-x-full transition-transform z-40 overflow-y-auto md:translate-x-0">
+<!-- User Info -->
+<div class="p-4 border-b border-gray-800">
+  <div class="flex items-center">
+    <div>
+      <p class="font-medium text-white">Employee User</p>
+      <p class="text-sm text-gray-400">Manager</p>
+    </div>
+  </div>
+</div>
 
-      <!-- Navigation -->
-      <nav class="py-4">
-        <ul class="space-y-1">
-          <li>
-            <a href="{{ Route('admin.statistics') }}"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-tachometer-alt"></i>
-              </span>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Route('admin.rooms.index') }}"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-bed"></i>
-              </span>
-              <span>Rooms</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Route('admin.activities.index') }}"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-umbrella-beach"></i>
-              </span>
-              <span>Activities</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Route('admin.payments') }}"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-credit-card"></i>
-              </span>
-              <span>Payments</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Route('employee.reservations.index') }}"
-              class="flex items-center px-4 py-3 text-yellow-400 bg-gray-900 border-l-4 border-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-calendar-alt"></i>
-              </span>
-              <span>Reservations</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Route('employee.users.index') }}"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-users"></i>
-              </span>
-              <span>Users</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-              class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400">
-              <span class="sidebar-icon mr-3">
-                <i class="fas fa-cog"></i>
-              </span>
-              <span>Settings</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<!-- Navigation -->
+<nav class="py-4">
+  <ul class="space-y-1">
+    <!-- Users Management -->
+    <li>
+      <a href="{{ Route('employee.users.index') }}"
+        class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400 {{ request()->routeIs('employee.users.index') ? 'text-yellow-400 bg-gray-900 border-l-4 border-yellow-400' : '' }}">
+        <span class="sidebar-icon mr-3">
+          <i class="fas fa-users"></i>
+        </span>
+        <span>Users</span>
+      </a>
+    </li>
+    
+    <!-- Room Reservations -->
+    <li>
+      <a href="{{ Route('employee.reservations.index') }}"
+        class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400 {{ request()->routeIs('employee.reservations.index') ? 'text-yellow-400 bg-gray-900 border-l-4 border-yellow-400' : '' }}">
+        <span class="sidebar-icon mr-3">
+          <i class="fas fa-bed"></i>
+        </span>
+        <span>Room Reservations</span>
+      </a>
+    </li>
+    
+    <!-- Activity Reservations -->
+    <li>
+      <a href="{{ Route('employee.reservations.activities') }}"
+        class="flex items-center px-4 py-3 {{ request()->routeIs('employee.reservations.activities') ? 'text-yellow-400 bg-gray-900 border-l-4 border-yellow-400' : 'text-white hover:bg-gray-800 hover:text-yellow-400' }}">
+        <span class="sidebar-icon mr-3">
+          <i class="fas fa-umbrella-beach"></i>
+        </span>
+        <span>Activity Reservations</span>
+      </a>
+    </li>
+    
+    <!-- Profile -->
+    <li>
+      <a href="{{ Route('client.profile.show') }}"
+        class="flex items-center px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400 {{ request()->routeIs('client.profile.show') ? 'text-yellow-400 bg-gray-900 border-l-4 border-yellow-400' : '' }}">
+        <span class="sidebar-icon mr-3">
+          <i class="fas fa-user"></i>
+        </span>
+        <span>My Profile</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
-      <!-- Logout Button -->
-      <div class="p-4 border-t border-gray-800">
-        <a href="{{ Route('logout') }}" class="flex items-center text-gray-400 hover:text-yellow-400">
-          <span class="sidebar-icon mr-3">
-            <i class="fas fa-sign-out-alt"></i>
-          </span>
-          <span>Logout</span>
-        </a>
-      </div>
-    </aside>
-
+<!-- Logout Button -->
+<div class="p-4 border-t border-gray-800 mt-auto">
+  <a href="{{ Route('logout') }}" class="flex items-center text-gray-400 hover:text-yellow-400">
+    <span class="sidebar-icon mr-3">
+      <i class="fas fa-sign-out-alt"></i>
+    </span>
+    <span>Logout</span>
+  </a>
+</div>
+</aside>
     <!-- Main Content -->
     <main class="flex-1 p-4 md:p-6 w-full overflow-x-hidden">
         <div class="max-w-7xl mx-auto">
