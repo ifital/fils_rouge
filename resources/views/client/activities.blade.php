@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All The Activities (Responsive)</title>
+    <title>All The Activities </title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -19,7 +19,7 @@
             <!-- Desktop Navigation Links (Hidden on Mobile) -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="{{ Route('client.home') }}" class="hover:text-yellow-400 transition duration-200">home</a>
-                <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
+                <a href="{{ Route('client.activities.my.activities') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
                 <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
             </div>
             <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <!-- Image -->
-                    <div class="w-full md:w-1/2 order-1 md:order-2">
+                    <div class="w-full md:w-1/2 order-1 md:order-2 ">
                         <img src="{{ asset('storage/' . $activity->images) }}" alt="{{ $activity->name }}" class="w-full h-auto object-cover rounded-lg shadow-md">
                     </div>
                 </div>

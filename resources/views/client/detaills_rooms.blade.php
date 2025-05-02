@@ -20,7 +20,7 @@
             <!-- Desktop Navigation Links (Hidden on Mobile) -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="{{ Route('client.home') }}" class="hover:text-yellow-400 transition duration-200">home</a>
-                <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
+                <a href="{{ Route('client.activities.my.activities') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
                 <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
             </div>
             <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->

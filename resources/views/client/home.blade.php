@@ -35,7 +35,7 @@
         <div class="hidden md:flex space-x-8 items-center">
             <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
             <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">activities</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">my activities</a>
+            <a href="{{ Route('client.activities.my.activities') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
         </div>
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
         <div class="flex space-x-4 items-center">

@@ -18,7 +18,6 @@
             <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Home</a>
             <a href="{{ route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Rooms</a>
             <a href="{{ route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">Activities</a>
-            <a href="{{ route('contact') }}" class="hover:text-yellow-400 transition duration-200">Contact</a>
         </div>
 
         <div class="flex space-x-4 items-center">

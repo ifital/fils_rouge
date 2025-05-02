@@ -26,9 +26,9 @@
 
         <!-- Desktop Navigation Links (Hidden on Mobile) -->
         <div class="hidden md:flex space-x-8 items-center">
-            <a href="#" class="hover:text-yellow-400 transition duration-200">Home</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">the rooms</a>
-            <a href="#" class="hover:text-yellow-400 transition duration-200">activities</a>
+            <a href="{{ Route('client.home') }}" class="hover:text-yellow-400 transition duration-200">Home</a>
+            <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my reservations</a>
+            <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">activities</a>
         </div>
 
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
