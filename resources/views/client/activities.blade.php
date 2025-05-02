@@ -61,13 +61,13 @@
         </h1>
 
         <!-- Activities Grid/List -->
-        <div class="space-y-16">
+        <div class="">
 
             @foreach($activities as $index => $activity)
                 <!-- Activity {{ $index + 1 }}: {{ $activity->name }} -->
-                <div class="flex flex-col md:flex-{{ $index % 2 == 0 ? 'row' : 'row-reverse' }} items-center gap-8 lg:gap-12">
+                <div class="flex flex-col md:flex-{{ $index % 2 == 0 ? 'row' : 'row-reverse' }} h-80 overflow-hidden">
                     <!-- Text Content -->
-                    <div class="w-full md:w-1/2 order-2 md:order-1 bg-gray-50 p-6 lg:p-8 rounded-lg shadow-sm">
+                    <div class="w-full md:w-1/2 order-2 md:order-1 bg-gray-50 p-6 lg:p-8 shadow-sm">
                         <h2 class="text-2xl font-bold text-gray-900 mb-3">{{ $activity->name }}</h2>
                         <p class="text-gray-500 text-sm mb-6 leading-relaxed">
                             {{ $activity->description }}
@@ -99,7 +99,7 @@
                     </div>
                     <!-- Image -->
                     <div class="w-full md:w-1/2 order-1 md:order-2 ">
-                        <img src="{{ asset('storage/' . $activity->images) }}" alt="{{ $activity->name }}" class="w-full h-auto object-cover rounded-lg shadow-md">
+                        <img src="{{ asset('storage/' . $activity->images) }}" alt="{{ $activity->name }}" class="w-full h-auto object-cover shadow-md">
                     </div>
                 </div>
             @endforeach
