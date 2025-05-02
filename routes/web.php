@@ -61,6 +61,8 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/reservations/activities/{id}', [ReserveActivityController::class, 'update'])->name('reservations.activities.update');
 
         Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+        Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');
+
 
     });
 

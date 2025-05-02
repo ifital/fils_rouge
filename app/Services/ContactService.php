@@ -1,11 +1,12 @@
-<?php
+<?php 
+
 namespace App\Services;
 
 use App\Models\Contact;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
-class ContactService
+class ContactService 
 {
     public function store(array $data): Contact
     {
@@ -15,16 +16,22 @@ class ContactService
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
-
+        
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }
-
+        
         return Contact::create($validator->validated());
     }
-
+    
     public function allPaginated(int $perPage = 10)
     {
         return Contact::latest()->paginate($perPage);
+    }
+    
+    public function destroy(int $id): bool
+    {
+        $contact = Contact::findOrFail($id);
+        return $contact->delete();
     }
 }

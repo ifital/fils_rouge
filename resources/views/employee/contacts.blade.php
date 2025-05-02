@@ -192,7 +192,7 @@
                       View
                     </button>
                     <!-- Delete Button -->
-                    <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this message?');">
+                    <form action="{{ route('employee.contacts.destroy', $contact->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this message?');">
                       @csrf
                       @method('DELETE')
                       <button type="submit" 

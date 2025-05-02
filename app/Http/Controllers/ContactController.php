@@ -32,4 +32,17 @@ class ContactController extends Controller
         $contacts = $this->contactService->allPaginated(10);
         return view('employee.contacts', compact('contacts'));
     }
+    
+   
+    public function destroy($id)
+    {
+        try {
+            $this->contactService->destroy($id);
+            return redirect()->route('employee.contacts')
+                ->with('success', 'Contact message deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('employee.contacts')
+                ->with('error', 'Failed to delete contact message.');
+        }
+    }
 }
