@@ -128,7 +128,7 @@
             <div class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-lg">
                 <!-- Image -->
                 <div class="md:w-1/2">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wZMSCTTLnSH5d8ShivK9eaMF3n1swX.png" alt="Panoramic terrace view" class="w-full h-full object-cover">
+                    <img src="/images/9AYN30jsQbFH0gU42KXctjPYjw.jpg" alt="Panoramic terrace view" class="w-full h-full object-cover">
                 </div>
                 
                 <!-- Amenities List -->
@@ -187,9 +187,9 @@
       <div class="flex flex-col md:flex-row gap-6">
         <div class="md:w-1/2">
           <img 
-            src="https://placehold.co/500x300" 
+            src="/images/6QW9hA50CkfTp2Sru6k8yHbsEjY.jpg" 
             alt="Fully equipped kitchen" 
-            class="w-full h-auto rounded"
+            class="w-full h-80 rounded "
           />
         </div>
         <div class="md:w-1/2">
