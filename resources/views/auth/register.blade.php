@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .signup-container {
-            background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-image: url('images/1734444481738.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -45,7 +45,7 @@
                 logo
             </div>
             
-            <div class="mt-12 text-center">
+            <div class="mt-6 text-center">
                 <h2 class="text-3xl font-bold text-white mb-2">sign up</h2>
                 <p class="text-white mb-6">If you have account? <a href="{{ route('login') }}" class="text-yellow-300 hover:underline">Login</a></p>
             </div>
@@ -60,43 +60,42 @@
                 </div>
             @endif
 
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST" class="space-y-4 mt-6 ">
                 @csrf
-
-                <div class="mb-2">
-                    <label for="name" class="block label">first name:</label>
+            
+                <div>
+                    <label for="name" class="block label font-bold">First Name:</label>
                     <input type="text" name="name" id="name" class="input-field" required>
                 </div>
-
-                <div class="mb-2">
-                    <label for="email" class="block label">Email:</label>
+            
+                <div>
+                    <label for="email" class="block label font-bold">Email:</label>
                     <input type="email" name="email" id="email" class="input-field" required>
                 </div>
-
-                <div class="mb-2">
-                    <label for="password" class="block label">password:</label>
-                    <input type="password" name="password" id="password" class="input-field" required>
-                </div>
-
-                <div class="mb-2">
-                    <label for="password_confirmation" class="block label">confirm password:</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="input-field" required>
-                </div>
-
-                <div class="mb-2">
-                    <label for="phone" class="block label">number phone:</label>
+                                <div>
+                    <label for="phone" class="block label font-bold">Phone Number:</label>
                     <input type="text" name="phone" id="phone" class="input-field" required>
                 </div>
-
-                <!-- Le champ nationalité peut rester caché car non présent dans l'image -->
+                <div class="flex gap-1 ">
+                <div>
+                    <label for="password" class="block label font-bold">Password:</label>
+                    <input type="password" name="password" id="password" class="input-field" required>
+                </div>
+            
+                <div>
+                    <label for="password_confirmation" class="block label font-bold">Confirm Password:</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="input-field" required>
+                </div>
+                </div>
+            
                 <input type="hidden" name="nationality" id="nationality" value="">
-                
-                <div class="flex justify-center mt-6">
+            
+                <div class="flex justify-center pt-4">
                     <button type="submit" class="signup-button">
-                        S'inscrire
+                        Sign Up
                     </button>
                 </div>
-            </form>
+            </form>            
         </div>
     </div>
 </body>

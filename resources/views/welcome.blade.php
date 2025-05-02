@@ -52,9 +52,9 @@
     </div>
 </header>
     <!-- Section 1: Why Stay -->
-    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center bg-yellow-50" style="background-image: url('https://picsum.photos/seed/wave/1600/900');">
+    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center bg-yellow-50" style="background-image: url('images/WhatsApp-Image-2024-12-07-at-3.0.jpg');">
         <!-- Overlay for text readability on background -->
-        <div class="absolute inset-0 bg-gradient-to-t from-yellow-100 via-yellow-50 to-transparent opacity-90"></div>
+        <div class="absolute inset-0  to-transparent"></div>
         <div class="relative z-10 container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">WHY STAY BLUE WAVES HOUSE?</h2>
             <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -72,22 +72,22 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="overflow-hidden rounded-lg shadow-md">
                     <!-- Replace with actual image -->
-                    <img src="https://picsum.photos/seed/house1/600/400" alt="Kekai Surf House Interior 1" class="w-full h-64 object-cover">
+                    <img src="images/6mfE7oGF7sSM6B3Caxg6cVJBxlU.webp" alt="Kekai Surf House Interior 1" class="w-full h-64 object-cover">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow-md">
                     <!-- Replace with actual image -->
-                    <img src="https://picsum.photos/seed/house2/600/400" alt="Kekai Surf House Interior 2" class="w-full h-64 object-cover">
+                    <img src="images/6QW9hA50CkfTp2Sru6k8yHbsEjY.jpg" alt="Kekai Surf House Interior 2" class="w-full h-64 object-cover">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow-md">
                     <!-- Replace with actual image -->
-                    <img src="https://picsum.photos/seed/house3/600/400" alt="Kekai Surf House Interior 3" class="w-full h-64 object-cover">
+                    <img src="images/609948284.jpg" alt="Kekai Surf House Interior 3" class="w-full h-64 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section 2: Home Essentials -->
-    <section class="relative hero-bg-image py-24 md:py-32 text-center text-white" style="background-image: url('https://picsum.photos/seed/surfer/1600/900');">
+    <section class="relative hero-bg-image py-24 md:py-32 text-center text-white" style="background-image: url('images/photo-kekai-surf-house-hostel-taghazout-45.jpg');">
         <!-- Dark overlay -->
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 container mx-auto px-6">
@@ -102,13 +102,12 @@
     </section>
 
     <!-- Section 3: Coworking Fiber Optic Wifi -->
-    <section class="py-16 bg-white">
+    <section class="py-10 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">COWORKING FIBER OPTIC WIFI</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <!-- Replace with actual Fiber Optic image -->
-                    <img src="https://picsum.photos/seed/wifi/600/400" alt="Fiber Optic Wifi Promotion" class="rounded-lg shadow-lg mx-auto">
+                    <img src="images/B4LozTXkS2ia0ZPeixtrSGABc.avif" alt="Fiber Optic Wifi Promotion" class="rounded-lg shadow-lg mx-auto ">
                 </div>
                 <div class="text-gray-700 leading-relaxed">
                     <p class="mb-4">
@@ -140,7 +139,7 @@
                 </div>
                 <div>
                     <!-- Replace with actual map image -->
-                    <img src="https://picsum.photos/seed/map/600/400" alt="Map showing Kekai Surf House location" class="rounded-lg shadow-lg mx-auto">
+                    <img src="images/Tamraght-Main-Road-to-SCT-Taghaz.jpg" alt="Map showing Kekai Surf House location" class="rounded-lg shadow-lg mx-auto">
                 </div>
             </div>
         </div>

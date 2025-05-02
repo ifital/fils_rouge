@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .login-container {
-            background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-image: url('images/1734444481738.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
