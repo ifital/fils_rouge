@@ -55,12 +55,12 @@
 </header>
 
     <!-- Hero Section with Contact Title -->
-    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('https://picsum.photos/seed/contact/1600/900');">
+    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('images/1734444212989.jpg');">
         <!-- Overlay for text readability on background -->
-        <div class="absolute inset-0 bg-gradient-to-t from-yellow-100 via-yellow-50 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-100 via-black-50 to-transparent opacity-90"></div>
         <div class="relative z-10 container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">CONTACT BLUE WAVES HOUSE</h2>
-            <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed font-bold">
                 Have questions or ready to book your stay? We're here to help you plan your perfect surf getaway in Taghazout.
                 Reach out to us using the form below or through our contact information.
             </p>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-800">Phone</p>
-                                    <p class="text-gray-600">+212 6XX-XXX-XXX</p>
+                                    <p class="text-gray-600">+212 625-426-809</p>
                                 </div>
                             </div>
                             
@@ -151,17 +151,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Map -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Location</h3>
-                        <div class="rounded-lg overflow-hidden shadow-md">
-                            <!-- Replace with actual map embed or image -->
-                            <img src="https://picsum.photos/seed/map/600/400" alt="Map showing Blue Waves House location" class="w-full h-64 object-cover">
-                        </div>
-                    </div>
-                    
+                    </div>  
                     <!-- Social Media Links -->
                     <div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
@@ -244,7 +234,7 @@
                 <p class="mb-2">Email us:</p>
                 <a href="mailto:kekaisurf7@gmail.com" class="hover:text-yellow-400 transition duration-300">kekaisurf7@gmail.com</a>
                 <p class="mt-2 mb-2">Call us:</p>
-                <a href="tel:+212600000000" class="hover:text-yellow-400 transition duration-300">+212 6XX-XXX-XXX</a>
+                <a href="tel:+212600000000" class="hover:text-yellow-400 transition duration-300">+212 625-426-809</a>
             </div>
 </body>
 </html>

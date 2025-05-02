@@ -56,12 +56,12 @@
 </header>
 
     <!-- Hero Section -->
-    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('https://picsum.photos/seed/aboutus/1600/900');">
+    <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('images/1734444212989.jpg');">
         <!-- Overlay for text readability on background -->
-        <div class="absolute inset-0 bg-gradient-to-t from-yellow-100 via-yellow-50 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 "></div>
         <div class="relative z-10 container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ABOUT BLUE WAVES HOUSE</h2>
-            <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">ABOUT BLUE WAVES HOUSE</h2>
+            <p class="text-white max-w-3xl mx-auto leading-relaxed font-bold">
                 Discover our story, our passion for surf culture, and our commitment to creating unforgettable experiences in the heart of Taghazout.
             </p>
         </div>
@@ -72,7 +72,7 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="https://picsum.photos/seed/story/600/400" alt="Blue Waves House Story" class="rounded-lg shadow-lg">
+                    <img src="images/1734444280212.jpg" alt="Blue Waves House Story" class="rounded-lg shadow-lg">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
@@ -138,97 +138,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Meet Our Team -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="text-center">
-                    <div class="mb-4 relative">
-                        <img src="https://picsum.photos/seed/member1/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
-                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800">Hamid</h3>
-                    <p class="text-gray-600">Founder & Surf Instructor</p>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="text-center">
-                    <div class="mb-4 relative">
-                        <img src="https://picsum.photos/seed/member2/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
-                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800">Fatima</h3>
-                    <p class="text-gray-600">Hospitality Manager</p>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="text-center">
-                    <div class="mb-4 relative">
-                        <img src="https://picsum.photos/seed/member3/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
-                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800">Omar</h3>
-                    <p class="text-gray-600">Surf Guide</p>
-                </div>
-
-                <!-- Team Member 4 -->
-                <div class="text-center">
-                    <div class="mb-4 relative">
-                        <img src="https://picsum.photos/seed/member4/300/300" alt="Team Member" class="w-40 h-40 rounded-full mx-auto object-cover">
-                        <div class="absolute bottom-0 right-1/4 bg-yellow-400 p-2 rounded-full">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800">Sarah</h3>
-                    <p class="text-gray-600">Chef & Culinary Director</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="relative hero-bg-image py-16" style="background-image: url('https://picsum.photos/seed/testimonial/1600/900');">
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="relative z-10 container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-white mb-12">What Our Guests Say</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-white bg-opacity-10 p-8 rounded-lg border border-white border-opacity-20 text-white text-center">
-                    <svg class="w-12 h-12 text-yellow-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                    </svg>
-                    <p class="italic text-lg mb-6">
-                        "Blue Waves House is more than just a place to stay - it's a community, a family. I came for the surf but stayed for the incredible people and atmosphere. The team goes above and beyond to create a truly special experience."
-                    </p>
-                    <div class="flex items-center justify-center">
-                        <img src="https://picsum.photos/seed/testimonial1/100/100" alt="Guest Testimonial" class="w-12 h-12 rounded-full mr-4 object-cover">
-                        <div class="text-left">
-                            <p class="font-semibold">Markus Henning</p>
-                            <p class="text-sm text-gray-300">Berlin, Germany</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Our Values -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
@@ -303,25 +212,6 @@
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-yellow-400">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-black mb-6">Ready to Experience Blue Waves?</h2>
-            <p class="text-black text-lg max-w-3xl mx-auto mb-8">
-                Join us for an unforgettable stay in Taghazout. Whether you're a surf enthusiast, digital nomad, or adventure seeker, we have the perfect space for you.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="{{ route('login') }}" class="bg-black text-white px-6 py-3 rounded font-semibold hover:bg-gray-800 transition duration-300">
-                    Book Your Stay
-                </a>
-                <a href="{{ route('contact') }}" class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-100 transition duration-300">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-12">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">

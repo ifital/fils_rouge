@@ -57,9 +57,8 @@
         <div class="absolute inset-0  to-transparent"></div>
         <div class="relative z-10 container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">WHY STAY BLUE WAVES HOUSE?</h2>
-            <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Découvrez Taghazout depuis  BLUE WAVES house, votre havre de surf chaleureux. Profitez de chambres confortables et d’une terrasse panoramique sur les vagues. Un espace dédié pour votre matériel est à disposition. Vivez une expérience unique dans une ambiance conviviale. Réservez dès maintenant !
-            </p>
+            <p class="text-white max-w-3xl mx-auto leading-relaxed font-bold">
+                Discover Taghazout from the BLUE WAVES house, your welcoming surf haven. Enjoy comfortable rooms and a panoramic terrace overlooking the waves. A dedicated area for your equipment is available. Enjoy a unique experience in a friendly atmosphere. Book now!            </p>
             <a href="#" class="mt-8 inline-block bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-500 transition duration-300">
                 See The House
             </a>
@@ -102,12 +101,12 @@
     </section>
 
     <!-- Section 3: Coworking Fiber Optic Wifi -->
-    <section class="py-10 bg-white">
+    <section class="my-10 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">COWORKING FIBER OPTIC WIFI</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <img src="images/B4LozTXkS2ia0ZPeixtrSGABc.avif" alt="Fiber Optic Wifi Promotion" class="rounded-lg shadow-lg mx-auto ">
+                    <img src="images/B4LozTXkS2ia0ZPeixtrSGABc.avif" alt="Fiber Optic Wifi Promotion" class="rounded-lg shadow-lg mx-auto max-h-80 object-cover">
                 </div>
                 <div class="text-gray-700 leading-relaxed">
                     <p class="mb-4">
