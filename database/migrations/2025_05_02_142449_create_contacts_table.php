@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dashboard_stats', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->decimal('total_revenue', 10, 2)->default(0); 
-            $table->integer('total_reservations')->default(0); 
-            $table->decimal('occupancy_rate', 5, 2)->default(0); 
-            $table->timestamp('last_update')->useCurrent(); 
+            $table->string('name');         
+            $table->string('email');        
+            $table->string('subject');      
+            $table->text('message');       
+            $table->timestamps();           
+
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dashboard_stats');
+        Schema::dropIfExists('contacts');
     }
 };
