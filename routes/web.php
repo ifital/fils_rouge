@@ -11,6 +11,8 @@ use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ReserveActivityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeeReservationController;
+use App\Http\Controllers\ContactController;
+
 
 
 
@@ -31,6 +33,8 @@ use App\Http\Controllers\EmployeeReservationController;
 Route::get('/', fn () => view('welcome'))->name('home');
 Route::get('/contact', fn () => view('contact_us'))->name('contact');
 Route::get('/about', fn () => view('about_us'))->name('about');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 
 // Authentification
 Route::controller(AuthController::class)->group(function () {
@@ -55,6 +59,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reservations/activities', [ReserveActivityController::class, 'managerIndex'])->name('reservations.activities');
         Route::delete('/reservations/activities/{id}', [ReserveActivityController::class, 'managerDestroy'])->name('reservations.activities.destroy');
         Route::put('/reservations/activities/{id}', [ReserveActivityController::class, 'update'])->name('reservations.activities.update');
+
+        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+
     });
 
     Route::prefix('admin')->name('admin.')->group(function () {
