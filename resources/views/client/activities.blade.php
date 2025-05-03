@@ -69,11 +69,11 @@
                     <!-- Text Content -->
                     <div class="w-full md:w-1/2 order-2 md:order-1 bg-gray-50 p-6 lg:p-8 shadow-sm">
                         <h2 class="text-2xl font-bold text-gray-900 mb-3">{{ $activity->name }}</h2>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        <p class="text-gray-500 text-sm mb-6 leading-relaxed font-bold">
                             {{ $activity->description }}
                         </p>
                         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between">
-                            <ul class="space-y-2 text-sm mb-4 sm:mb-0">
+                            <ul class="space-y-2 text-b mb-4 sm:mb-0">
                                 <!-- Price -->
                                 <li class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-black flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
@@ -92,7 +92,7 @@
                                 </li>
                                 @endif
                             </ul>
-                            <a href="{{ route('client.activities.detaills', $activity->id) }}" class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold text-xs hover:bg-yellow-500 transition duration-200 whitespace-nowrap mt-4 sm:mt-0">
+                            <a href="{{ route('client.activities.detaills', $activity->id) }}" class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-xs hover:bg-yellow-500 transition duration-200 whitespace-nowrap mt-4 sm:mt-0">
                                 reserve now
                             </a>
                         </div>
@@ -112,49 +112,133 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 text-gray-700 mt-16 pt-12 pb-8">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Quick Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-3 text-gray-800">Quick Link</h4>
-                <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                    <a href="#" class="hover:text-black hover:underline">Home</a>
-                    <a href="#" class="hover:text-black hover:underline">The House The</a>
-                    <a href="#" class="hover:text-black hover:underline">Surf</a>
-                    <a href="#" class="hover:text-black hover:underline">Activities</a>
-                    <a href="#" class="hover:text-black hover:underline">Groups</a>
-                    <a href="#" class="hover:text-black hover:underline">Blogs</a>
-                    <a href="#" class="hover:text-black hover:underline">Contact</a>
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="container mx-auto px-4">
+            <!-- Footer Navigation Links -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quick Links Column -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                The House
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Surf
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Services Column -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Accommodations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Coworking
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Surf Lessons
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400 transition duration-300 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Equipment Rental
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Taghazout, 500m from Beach, Morocco</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:kekaisurf7@gmail.com" class="hover:text-yellow-400 transition duration-300">kekaisurf7@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>+212 600 000 000</span>
+                        </li>
+                        <li class="flex items-start">
+                            <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Contact Us -->
-            <div>
-                <h4 class="text-lg font-semibold mb-3 text-gray-800">contacte us</h4>
-                <p class="text-sm font-semibold">Email us</p>
-                <a href="mailto:bluewaves777@gmail.com" class="text-sm hover:text-black hover:underline break-all">bluewaves777@gmail.com</a>
-            </div>
-
-            <!-- Follow Us -->
-            <div>
-                <h4 class="text-lg font-semibold mb-3 text-gray-800">follow us</h4>
-                <div class="flex space-x-4">
-                    <!-- Replace with actual icons (e.g., Font Awesome, Heroicons SVG) -->
-                    <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-black">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-black">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.01 3.808.055 1.07.048 1.68.168 2.176.352.584.22 1.002.515 1.44.953.438.438.734.856.954 1.44.184.496.304 1.106.352 2.175.045 1.024.055 1.378.055 3.808s-.01 2.784-.055 3.808c-.048 1.07-.168 1.68-.352 2.176a3.88 3.88 0 01-.954 1.44 3.88 3.88 0 01-1.44.954c-.496.184-1.106.304-2.175.352-1.024.045-1.378.055-3.808.055s-2.784-.01-3.808-.055c-1.07-.048-1.68-.168-2.176-.352a3.88 3.88 0 01-1.44-.954 3.88 3.88 0 01-.954-1.44c-.184-.496-.304-1.106-.352-2.175-.045-1.024-.055-1.378-.055-3.808s.01-2.784.055-3.808c.048-1.07.168 1.68.352 2.176.22-.583.516-1.002.954-1.44a3.88 3.88 0 011.44-.954c.496-.184 1.106.304 2.175.352C9.53 2.01 9.884 2 12.315 2zm0 1.622c-2.372 0-2.69.01-3.632.053-.88.04-1.36.156-1.708.292-.402.156-.7.334-.98.613a2.26 2.26 0 00-.614.98c-.136.348-.252.828-.292 1.708-.042.942-.053 1.26-.053 3.632s.01 2.69.053 3.632c.04 1.012.17 1.56.35 2.05.203.546.507.976.97 1.44.465.466.895.768 1.44.97.49.18 1.04.31 2.05.35.942.043 1.26.053 3.632.053s2.69-.01 3.632-.053c1.012-.04 1.56-.17 2.05-.35.546-.203.976-.507 1.44-.97.466-.465.768-.895.97-1.44.18-.49.31-1.04.35-2.05.043-.942.053-1.26.053-3.632s-.01-2.69-.053-3.632c-.04-1.012-.17-1.56-.35-2.05a3.05 3.05 0 00-.97-1.44 3.05 3.05 0 00-1.44-.97c-.49-.18-1.04-.31-2.05-.35C15.006 3.63 14.686 3.62 12.315 3.62zm0 5.48a3.21 3.21 0 100 6.42 3.21 3.21 0 000-6.42zm0 1.622a1.588 1.588 0 110 3.176 1.588 1.588 0 010-3.176zm5.18-3.44a1.18 1.18 0 100 2.36 1.18 1.18 0 000-2.36z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <!-- Add other icons (Twitter, LinkedIn, etc.) as needed -->
-                </div>
             </div>
         </div>
-
     </footer>
 
     <!-- JavaScript for Mobile Menu Toggle -->
