@@ -52,10 +52,10 @@
 
 <!-- Hero Section -->
 <section class="relative hero-bg-image pt-32 pb-16 md:pt-48 md:pb-24 text-center" style="background-image: url('images/1734444212989.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-t from-gray-100 via-black-50 to-transparent opacity-90"></div>
+    <div class="absolute inset-0 "></div>
     <div class="relative z-10 container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">CONTACT BLUE WAVES HOUSE</h2>
-        <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed font-bold">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">CONTACT BLUE WAVES HOUSE</h2>
+        <p class="text-white max-w-3xl mx-auto leading-relaxed font-bold">
             Have questions or ready to book your stay? We're here to help you plan your perfect surf getaway in Taghazout.
         </p>
     </div>
