@@ -80,69 +80,52 @@
                 </button>
             </div>
 
-            <!-- Right Section: User Details -->
-             <!-- Takes full width on small, remaining width on medium+ --> 
-             <!-- ... le début du fichier reste identique ... -->
+        <!-- Takes full width on small, remaining width on medium+ --> 
+        <form action="{{ route('client.profile.update') }}" method="POST" class="flex-1 w-full md:w-3/4 space-y-5">
+            @csrf
+            @method('PUT') {{-- or POST depending on your route --}}            
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">User Name:</label>
+                    <input type="text" id="prenom" name="name" value="{{ $user->name }}"
+                        class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                </div>
 
-<!-- Right Section: User Details -->
-<!-- Takes full width on small, remaining width on medium+ --> 
-<form action="{{ route('client.profile.update') }}" method="POST" class="flex-1 w-full md:w-3/4 space-y-5">
-    @csrf
-    @method('PUT') {{-- or POST depending on your route --}}
-    
-    <!-- First and Last Name -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="prenom">First Name:</label>
-            <input type="text" id="prenom" name="name" value="{{ $user->name }}"
-                   class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-        </div>
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="nom">Last Name:</label>
-            <input type="text" id="nom" name="last_name" value="{{ strtoupper($user->name) }}"
-                   class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-        </div>
-    </div>
+            <!-- Email -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{ $user->email }}"
+                    class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            </div>
 
-    <!-- Email -->
-    <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email:</label>
-        <input type="email" id="email" name="email" value="{{ $user->email }}"
-               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-    </div>
+            <!-- Password (optional) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="password">New Password:</label>
+                <input type="password" id="password" name="password" placeholder="Leave blank to keep current"
+                    class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            </div>
 
-    <!-- Password (optional) -->
-    <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="password">New Password:</label>
-        <input type="password" id="password" name="password" placeholder="Leave blank to keep current"
-               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-    </div>
+            <!-- Phone -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" value="{{ $user->phone }}"
+                    class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            </div>
 
-    <!-- Phone -->
-    <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone" value="{{ $user->phone }}"
-               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-    </div>
+            <!-- Nationality -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" value="{{ $user->nationality ?? '' }}"
+                    class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            </div>
 
-    <!-- Nationality -->
-    <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="nationality">Nationality:</label>
-        <input type="text" id="nationality" name="nationality" value="{{ $user->nationality ?? '' }}"
-               class="bg-white border border-gray-300 text-gray-900 w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-    </div>
-
-    <!-- Save Button -->
-    <div class="pt-4 md:pt-6 text-center md:text-left">
-        <button type="submit"
-                class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
-            Save Changes
-        </button>
-    </div>
-</form>
-
-                     
-
+            <!-- Save Button -->
+            <div class="pt-4 md:pt-6 text-center md:text-left">
+                <button type="submit"
+                        class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition duration-200">
+                    Save Changes
+                </button>
+            </div>
+        </form>    
         </div>
     </main>
 
