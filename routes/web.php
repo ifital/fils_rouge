@@ -47,7 +47,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::prefix('employee')->name('employee.')->group(function (){
+    Route::middleware('role:employee')->prefix('employee')->name('employee.')->group(function (){
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
         Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
@@ -66,7 +66,7 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
         Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
         Route::put('/rooms/{room}', [RoomController::class, 'update'])->name('rooms.update');
@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
 
     });
     
-    Route::prefix('client')->name('client.')->group(function () {
+    Route::middleware('role:client')->prefix('client')->name('client.')->group(function () {
         // Routes pour les activités
         Route::get('/activities', [ActivityController::class, 'homeActivities'])->name('activities.index');
         Route::get('/activity/{id}', [ActivityController::class, 'show'])->name('activities.detaills');
