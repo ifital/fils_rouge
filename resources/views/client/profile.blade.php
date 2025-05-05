@@ -33,7 +33,7 @@
 
         <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
         <div class="flex space-x-4 items-center">
-            <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
+            <a href="{{ Route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
                 log out
             </a>
 
