@@ -12,10 +12,9 @@
         <!-- Main navigation container -->
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- Logo -->
-            <div class="text-2xl font-bold">
-                LOGO
-            </div>
-    
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>
             <!-- Desktop Navigation Links (Hidden on Mobile) -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="{{ Route('client.home') }}" class="hover:text-yellow-400 transition duration-200">home</a>

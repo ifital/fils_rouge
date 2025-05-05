@@ -19,8 +19,10 @@
 
         <!-- Header -->
         <header class="flex justify-between items-center mb-6">
-            <span class="text-sm font-semibold tracking-wider text-gray-700">LOGO</span>
-            <a href={{ Route('client.home') }} aria-label="Go back">
+        <!-- Logo -->
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>            <a href={{ Route('client.home') }} aria-label="Go back">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 text-black">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
@@ -36,7 +38,7 @@
 
        <!-- Loop Through Reservations -->
         @forelse($reservations as $reservation)
-        <div class="border-2 border-blue-500 rounded-lg bg-gray-50 p-4 md:p-6 shadow-md mb-6">
+        <div class="border-2 rounded-lg bg-gray-50 p-4 md:p-6 shadow-md mb-6">
             <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                 <!-- Image -->
                 <div class="md:w-1/3 flex-shrink-0">

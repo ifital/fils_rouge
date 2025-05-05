@@ -12,10 +12,10 @@
     <header class="bg-black text-white shadow-md relative">
         <!-- Main navigation container -->
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <!-- Logo -->
-            <div class="text-2xl font-bold">
-                LOGO
-            </div>
+        <!-- Logo -->
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>
     
             <!-- Desktop Navigation Links (Hidden on Mobile) -->
             <div class="hidden md:flex space-x-8 items-center">

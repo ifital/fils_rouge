@@ -10,8 +10,10 @@
 
 <header class="bg-black text-white shadow-md">
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div class="text-2xl font-bold">
-            <a href="{{ route('client.home') }}">LOGO</a>
+        <!-- Logo -->
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>
         </div>
 
         <div class="hidden md:flex space-x-8 items-center">

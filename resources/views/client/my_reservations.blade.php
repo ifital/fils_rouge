@@ -79,8 +79,10 @@
 
         <!-- Header -->
         <header class="flex justify-between items-center mb-8">
-            <span class="text-sm font-semibold tracking-wider text-gray-800">LOGO</span>
-            <a href="{{ route('client.home') }}" aria-label="Go back">
+        <!-- Logo -->
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>            <a href="{{ route('client.home') }}" aria-label="Go back">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-black">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>

@@ -39,10 +39,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <div class="flex items-center">
-                    <span class="text-yellow-400 text-2xl font-bold">BLUE</span>
-                    <span class="text-white text-2xl font-bold">WAVES</span>
-                </div>
+            <!-- Logo -->
+            <div class="">
+                <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+            </div>
             </div>
             <div class="flex items-center space-x-4">
                 <div class="hidden md:flex items-center space-x-2 text-sm">
