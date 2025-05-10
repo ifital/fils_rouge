@@ -114,6 +114,11 @@ Les hostels sont souvent confrontés à une gestion manuelle ou décentralisée 
 
 ---
 
+## Links
+
+- **Link For all:** [View all Links](https://linktr.ee/abdelalilatifi3);
+
+
 ## 🛠️ Installation et Lancement
 
 ```bash
@@ -140,7 +145,5 @@ php artisan serve
 
 ---
 
-## Links
 
-- **Link For all:** [View all Links](https://linktr.ee/abdelalilatifi3);
 
