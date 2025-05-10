@@ -35,10 +35,10 @@
 <body class="m-0 p-0">
     <div class="login-container flex items-center justify-center">
         <div class="w-full max-w-md p-8">
-            <!-- Logo en haut à gauche -->
-            <div class="text-white text-2xl font-bold absolute top-8 left-8">
-                LOGO
-            </div>
+         <!-- Logo -->
+         <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>
             
             @if ($errors->any())
                 <div class="mb-4 text-red-600 bg-white bg-opacity-70 p-3 rounded">

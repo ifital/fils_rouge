@@ -98,7 +98,7 @@
                     </div>
                     <!-- Image -->
                     <div class="w-full md:w-1/2 order-1 md:order-2 ">
-                        <img src="{{ asset('storage/' . $activity->images) }}" alt="{{ $activity->name }}" class="w-full h-auto object-cover shadow-md">
+                        <img src="{{ asset('storage/' . $activity->images) }}" alt="{{ $activity->name }}" class="h-full w-full object-cover">
                     </div>
                 </div>
             @endforeach

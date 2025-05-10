@@ -40,7 +40,7 @@ class ReserveActivityService
 
     public function deleteReservationByManager($reservationId)
     {
-        $reservation = ReserveActivitie::find($reservationId); // Correction ici !
+        $reservation = ReserveActivitie::find($reservationId); 
 
         if ($reservation) {
             return $reservation->delete();

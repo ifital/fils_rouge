@@ -40,11 +40,10 @@
 <body class="m-0 p-0">
     <div class="signup-container flex items-center justify-center">
         <div class="w-full max-w-md p-8">
-            <!-- Logo en haut à gauche -->
-            <div class="text-white text-xl font-medium absolute top-8 left-8">
-                logo
-            </div>
-            
+          <!-- Logo -->
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>  
             <div class="mt-6 text-center">
                 <h2 class="text-3xl font-bold text-white mb-2">sign up</h2>
                 <p class="text-white mb-6">If you have account? <a href="{{ route('login') }}" class="text-yellow-300 hover:underline">Login</a></p>

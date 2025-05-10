@@ -19,7 +19,9 @@
 <header class="absolute top-0 left-0 right-0 z-20 bg-black bg-opacity-30 text-white" x-data="{ open: false }">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo -->
-        <a href="#" class="text-xl font-bold">LOGO</a>
+        <div class="">
+            <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
+        </div>
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 items-center">
             <a href="#" class="hover:text-yellow-600 text-yellow-400">home</a>

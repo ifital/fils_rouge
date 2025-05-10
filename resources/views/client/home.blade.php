@@ -85,7 +85,7 @@
             <img 
               src="{{ asset('storage/' . $room->images) }}" 
               alt="Room {{ $room->room_number }}" 
-              class="h-full w-full object-cover"
+              class="h-40 w-full object-cover"
             />
           </div>
           <div class="w-2/3 p-4 flex flex-col justify-between">
