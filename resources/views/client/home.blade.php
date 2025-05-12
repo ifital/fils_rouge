@@ -22,33 +22,28 @@
   </script>
 </head>
 <body class="min-h-screen bg-white font-sans">
-   <!-- Header Navigation -->
    <header class="bg-black text-white shadow-md relative">
-    <!-- Main navigation container -->
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
         <!-- Logo -->
         <div class="">
             <img src="/images/Design_sans_titre_13.png" alt="logo"  class="h-12">
         </div>
 
-        <!-- Desktop Navigation Links (Hidden on Mobile) -->
         <div class="hidden md:flex space-x-8 items-center">
             <a href="{{ Route('client.reservations.index') }}" class="hover:text-yellow-400 transition duration-200">my resrevations</a>
             <a href="{{ Route('client.activities.index') }}" class="hover:text-yellow-400 transition duration-200">activities</a>
             <a href="{{ Route('client.activities.my.activities') }}" class="hover:text-yellow-400 transition duration-200">my activities</a>
         </div>
-        <!-- Right Side Buttons (Login/Signup & Mobile Toggle) -->
         <div class="flex space-x-4 items-center">
             <a href="{{ Route('logout') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-yellow-500 transition duration-200">
                 log out
             </a>
             <a href="{{ Route('client.profile.show') }}" class="hover:text-yellow-400 transition duration-200" aria-label="My Profile" title="My Profile">
-              <span class="sr-only">My Profile</span> <!-- Pour l'accessibilité -->
+              <span class="sr-only">My Profile</span> 
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
            </a>
-             <!-- Mobile Menu Button (Visible only on Mobile) -->
              <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <span class="sr-only">Open main menu</span> <!-- Accessibility improvement -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,8 +110,6 @@
       </div>
       @endforelse
     </div>
-
-    <!-- Pagination -->
     <div class="mb-8">
       {{ $rooms->links() }}
     </div>
@@ -126,7 +119,6 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">What's included?</h2>
             
             <div class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-lg">
-                <!-- Image -->
                 <div class="md:w-1/2">
                     <img src="/images/9AYN30jsQbFH0gU42KXctjPYjw.jpg" alt="Panoramic terrace view" class="w-full h-full object-cover">
                 </div>

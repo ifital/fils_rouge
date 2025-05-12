@@ -115,27 +115,21 @@
 
         <!-- Reservations List -->
         @forelse($reservations as $reservation)
-            <!-- Card Styling: background, padding, rounding, shadow -->
             <div class="bg-gray-100 rounded-2xl p-5 mb-4 shadow-md">
                 <div class="flex flex-row">
-                    <!-- Image Container: width, margin -->
                     <div class="w-1/4 mr-5 flex-shrink-0">
                         <img src="{{ $reservation->room->images ? asset('storage/' . $reservation->room->images) : 'https://via.placeholder.com/400x300/cccccc/969696?text=Room+Image' }}"
                              alt="{{ $reservation->room->type == 'private' ? 'Private Room' : 'Dormitory' }} #{{ $reservation->room->room_number }}"
                              class="w-full h-40 object-cover rounded-lg">
                     </div>
 
-                    <!-- Details Container -->
                     <div class="w-3/4 flex flex-col">
-                        <!-- Top section: Title and Dates -->
                         <div class="flex justify-between items-start">
-                             <!-- Title Styling -->
                             <h2 class="text-xl font-bold text-gray-900 pt-1">
                                 {{ $reservation->room->name ?? ($reservation->room->type == 'private' ? 'Private Room' : 'Dormitory Bed') }}
                                 @if($reservation->room->type == 'private') #{{ $reservation->room->room_number }} @endif
                             </h2>
 
-                             <!-- Dates section styling -->
                             <div class="text-right flex-shrink-0">
                                 <div class="text-sm font-medium text-gray-800">
                                     check in <span class="text-blue-600 font-semibold">{{ $reservation->check_in->format('d/m/Y') }}</span>
@@ -151,14 +145,11 @@
                             {{ Str::limit($reservation->room->description ?? 'Enjoy your stay with us.', 150) }}
                         </p>
 
-                        <!-- Bottom section: Price/Guests and Buttons -->
                         <div class="flex justify-between items-end mt-auto">
                             <div>
-                                <!-- Price Styling: size, weight -->
                                 <p class="text-3xl font-extrabold text-gray-900">
                                     €{{ number_format($reservation->total_price ?? $reservation->price, 2) }}
                                 </p>
-                                <!-- Guest/Night Styling -->
                                 <p class="text-sm text-gray-800 font-medium mt-1">
                                     {{ $reservation->guests ?? 1 }} {{ \Illuminate\Support\Str::plural('adult', $reservation->guests ?? 1) }} /
                                     @php
@@ -171,14 +162,12 @@
                                 </p>
                             </div>
 
-                            <!-- Buttons Section Styling -->
                             <div class="flex gap-2 items-center">
                                 @if($reservation->status == 'cancelled')
                                     <span class="bg-red-100 text-red-800 text-xs font-medium py-1.5 px-4 rounded-full">
                                         Cancelled
                                     </span>
                                 @else
-                                    <!-- Show Update Date button for all non-cancelled reservations -->
                                     <button 
                                         type="button" 
                                         onclick="openModal('updateModal{{ $reservation->id }}')" 
@@ -186,7 +175,6 @@
                                         change dates
                                     </button>
                                     
-                                    <!-- Show Cancel button only for unpaid reservations -->
                                     @if($reservation->status != 'cancelled' && !($reservation->payment && $reservation->payment->status == 'paid'))
                                         <form action="{{ route('client.reservation.cancel', $reservation->id) }}" method="POST" class="inline">
                                             @csrf
@@ -197,7 +185,6 @@
                                         </form>
                                     @endif
                                     
-                                    <!-- Show Paid badge for paid reservations -->
                                     @if($reservation->payment && $reservation->payment->status == 'paid')
                                         <span class="bg-green-100 text-green-800 text-xs font-medium py-1.5 px-4 rounded-full">
                                             Paid
@@ -239,10 +226,8 @@
                             >
                         </div>
                         
-                        <!-- Keep the same number of nights -->
                         <input type="hidden" name="nights" value="{{ $nights }}">
                         
-                        <!-- Keep the same number of guests -->
                         <input type="hidden" name="guests" value="{{ $reservation->guests ?? 1 }}">
                         
                         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">

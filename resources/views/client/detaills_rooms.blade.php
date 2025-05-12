@@ -154,7 +154,6 @@
         </div>
     </main>
 
-    <!-- JavaScript for Mobile Menu Toggle and Booking Form -->
     <script>
         // Mobile menu toggle
         const menuButton = document.getElementById('mobile-menu-button');
